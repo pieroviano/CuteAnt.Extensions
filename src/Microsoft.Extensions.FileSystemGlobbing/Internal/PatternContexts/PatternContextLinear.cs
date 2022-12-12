@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Extensions.FileSystemGlobbing.Abstractions;
 
 namespace Microsoft.Extensions.FileSystemGlobbing.Internal.PatternContexts
@@ -76,7 +77,11 @@ namespace Microsoft.Extensions.FileSystemGlobbing.Internal.PatternContexts
 
             public string Stem
             {
-                get { return _stemItems == null ? null : string.Join("/", _stemItems); }
+                get { return _stemItems == null ? null : string.Join("/", _stemItems
+#if NET35
+                        .ToArray()
+#endif
+                ); }
             }
         }
 

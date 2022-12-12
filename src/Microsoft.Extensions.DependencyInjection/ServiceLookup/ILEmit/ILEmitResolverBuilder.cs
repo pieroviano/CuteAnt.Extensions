@@ -1,4 +1,5 @@
-﻿// Copyright (c) .NET Foundation. All rights reserved.
+﻿#if !NET35
+// Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
@@ -14,7 +15,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
     {
         private static readonly MethodInfo ResolvedServicesGetter = typeof(ServiceProviderEngineScope).GetProperty(
             nameof(ServiceProviderEngineScope.ResolvedServices), BindingFlags.Instance | BindingFlags.NonPublic)
-#if NET40
+#if NET40 || NET35
             .GetGetMethod(true);
 #else
             .GetMethod;
@@ -399,7 +400,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         private static bool BeginCaptureDisposable(Type implType, ILEmitResolverBuilderContext argument)
         {
-#if NET40
+#if NET40 || NET35
             var shouldCapture = implType == null || typeof(IDisposable).IsAssignableFrom(implType);
 #else
             var shouldCapture = implType == null || typeof(IDisposable).GetTypeInfo().IsAssignableFrom(implType.GetTypeInfo());
@@ -467,3 +468,5 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         }
     }
 }
+
+#endif

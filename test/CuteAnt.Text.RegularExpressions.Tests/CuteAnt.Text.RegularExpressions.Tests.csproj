@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net471</TargetFrameworks>
+    <TargetFrameworks>net471;net35</TargetFrameworks>
     <RootNamespace>CuteAnt.Text.RegularExpressions.Tests</RootNamespace>
-    <AssemblyName>CuteAnt.Text.RegularExpressions.Tests</AssemblyName>
+    <AssemblyName>Net4x.Text.RegularExpressions.Tests</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 

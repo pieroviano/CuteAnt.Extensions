@@ -50,7 +50,7 @@ namespace System.Reflection.PortableExecutable
 
             // compressed data:
             var compressed = new MemoryStream();
-#if NET40
+#if NET40 || NET35
             using (var deflate = new DeflateStream(compressed, CompressionMode.Compress, leaveOpen: true))
 #else
             using (var deflate = new DeflateStream(compressed, CompressionLevel.Optimal, leaveOpen: true))

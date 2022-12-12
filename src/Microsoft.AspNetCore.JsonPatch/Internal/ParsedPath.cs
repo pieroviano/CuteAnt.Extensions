@@ -37,7 +37,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             }
         }
 
-#if NET40
+#if NET40 || NET35
         public IList<string> Segments => _segments ?? Empty;
 #else
         public IReadOnlyList<string> Segments => _segments ?? Empty;

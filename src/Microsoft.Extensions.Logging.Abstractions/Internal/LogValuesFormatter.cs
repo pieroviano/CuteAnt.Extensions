@@ -137,7 +137,11 @@ namespace Microsoft.Extensions.Logging.Internal
                     var enumerable = value as IEnumerable;
                     if (enumerable != null)
                     {
-                        values[i] = string.Join(", ", enumerable.Cast<object>().Select(o => o ?? NullValue));
+                        values[i] = string.Join(", ", enumerable.Cast<object>().Select(o => o ?? NullValue)
+#if NET35
+                                .Select(i=>i?.ToString()).ToArray()
+#endif
+                        );
                     }
                 }
             }

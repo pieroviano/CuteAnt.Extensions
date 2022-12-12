@@ -5,7 +5,7 @@
 // ==--==
 // <OWNER>Microsoft</OWNER>
 // 
-#if NET40
+#if NET40 || NET35
 namespace System.Collections.ObjectModel
 {
   using System;

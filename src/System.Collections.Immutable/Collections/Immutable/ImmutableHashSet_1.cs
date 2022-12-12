@@ -1059,4 +1059,5 @@ namespace System.Collections.Immutable
             return result.Finalize(this);
         }
     }
+
 }

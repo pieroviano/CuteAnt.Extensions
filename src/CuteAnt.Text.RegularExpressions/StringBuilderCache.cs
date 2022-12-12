@@ -63,7 +63,11 @@ namespace CuteAnt.Text
           if (capacity <= sb.Capacity)
           {
             StringBuilderCache.CachedInstance = null;
-            sb.Clear();
+#if NET35
+              sb.Remove(0, sb.Length);
+#else
+              sb.Clear();
+#endif
             return sb;
           }
         }

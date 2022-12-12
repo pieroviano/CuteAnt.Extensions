@@ -7,7 +7,7 @@ using System.IO;
 using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Text;
-#if NET40
+#if NET40 || NET35
 using System.Reflection.Internal;
 #endif
 
@@ -33,7 +33,7 @@ namespace System.Reflection.PortableExecutable
 
             _startOffset = stream.Position;
             _maxOffset = _startOffset + size;
-#if NET40
+#if NET40 || NET35
             _reader = new BinaryReader(new DelegatingStreamWrapper(stream), Encoding.UTF8);
 #else
             _reader = new BinaryReader(stream, Encoding.UTF8, leaveOpen: true);

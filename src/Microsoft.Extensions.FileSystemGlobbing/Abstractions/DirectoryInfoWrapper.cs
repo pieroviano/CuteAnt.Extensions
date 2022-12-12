@@ -35,7 +35,11 @@ namespace Microsoft.Extensions.FileSystemGlobbing.Abstractions
         {
             if (_directoryInfo.Exists)
             {
+#if NET35
+                foreach (var fileSystemInfo in _directoryInfo.GetFileSystemInfos("*"))
+#else
                 foreach (var fileSystemInfo in _directoryInfo.EnumerateFileSystemInfos("*", SearchOption.TopDirectoryOnly))
+#endif
                 {
                     var directoryInfo = fileSystemInfo as DirectoryInfo;
                     if (directoryInfo != null)

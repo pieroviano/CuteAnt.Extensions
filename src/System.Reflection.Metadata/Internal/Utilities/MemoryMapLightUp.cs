@@ -19,7 +19,7 @@ namespace System.Reflection.Internal
                 mapName: null,
                 capacity: 0, 
                 access: MemoryMappedFileAccess.Read,
-#if NET40
+#if NET40 || NET35
                 memoryMappedFileSecurity: null,
 #endif
 
@@ -39,7 +39,7 @@ namespace System.Reflection.Internal
             }
         }
 
-#if NET40
+#if NET40 || NET35
         // TODO .Net40 无法获取 MemoryMappedViewAccessor.PointerOffset 属性
         internal static bool TryGetSafeBufferAndPointerOffset(object accessor, Int64 pointerOffset, out SafeBuffer safeBuffer, out long offset)
         {

@@ -7,8 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Xml;
 
+
 namespace Microsoft.Extensions.Configuration.Xml
 {
+
     /// <summary>
     /// Represents an XML file as an <see cref="IConfigurationSource"/>.
     /// </summary>
@@ -35,7 +37,11 @@ namespace Microsoft.Extensions.Configuration.Xml
             var readerSettings = new XmlReaderSettings()
             {
                 CloseInput = false, // caller will close the stream
+#if NET35
+                ProhibitDtd = true,
+#else
                 DtdProcessing = DtdProcessing.Prohibit,
+#endif
                 IgnoreComments = true,
                 IgnoreWhitespace = true
             };

@@ -154,7 +154,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Transient"/>
         public static IServiceCollection AddTransient<TService>(
             this IServiceCollection services,
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
             if (services == null)
@@ -184,7 +188,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Transient"/>
         public static IServiceCollection AddTransient<TService, TImplementation>(
             this IServiceCollection services,
-            Func<IServiceProvider, TImplementation> implementationFactory)
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
+            Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
             where TImplementation : class, TService
         {
@@ -347,7 +355,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Scoped"/>
         public static IServiceCollection AddScoped<TService>(
             this IServiceCollection services,
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
             if (services == null)
@@ -377,7 +389,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Scoped"/>
         public static IServiceCollection AddScoped<TService, TImplementation>(
             this IServiceCollection services,
-            Func<IServiceProvider, TImplementation> implementationFactory)
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
+            Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
             where TImplementation : class, TService
         {

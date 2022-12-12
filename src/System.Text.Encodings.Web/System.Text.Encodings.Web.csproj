@@ -11,11 +11,26 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>Net40.Text.Encodings.Web</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Text.Encodings.Web</PackageId>
     <Title>Corefx.Text.Encodings.Web-net40-fork</Title>
     <Description>Provides types for encoding and escaping strings for use in JavaScript, HyperText Markup Language (HTML), and uniform resource locators (URL).</Description>
     <PackageTags>primitives</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <None Remove="Resources\unicode8definedcharacters.bin" />

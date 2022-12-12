@@ -142,7 +142,7 @@ namespace Microsoft.Extensions.DependencyInjection
             => services.ConfigureOptions(typeof(TConfigureOptions));
 
         private static bool IsAction(Type type)
-#if NET40
+#if NET40 || NET35
             => (type.IsGenericType && type.GetGenericTypeDefinition() == typeof(Action<>));
 #else
             => (type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(Action<>));
@@ -150,7 +150,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static IEnumerable<Type> FindIConfigureOptions(Type type)
         {
-#if NET40
+#if NET40 || NET35
             var serviceTypes = type.GetInterfaces()
                 .Where(t => t.IsGenericType && 
 #else

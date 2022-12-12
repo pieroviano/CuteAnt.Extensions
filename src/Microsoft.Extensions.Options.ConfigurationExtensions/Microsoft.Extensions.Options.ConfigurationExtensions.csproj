@@ -3,18 +3,33 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Options.ConfigurationExtensions</AssemblyName>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.Options.ConfigurationExtensions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Options.ConfigurationExtensions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Options.ConfigurationExtensions</PackageId>
     <Title>Ms.Extensions.Options.ConfigurationExtensions-net40-net451-fork</Title>
     <Description>Provides additional configuration specific functionality related to Options.</Description>
     <PackageTags>aspnetcore;configuration;options</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.Binder\Microsoft.Extensions.Configuration.Binder.csproj" />

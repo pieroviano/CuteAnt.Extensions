@@ -4,17 +4,32 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Caching.Abstractions</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Caching.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Caching</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Caching.Abstractions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Caching.Abstractions</PackageId>
     <Description>Caching abstractions for in-memory cache and distributed cache.</Description>
     <Title>Ms.Extensions.Caching.Abstractions-net451-fork</Title>
     <PackageTags>cache;memorycache;distributedcache</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />

@@ -9,7 +9,11 @@ namespace Microsoft.Extensions.Options
     /// Used for notifications when TOptions instances change.
     /// </summary>
     /// <typeparam name="TOptions">The options type.</typeparam>
-    public interface IOptionsMonitor<out TOptions>
+    public interface IOptionsMonitor<
+#if !NET35
+        out 
+#endif
+        TOptions>
     {
         /// <summary>
         /// Returns the current TOptions instance with the <see cref="Options.DefaultName"/>.

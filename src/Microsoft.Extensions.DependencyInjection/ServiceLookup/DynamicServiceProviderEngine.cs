@@ -1,4 +1,5 @@
-﻿// Copyright (c) .NET Foundation. All rights reserved.
+﻿#if !NET35
+// Copyright (c) .NET Foundation. All rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
@@ -21,7 +22,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             {
                 if (Interlocked.Increment(ref callCount) == 2)
                 {
-#if NET40
+#if NET40 || NET35
                     ThreadPool.QueueUserWorkItem(state => base.RealizeService(callSite));
 #else
                     Task.Run(() => base.RealizeService(callSite));
@@ -32,3 +33,5 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         }
     }
 }
+
+#endif

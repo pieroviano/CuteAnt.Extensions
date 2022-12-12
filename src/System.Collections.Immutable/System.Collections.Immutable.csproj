@@ -4,6 +4,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net40</TargetFrameworks>
+    <!--<TargetFrameworks>net40;net35</TargetFrameworks>-->
     <RootNamespace>System</RootNamespace>
     <AssemblyName>System.Collections.Immutable</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -11,14 +12,33 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>Net40.Collections.Immutable</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Collections.Immutable</PackageId>
     <Title>Corefx.Collections.Immutable-net40-fork</Title>
     <Description>This package provides collections that are thread safe and guaranteed to never change their contents, also known as immutable collections. Like strings, any methods that perform modifications will not change the existing instance but instead return a new instance. For efficiency reasons, the implementation uses a sharing mechanism to ensure that newly created instances share as much data as possible with the previous instance while ensuring that operations have a predictable time complexity.</Description>
     <PackageTags>Regular</PackageTags>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
+
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="Kaos.Collections" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>

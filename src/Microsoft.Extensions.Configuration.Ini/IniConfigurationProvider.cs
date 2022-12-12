@@ -7,6 +7,22 @@ using System.IO;
 
 namespace Microsoft.Extensions.Configuration.Ini
 {
+
+    public static class StringExtension
+    {
+        public static bool IsNullOrWhiteSpace(this string value)
+        {
+            if (value == null)
+                return true;
+            for (int index = 0; index < value.Length; ++index)
+            {
+                if (!char.IsWhiteSpace(value[index]))
+                    return false;
+            }
+            return true;
+        }
+
+    }
     /// <summary>
     /// An INI file based <see cref="ConfigurationProvider"/>.
     /// Files are simple line structures (<a href="https://en.wikipedia.org/wiki/INI_file">INI Files on Wikipedia</a>)
@@ -45,7 +61,7 @@ namespace Microsoft.Extensions.Configuration.Ini
                     var line = rawLine.Trim();
 
                     // Ignore blank lines
-                    if (string.IsNullOrWhiteSpace(line))
+                    if (line.IsNullOrWhiteSpace())
                     {
                         continue;
                     }

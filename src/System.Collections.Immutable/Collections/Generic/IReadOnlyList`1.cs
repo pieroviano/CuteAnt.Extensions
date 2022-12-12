@@ -1,4 +1,4 @@
-﻿//#if !NET40
+﻿//#if !NET40 && !NET35
 
 //using System.Collections.Generic;
 //using System.Runtime.CompilerServices;
@@ -42,7 +42,7 @@
 //    [ContractClass(typeof(IReadOnlyListContract<>))]
 //#endif
 //    // If we ever implement more interfaces on IReadOnlyList, we should also update RuntimeTypeCache.PopulateInterfaces() in rttype.cs
-//#if NET40
+//#if NET40 || NET35
 //    public interface IReadOnlyList<out T> : IReadOnlyCollection<T>
 //#else
 //    public interface IReadOnlyList<T> : IReadOnlyCollection<T>

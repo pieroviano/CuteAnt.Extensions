@@ -2,6 +2,7 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 
@@ -9,7 +10,11 @@ namespace Microsoft.Extensions.ObjectPool
 {
     public class LeakTrackingObjectPool<T> : ObjectPool<T> where T : class
     {
+#if NET35
+        private readonly Dictionary<T, Tracker> _trackers = new Dictionary<T, Tracker>();
+#else
         private readonly ConditionalWeakTable<T, Tracker> _trackers = new ConditionalWeakTable<T, Tracker>();
+#endif
         private readonly ObjectPool<T> _inner;
 
         public LeakTrackingObjectPool(ObjectPool<T> inner)

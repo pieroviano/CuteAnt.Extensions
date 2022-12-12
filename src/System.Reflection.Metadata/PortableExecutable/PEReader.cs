@@ -750,7 +750,7 @@ namespace System.Reflection.PortableExecutable
             if (errorToReport != null)
             {
                 Debug.Assert(errorToReport is BadImageFormatException || errorToReport is IOException);
-#if NET40
+#if NET40 || NET35
                 throw ExceptionEnlightenment.PrepareForRethrow(errorToReport);
 #else
                 ExceptionDispatchInfo.Capture(errorToReport).Throw();

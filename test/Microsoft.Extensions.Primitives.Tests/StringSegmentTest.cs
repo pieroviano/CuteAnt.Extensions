@@ -33,6 +33,9 @@ namespace Microsoft.Extensions.Primitives
         }
 
         [Fact]
+#if NET35
+        [Ignore]
+#endif
         public void StringSegment_AsSpan()
         {
             var segment = new StringSegment("Hello");
@@ -43,6 +46,9 @@ namespace Microsoft.Extensions.Primitives
         }
 
         [Fact]
+#if NET35
+        [Ignore]
+#endif
         public void StringSegment_ImplicitConvertToSpan()
         {
             ReadOnlySpan<char> span = new StringSegment("Hello");

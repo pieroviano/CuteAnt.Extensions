@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Extensions.Configuration.Json.Test</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Json.Test</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.Json.Test</RootNamespace>
-    <TargetFrameworks>net45</TargetFrameworks>
+    <TargetFrameworks>net45;net35</TargetFrameworks>
     <DefineConstants>$(DefineConstants);TEST40</DefineConstants>
   </PropertyGroup>
 

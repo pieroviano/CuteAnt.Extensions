@@ -5,11 +5,16 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Microsoft.Extensions.Internal;
+#if !NET35
 using Microsoft.CSharp.RuntimeBinder;
+#endif
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+#if !NET35
 using CSharpBinder = Microsoft.CSharp.RuntimeBinder;
+#endif
 
 namespace Microsoft.AspNetCore.JsonPatch.Internal
 {
@@ -63,7 +68,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             // null in case of reference types
             object value = null;
             if (property.GetType()
-#if !NET40
+#if !NET40 && !NET35
                 .GetTypeInfo()
 #endif
                 .IsValueType
@@ -166,7 +171,24 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             out object value,
             out string errorMessage)
         {
-            var jsonDynamicContract = (JsonDynamicContract)contractResolver.ResolveContract(target.GetType());
+#if NET35
+            try
+            {
+                var propertyInfo = target.GetType().GetProperty(segment);
+                value = propertyInfo.GetValue(target);
+                errorMessage = null;
+                return true;
+            }
+            catch (Exception e)
+            {
+                value = null;
+                errorMessage = Resources.FormatTargetLocationAtPathSegmentNotFound(segment);
+                return false;
+            }
+#else
+            var jsonDynamicContract =
+                (JsonDynamicContract)
+            contractResolver.ResolveContract(target.GetType());
 
             var propertyName = jsonDynamicContract.PropertyNameResolver(segment);
 
@@ -193,6 +215,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
                 errorMessage = Resources.FormatTargetLocationAtPathSegmentNotFound(segment);
                 return false;
             }
+#endif
         }
 
         protected virtual bool TrySetDynamicObjectProperty(
@@ -202,6 +225,21 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             object value,
             out string errorMessage)
         {
+#if NET35
+            try
+            {
+                var propertyInfo = target.GetType().GetProperty(segment);
+                propertyInfo.SetValue(target, value);
+                errorMessage = null;
+                return true;
+            }
+            catch (Exception e)
+            {
+                value = null;
+                errorMessage = Resources.FormatTargetLocationAtPathSegmentNotFound(segment);
+                return false;
+            }
+#else
             var jsonDynamicContract = (JsonDynamicContract)contractResolver.ResolveContract(target.GetType());
 
             var propertyName = jsonDynamicContract.PropertyNameResolver(segment);
@@ -229,6 +267,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
                 errorMessage = Resources.FormatTargetLocationAtPathSegmentNotFound(segment);
                 return false;
             }
+#endif
         }
 
         protected virtual bool TryConvertValue(object value, Type propertyType, out object convertedValue)

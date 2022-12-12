@@ -3,20 +3,40 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Options</AssemblyName>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.Options</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Options</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Options</PackageId>
     <Title>Ms.Extensions.Options-net40-net451-fork</Title>
     <Description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</Description>
     <PackageTags>aspnetcore;options</PackageTags>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="TaskParallelLibrary" Version="1.0.2856" />
+  </ItemGroup>
+
   <ItemGroup>
+    <ProjectReference Include="..\..\System.Actions\System.Actions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
   </ItemGroup>

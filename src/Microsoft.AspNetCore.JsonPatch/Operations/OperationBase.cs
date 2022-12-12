@@ -32,8 +32,21 @@ namespace Microsoft.AspNetCore.JsonPatch.Operations
             }
             set
             {
-                OperationType result;
-                if (!Enum.TryParse(value, ignoreCase: true, result: out result))
+                OperationType result=default;
+                bool tryParse=true;
+#if NET35
+                try
+                {
+                    result = (OperationType)Enum.Parse(typeof(OperationType),value,true);
+                }
+                catch (Exception e)
+                {
+                    tryParse = false;
+                }
+#else
+                tryParse = Enum.TryParse(value, ignoreCase: true, result: out result);
+#endif
+                if (!tryParse)
                 {
                     result = OperationType.Invalid;
                 }

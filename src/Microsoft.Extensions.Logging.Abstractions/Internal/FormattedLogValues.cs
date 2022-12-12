@@ -13,7 +13,7 @@ namespace Microsoft.Extensions.Logging.Internal
     /// LogValues to enable formatting options supported by <see cref="M:string.Format"/>.
     /// This also enables using {NamedformatItem} in the format string.
     /// </summary>
-#if NET40
+#if NET40 || NET35
     public class FormattedLogValues : IList<KeyValuePair<string, object>>
 #else
     public class FormattedLogValues : IReadOnlyList<KeyValuePair<string, object>>
@@ -71,7 +71,7 @@ namespace Microsoft.Extensions.Logging.Internal
 
                 return _formatter.GetValue(_values, index);
             }
-#if NET40
+#if NET40 || NET35
             set => throw new NotImplementedException();
 #endif
         }
@@ -112,7 +112,7 @@ namespace Microsoft.Extensions.Logging.Internal
             return GetEnumerator();
         }
 
-#if NET40
+#if NET40 || NET35
         public bool IsReadOnly => throw new NotImplementedException();
 
         public int IndexOf(KeyValuePair<string, object> item)

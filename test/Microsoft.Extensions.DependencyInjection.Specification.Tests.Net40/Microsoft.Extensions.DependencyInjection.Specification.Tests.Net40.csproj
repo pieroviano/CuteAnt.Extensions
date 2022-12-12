@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
-    <TargetFrameworks>net45</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.DependencyInjection.Specification.Tests.Net40</AssemblyName>
+    <TargetFrameworks>net45;net35;</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.DependencyInjection.Specification.Tests.Net40</AssemblyName>
     <RootNamespace>Microsoft.Extensions.DependencyInjection.Specification</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>

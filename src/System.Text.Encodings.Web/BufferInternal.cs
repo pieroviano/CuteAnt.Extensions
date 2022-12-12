@@ -186,7 +186,7 @@ namespace System {
 
         // The attributes on this method are chosen for best JIT performance. 
         // Please do not edit unless intentional.
-#if !NET40
+#if !NET40 && !NET35
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         public static unsafe void MemoryCopy(void* source, void* destination, int destinationSizeInBytes, int sourceBytesToCopy)

@@ -2,10 +2,14 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+#if !NET35
 using System.Runtime.ExceptionServices;
+#endif
 
 #if ActivatorUtilities_In_DependencyInjection
 using Microsoft.Extensions.Internal;
@@ -46,13 +50,13 @@ namespace Microsoft.Extensions.Internal
             ConstructorMatcher bestMatcher = null;
 
             if (!instanceType
-#if !NET40
+#if !NET40 && !NET35
                 .GetTypeInfo()
 #endif
                 .IsAbstract)
             {
                 foreach (var constructor in instanceType
-#if NET40
+#if NET40 || NET35
                     .GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
 #else
                     .GetTypeInfo()
@@ -190,11 +194,13 @@ namespace Microsoft.Extensions.Internal
                 var parameterType = constructorParameter.ParameterType;
                 var hasDefaultValue = ParameterDefaultValue.TryGetDefaultValue(constructorParameter, out var defaultValue);
 
+#if !NET35
                 if (parameterMap[i] != null)
                 {
                     constructorArguments[i] = Expression.ArrayAccess(factoryArgumentArray, Expression.Constant(parameterMap[i]));
                 }
                 else
+#endif
                 {
                     var parameterTypeExpression = new Expression[] { serviceProvider,
                         Expression.Constant(parameterType, typeof(Type)),
@@ -242,7 +248,7 @@ namespace Microsoft.Extensions.Internal
             ref int?[] parameterMap)
         {
             foreach (var constructor in instanceType
-#if NET40
+#if NET40 || NET35
                 .GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
 #else
                 .GetTypeInfo().DeclaredConstructors
@@ -277,7 +283,7 @@ namespace Microsoft.Extensions.Internal
             ref int?[] parameterMap)
         {
             var seenPreferred = false;
-#if NET40
+#if NET40 || NET35
             foreach (var constructor in instanceType.GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly))
 #else
             foreach (var constructor in instanceType.GetTypeInfo().DeclaredConstructors)
@@ -318,7 +324,7 @@ namespace Microsoft.Extensions.Internal
             for (var i = 0; i < argumentTypes.Length; i++)
             {
                 var foundMatch = false;
-#if NET40
+#if NET40 || NET35
                 var givenParameter = argumentTypes[i];
 #else
                 var givenParameter = argumentTypes[i].GetTypeInfo();
@@ -332,7 +338,7 @@ namespace Microsoft.Extensions.Internal
                         continue;
                     }
 
-#if NET40
+#if NET40 || NET35
                     if (constructorParameters[j].ParameterType.IsAssignableFrom(givenParameter))
 #else
                     if (constructorParameters[j].ParameterType.GetTypeInfo().IsAssignableFrom(givenParameter))
@@ -374,7 +380,7 @@ namespace Microsoft.Extensions.Internal
                 var applyExactLength = 0;
                 for (var givenIndex = 0; givenIndex != givenParameters.Length; givenIndex++)
                 {
-#if NET40
+#if NET40 || NET35
                     var givenType = givenParameters[givenIndex]?.GetType();
 #else
                     var givenType = givenParameters[givenIndex]?.GetType().GetTypeInfo();
@@ -384,7 +390,7 @@ namespace Microsoft.Extensions.Internal
                     for (var applyIndex = applyIndexStart; givenMatched == false && applyIndex != _parameters.Length; ++applyIndex)
                     {
                         if (_parameterValuesSet[applyIndex] == false &&
-#if NET40
+#if NET40 || NET35
                             _parameters[applyIndex].ParameterType.IsAssignableFrom(givenType))
 #else
                             _parameters[applyIndex].ParameterType.GetTypeInfo().IsAssignableFrom(givenType))
@@ -443,8 +449,13 @@ namespace Microsoft.Extensions.Internal
                 }
                 catch (TargetInvocationException ex)
                 {
-#if NET40
+#if NET40 
                     throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
+#elif NET35
+                    if (ex.InnerException != null)
+                    {
+                        throw ex.InnerException;
+                    }
 #else
                     ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
 #endif

@@ -796,7 +796,11 @@ namespace Microsoft.AspNetCore.JsonPatch
         internal string GetPath<TProp>(Expression<Func<TModel, TProp>> expr, string position)
         {
             var segments = GetPathSegments(expr.Body);
+#if NET35
+            var path = String.Join("/", segments.ToArray());
+#else
             var path = String.Join("/", segments);
+#endif
             if (position != null)
             {
                 path += "/" + position;

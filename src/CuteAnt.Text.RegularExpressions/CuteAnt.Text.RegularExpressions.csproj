@@ -3,18 +3,33 @@
   <Import Project="..\nuget.dotnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40</TargetFrameworks>
+    <TargetFrameworks>net40;net35</TargetFrameworks>
     <RootNamespace>CuteAnt.Text.RegularExpressions</RootNamespace>
-    <AssemblyName>CuteAnt.Text.RegularExpressions</AssemblyName>
+    <AssemblyName>Net4x.Text.RegularExpressions</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>CuteAnt.Text.RegularExpressions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Text.RegularExpressions</PackageId>
     <Title>Corefx.Text.RegularExpressions-net40-fork</Title>
     <Description>Provides the System.Text.RegularExpressions.Regex class, an implementation of a regular expression engine.</Description>
     <PackageTags>Regular</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <Compile Update="Strings.Designer.cs">

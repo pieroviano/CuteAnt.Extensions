@@ -8,6 +8,20 @@ using System.Xml;
 
 namespace Microsoft.Extensions.Configuration.Xml
 {
+#if NET35
+    public static class StreamExtension
+    {
+        public static void CopyTo(this Stream source, Stream destination, int bufferSize=8192)
+        {
+            byte[] buffer = new byte[bufferSize];
+            int count;
+            while ((count = source.Read(buffer, 0, buffer.Length)) != 0)
+                destination.Write(buffer, 0, count);
+        }
+
+    }
+
+#endif
     /// <summary>
     /// Class responsible for encrypting and decrypting XML.
     /// </summary>

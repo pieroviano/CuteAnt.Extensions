@@ -12,6 +12,7 @@ using Microsoft.Extensions.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 {
+
     internal class CallSiteFactory
     {
         private readonly List<ServiceDescriptor> _descriptors;
@@ -28,14 +29,14 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         {
             foreach (var descriptor in descriptors)
             {
-#if NET40
+#if NET40 || NET35
                 var serviceTypeInfo = descriptor.ServiceType;
 #else
                 var serviceTypeInfo = descriptor.ServiceType.GetTypeInfo();
 #endif
                 if (serviceTypeInfo.IsGenericTypeDefinition)
                 {
-#if NET40
+#if NET40 || NET35
                     var implementationTypeInfo = descriptor.ImplementationType;
 #else
                     var implementationTypeInfo = descriptor.ImplementationType?.GetTypeInfo();
@@ -57,7 +58,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                 else if (descriptor.ImplementationInstance == null && descriptor.ImplementationFactory == null)
                 {
                     Debug.Assert(descriptor.ImplementationType != null);
-#if NET40
+#if NET40 || NET35
                     var implementationTypeInfo = descriptor.ImplementationType;
 #else
                     var implementationTypeInfo = descriptor.ImplementationType.GetTypeInfo();
@@ -119,7 +120,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         private IServiceCallSite TryCreateOpenGeneric(Type serviceType, CallSiteChain callSiteChain)
         {
-#if NET40
+#if NET40 || NET35
             if (serviceType.IsConstructedGenericType()
 #else
             if (serviceType.IsConstructedGenericType
@@ -134,7 +135,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         private IServiceCallSite TryCreateEnumerable(Type serviceType, CallSiteChain callSiteChain)
         {
-#if NET40
+#if NET40 || NET35
             if (serviceType.IsConstructedGenericType() &&
 #else
             if (serviceType.IsConstructedGenericType &&
@@ -147,7 +148,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                 var callSites = new List<IServiceCallSite>();
 
                 // If item type is not generic we can safely use descriptor cache
-#if NET40
+#if NET40 || NET35
                 if (!itemType.IsConstructedGenericType() &&
 #else
                 if (!itemType.IsConstructedGenericType &&
@@ -216,7 +217,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         private IServiceCallSite TryCreateOpenGeneric(ServiceDescriptor descriptor, Type serviceType, CallSiteChain callSiteChain)
         {
-#if NET40
+#if NET40 || NET35
             if (serviceType.IsConstructedGenericType() &&
 #else
             if (serviceType.IsConstructedGenericType &&
@@ -228,7 +229,12 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                 var closedType = descriptor.ImplementationType.MakeGenericType(serviceType.GetTypeGenericArguments());
                 var constructorCallSite = CreateConstructorCallSite(serviceType, closedType, callSiteChain);
 
-                return ApplyLifetime(constructorCallSite, Tuple.Create(descriptor, serviceType), descriptor.Lifetime);
+                return ApplyLifetime(constructorCallSite,
+#if NET35
+                    new System.Tuple<ServiceDescriptor, Type>(descriptor, serviceType), descriptor.Lifetime);
+#else
+                Tuple.Create(descriptor, serviceType), descriptor.Lifetime);
+#endif
             }
 
             return null;
@@ -258,7 +264,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         {
             callSiteChain.Add(serviceType, implementationType);
 
-#if NET40
+#if NET40 || NET35
             var constructors = implementationType.GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
 #else
             var constructors = implementationType.GetTypeInfo()
@@ -331,9 +337,21 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                             // Ambiguous match exception
                             var message = string.Join(
                                 Environment.NewLine,
+#if NET35
+                                new string[]{
+#endif
                                 Resources.FormatAmbiguousConstructorException(implementationType),
-                                bestConstructor,
-                                constructors[i]);
+                                bestConstructor
+#if NET35
+                                    .ToString()
+#endif
+                                ,
+                                constructors[i]
+#if NET35
+                                    .ToString()
+                                }
+#endif
+                                );
                             throw new InvalidOperationException(message);
                         }
                     }

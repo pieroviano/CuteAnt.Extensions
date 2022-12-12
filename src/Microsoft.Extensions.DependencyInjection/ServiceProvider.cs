@@ -26,12 +26,15 @@ namespace Microsoft.Extensions.DependencyInjection
             }
             switch (options.Mode)
             {
+#if !NET35
                 case ServiceProviderMode.Dynamic:
                     _engine = new DynamicServiceProviderEngine(serviceDescriptors, callback);
                     break;
+#endif
                 case ServiceProviderMode.Runtime:
                     _engine = new RuntimeServiceProviderEngine(serviceDescriptors, callback);
                     break;
+#if !NET35
 #if IL_EMIT
                 case ServiceProviderMode.ILEmit:
                     _engine = new ILEmitServiceProviderEngine(serviceDescriptors, callback);
@@ -40,6 +43,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 case ServiceProviderMode.Expressions:
                     _engine = new ExpressionsServiceProviderEngine(serviceDescriptors, callback);
                     break;
+#endif
                 default:
                     throw new NotSupportedException(nameof(options.Mode));
             }

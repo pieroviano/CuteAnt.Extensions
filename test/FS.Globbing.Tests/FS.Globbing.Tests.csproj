@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <RootNamespace>Microsoft.Extensions.FileSystemGlobbing</RootNamespace>
-    <AssemblyName>Microsoft.Extensions.FileSystemGlobbing.Tests</AssemblyName>
-    <TargetFrameworks>net45</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.FileSystemGlobbing.Tests</AssemblyName>
+    <TargetFrameworks>net45;net35</TargetFrameworks>
     <DefineConstants>$(DefineConstants);TEST40</DefineConstants>
   </PropertyGroup>
 

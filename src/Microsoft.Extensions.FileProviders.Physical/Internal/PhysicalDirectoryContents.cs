@@ -59,7 +59,11 @@ namespace Microsoft.Extensions.FileProviders.Internal
             try
             {
                 _entries = new DirectoryInfo(_directory)
+#if NET35
+                    .GetFileSystemInfos()
+#else
                     .EnumerateFileSystemInfos()
+#endif
                     .Where(info => !FileSystemInfoHelper.IsExcluded(info, _filters))
                     .Select<FileSystemInfo, IFileInfo>(info =>
                     {

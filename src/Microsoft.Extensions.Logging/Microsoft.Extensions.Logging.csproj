@@ -3,21 +3,63 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40;net451</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Logging</AssemblyName>
+    <TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.Logging</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Logging</PackageId>
+    <PackageId>Net4x.Extensions.Logging</PackageId>
     <Title>Ms.Extensions.Logging-net40-net451-fork</Title>
     <Description>Logging infrastructure default implementation for Ms.Extensions.Logging.</Description>
     <PackageTags>logging</PackageTags>
   </PropertyGroup>
 
-  <ItemGroup>
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net351'">
+    <Compile Remove="DefaultLoggerLevelConfigureOptions.cs" />
+    <Compile Remove="FilterLoggingBuilderExtensions.cs" />
+    <Compile Remove="ILoggingBuilder.cs" />
+    <Compile Remove="Logger.cs" />
+    <Compile Remove="LoggerFactory.cs" />
+    <Compile Remove="LoggerFilterOptions.cs" />
+    <Compile Remove="LoggerFilterRule.cs" />
+    <Compile Remove="LoggerInformation.cs" />
+    <Compile Remove="LoggerRuleSelector.cs" />
+    <Compile Remove="LoggingBuilder.cs" />
+    <Compile Remove="LoggingBuilderExtensions.cs" />
+    <Compile Remove="LoggingServiceCollectionExtensions.cs" />
+    <Compile Remove="ProviderAliasAttribute.cs" />
+    <Compile Remove="ProviderAliasUtilities.cs" />
+    <Compile Remove="StaticFilterOptionsMonitor.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="ReflectionUtils.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
+    <Compile Remove="LoggerLibrary\Interfaces\ILogger.cs" />
+    <Compile Remove="LoggerLibrary\Model\EventId.cs" />
+    <Compile Remove="LoggerLibrary\Model\LogLevel.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="TaskParallelLibrary" Version="1.0.2856" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,4 +67,5 @@
     <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
   </ItemGroup>
+
 </Project>

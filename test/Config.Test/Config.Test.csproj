@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Extensions.Configuration.Test</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Test</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.Test</RootNamespace>
     <TargetFrameworks>$(StandardTestTfms)</TargetFrameworks>
   </PropertyGroup>

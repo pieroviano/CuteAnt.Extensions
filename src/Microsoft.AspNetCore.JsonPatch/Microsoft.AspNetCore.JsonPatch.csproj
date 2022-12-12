@@ -4,18 +4,33 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.AspNetCore.JsonPatch</AssemblyName>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
+    <AssemblyName>Net4x.AspNetCore.JsonPatch</AssemblyName>
     <RootNamespace>Microsoft.AspNetCore.JsonPatch</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.AspNetCore.JsonPatch</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.AspNetCore.JsonPatch</PackageId>
     <Title>Ms.AspNetCore.JsonPatch-net40-net451-fork</Title>
     <Description>ASP.NET Core support for JSON PATCH.</Description>
     <PackageTags>json;jsonpatch</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="Internal\ReflectionUtils.cs" />
@@ -25,7 +40,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 

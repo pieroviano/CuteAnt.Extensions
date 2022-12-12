@@ -252,10 +252,14 @@ namespace Microsoft.Extensions.DependencyInjection.Extensions
         /// <param name="implementationFactory">The factory that creates the service.</param>
         public static void TryAddTransient<TService>(
             this IServiceCollection services,
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
-            services.TryAdd(ServiceDescriptor.Transient(implementationFactory));
+            services.TryAdd(ServiceDescriptor.Transient<TService>(implementationFactory));
         }
 
         /// <summary>
@@ -393,10 +397,14 @@ namespace Microsoft.Extensions.DependencyInjection.Extensions
         /// <param name="implementationFactory">The factory that creates the service.</param>
         public static void TryAddScoped<TService>(
             this IServiceCollection services,
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
-            services.TryAdd(ServiceDescriptor.Scoped(implementationFactory));
+            services.TryAdd(ServiceDescriptor.Scoped<TService>(implementationFactory));
         }
 
         /// <summary>

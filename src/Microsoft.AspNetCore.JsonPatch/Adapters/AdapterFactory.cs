@@ -36,10 +36,12 @@ namespace Microsoft.AspNetCore.JsonPatch.Adapters
                 var type = typeof(DictionaryAdapter<,>).MakeGenericType(jsonDictionaryContract.DictionaryKeyType, jsonDictionaryContract.DictionaryValueType);
                 return (IAdapter)Activator.CreateInstance(type);
             }
+#if !NET35
             else if (jsonContract is JsonDynamicContract)
             {
                 return new DynamicObjectAdapter();
             }
+#endif
             else
             {
                 return new PocoAdapter();
