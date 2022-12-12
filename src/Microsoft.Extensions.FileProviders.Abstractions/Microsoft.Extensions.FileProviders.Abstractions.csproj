@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.FileProviders.Abstractions</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileProviders.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.FileProviders</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.FileProviders.Abstractions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.FileProviders.Abstractions</PackageId>
     <Description>Abstractions of files and directories.</Description>
     <Title>Ms.Extensions.FileProviders.Abstractions-net40-net451-fork</Title>
     <PackageTags>files;filesystem</PackageTags>

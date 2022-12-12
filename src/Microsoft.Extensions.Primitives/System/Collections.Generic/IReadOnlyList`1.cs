@@ -1,4 +1,4 @@
-﻿#if NET40
+﻿#if NET40 || NET35
 
 // ==++==
 // 
@@ -15,7 +15,9 @@
 ** 
 ===========================================================*/
 using System;
+#if !NET35
 using System.Diagnostics.Contracts;
+#endif
 using System.Runtime.CompilerServices;
 
 namespace System.Collections.Generic
@@ -37,6 +39,8 @@ namespace System.Collections.Generic
     // If we ever implement more interfaces on IReadOnlyList, we should also update RuntimeTypeCache.PopulateInterfaces() in rttype.cs
 #if NET40
     public interface IReadOnlyList<out T> : IReadOnlyCollection<T>
+#elif NET35
+    public interface IReadOnlyList<T> : IReadOnlyCollection<T>
 #else
     public interface IReadOnlyList<T> : IReadOnlyCollection<T>
 #endif

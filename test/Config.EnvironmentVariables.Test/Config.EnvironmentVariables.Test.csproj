@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Extensions.Configuration.EnvironmentVariables.Test</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.EnvironmentVariables.Test</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.EnvironmentVariables.Test</RootNamespace>
     <TargetFrameworks>$(StandardTestTfms)</TargetFrameworks>
   </PropertyGroup>

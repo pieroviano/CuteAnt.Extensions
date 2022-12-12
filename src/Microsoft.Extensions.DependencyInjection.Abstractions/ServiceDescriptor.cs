@@ -3,7 +3,7 @@
 
 using System;
 using System.Diagnostics;
-#if NET40
+#if NET40 || NET35
 using Microsoft.Extensions.Internal;
 #endif
 
@@ -122,7 +122,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
             else if (ImplementationFactory != null)
             {
-#if NET40
+#if NET40 || NET35
                 var typeArguments = ImplementationFactory.GetType().GetTypeGenericArguments();
 #else
                 var typeArguments = ImplementationFactory.GetType().GenericTypeArguments;

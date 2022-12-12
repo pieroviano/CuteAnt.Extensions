@@ -4,14 +4,15 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Primitives</AssemblyName>
+    <TargetFrameworks>net451;net40;net35</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.Primitives</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Primitives</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Primitives</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Primitives</PackageId>
     <Title>Ms.Extensions.Primitives-net40-net451-fork</Title>
     <Description>Primitives shared by framework extensions.</Description>
     <PackageTags>primitives</PackageTags>
@@ -35,5 +36,9 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
     <PackageReference Include="System.Memory" Version="$(SystemMemoryPackageVersion)" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="AsyncBridge" Version="0.3.1" PrivateAssets="all" />
   </ItemGroup>
 </Project>

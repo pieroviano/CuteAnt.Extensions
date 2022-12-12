@@ -155,7 +155,7 @@ namespace System.Reflection.Internal
                 return false;
             }
 
-#if NET40
+#if NET40 || NET35
             if (!MemoryMapLightUp.TryGetSafeBufferAndPointerOffset(accessor, start, out var safeBuffer, out long offset))
 #else
             if (!MemoryMapLightUp.TryGetSafeBufferAndPointerOffset(accessor, out var safeBuffer, out long offset))

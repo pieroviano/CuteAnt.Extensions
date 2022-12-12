@@ -169,7 +169,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         private Expression TryCaptureDisposible(Type implType, ParameterExpression scope, Expression service)
         {
             if (implType != null &&
-#if NET40
+#if NET40 || NET35
                 !typeof(IDisposable).IsAssignableFrom(implType))
 #else
                 !typeof(IDisposable).GetTypeInfo().IsAssignableFrom(implType.GetTypeInfo()))
@@ -196,7 +196,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         private static Expression Convert(Expression expression, Type type)
         {
             // Don't convert if the expression is already assignable
-#if NET40
+#if NET40 || NET35
             if (type.IsAssignableFrom(expression.Type))
 #else
             if (type.GetTypeInfo().IsAssignableFrom(expression.Type.GetTypeInfo()))

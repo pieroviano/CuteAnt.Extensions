@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Microsoft.Extensions.FileProviders.Physical</RootNamespace>
-    <AssemblyName>Microsoft.Extensions.FileProviders.Physical.Tests</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileProviders.Physical.Tests</AssemblyName>
     <TargetFrameworks>net45</TargetFrameworks>
     <DefineConstants>$(DefineConstants);TEST40</DefineConstants>
   </PropertyGroup>

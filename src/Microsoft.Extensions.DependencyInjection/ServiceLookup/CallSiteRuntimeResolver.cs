@@ -30,7 +30,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             }
             catch (Exception ex) when (ex.InnerException != null)
             {
-#if NET40
+#if NET40 || NET35
                 throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
 #else
                 ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
@@ -72,7 +72,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             }
             catch (Exception ex) when (ex.InnerException != null)
             {
-#if NET40
+#if NET40 || NET35
                 throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
 #else
                 ExceptionDispatchInfo.Capture(ex.InnerException).Throw();

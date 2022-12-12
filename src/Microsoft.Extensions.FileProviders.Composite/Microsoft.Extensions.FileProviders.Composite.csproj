@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.FileProviders.Composite</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileProviders.Composite</AssemblyName>
     <RootNamespace>Microsoft.Extensions.FileProviders</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.FileProviders.Composite</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.FileProviders.Composite</PackageId>
     <Description>Composite file and directory providers for Ms.Extensions.FileProviders.</Description>
     <Title>Ms.Extensions.FileProviders.Composite-net40-net451-fork</Title>
     <PackageTags>files;filesystem</PackageTags>

@@ -245,7 +245,7 @@ namespace Microsoft.Extensions.Logging
             return logValuesFormatter;
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues : IList<KeyValuePair<string, object>>
 #else
         private class LogValues : IReadOnlyList<KeyValuePair<string, object>>
@@ -272,7 +272,7 @@ namespace Microsoft.Extensions.Logging
                     }
                     throw new IndexOutOfRangeException(nameof(index));
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -298,7 +298,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -343,7 +343,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0> : IReadOnlyList<KeyValuePair<string, object>>
@@ -374,7 +374,7 @@ namespace Microsoft.Extensions.Logging
                     }
                     throw new IndexOutOfRangeException(nameof(index));
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -403,7 +403,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -448,7 +448,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0, T1> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0, T1> : IReadOnlyList<KeyValuePair<string, object>>
@@ -483,7 +483,7 @@ namespace Microsoft.Extensions.Logging
                             throw new IndexOutOfRangeException(nameof(index));
                     }
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -512,7 +512,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -557,7 +557,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0, T1, T2> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0, T1, T2> : IReadOnlyList<KeyValuePair<string, object>>
@@ -596,7 +596,7 @@ namespace Microsoft.Extensions.Logging
                             throw new IndexOutOfRangeException(nameof(index));
                     }
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -625,7 +625,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -670,7 +670,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0, T1, T2, T3> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0, T1, T2, T3> : IReadOnlyList<KeyValuePair<string, object>>
@@ -712,7 +712,7 @@ namespace Microsoft.Extensions.Logging
                             throw new IndexOutOfRangeException(nameof(index));
                     }
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -742,7 +742,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -787,7 +787,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0, T1, T2, T3, T4> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0, T1, T2, T3, T4> : IReadOnlyList<KeyValuePair<string, object>>
@@ -832,7 +832,7 @@ namespace Microsoft.Extensions.Logging
                             throw new IndexOutOfRangeException(nameof(index));
                     }
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -863,7 +863,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -908,7 +908,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0, T1, T2, T3, T4, T5> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0, T1, T2, T3, T4, T5> : IReadOnlyList<KeyValuePair<string, object>>
@@ -956,7 +956,7 @@ namespace Microsoft.Extensions.Logging
                             throw new IndexOutOfRangeException(nameof(index));
                     }
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -988,7 +988,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)
@@ -1033,7 +1033,7 @@ namespace Microsoft.Extensions.Logging
 #endif
         }
 
-#if NET40
+#if NET40 || NET35
         private class LogValues<T0, T1, T2, T3, T4, T5, T6> : IList<KeyValuePair<string, object>>
 #else
         private class LogValues<T0, T1, T2, T3, T4, T5, T6> : IReadOnlyList<KeyValuePair<string, object>>
@@ -1084,7 +1084,7 @@ namespace Microsoft.Extensions.Logging
                             throw new IndexOutOfRangeException(nameof(index));
                     }
                 }
-#if NET40
+#if NET40 || NET35
                 set => throw new NotImplementedException();
 #endif
             }
@@ -1117,7 +1117,7 @@ namespace Microsoft.Extensions.Logging
             {
                 return GetEnumerator();
             }
-#if NET40
+#if NET40 || NET35
             public bool IsReadOnly => throw new NotImplementedException();
 
             public int IndexOf(KeyValuePair<string, object> item)

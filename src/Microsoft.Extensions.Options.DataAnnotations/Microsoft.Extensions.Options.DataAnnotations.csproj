@@ -4,13 +4,14 @@
   
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Options.DataAnnotations</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Options.DataAnnotations</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Options.DataAnnotations</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Options.DataAnnotations</PackageId>
     <Title>Ms.Extensions.Options.DataAnnotations-net40-net451-fork</Title>
     <Description>Provides additional DataAnnotations specific functionality related to Options.</Description>
     <PackageTags>aspnetcore;configuration;options</PackageTags>

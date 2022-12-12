@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Extensions.Configuration.FunctionalTests</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.FunctionalTests</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.FunctionalTests</RootNamespace>
     <TargetFrameworks>$(StandardTestTfms)</TargetFrameworks>
   </PropertyGroup>

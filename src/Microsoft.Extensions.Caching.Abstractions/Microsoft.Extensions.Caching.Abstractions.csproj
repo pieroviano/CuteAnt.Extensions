@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Caching.Abstractions</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Caching.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Caching</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Caching.Abstractions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Caching.Abstractions</PackageId>
     <Description>Caching abstractions for in-memory cache and distributed cache.</Description>
     <Title>Ms.Extensions.Caching.Abstractions-net451-fork</Title>
     <PackageTags>cache;memorycache;distributedcache</PackageTags>

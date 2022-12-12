@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Configuration.Binder</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Binder</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Configuration.Binder</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
     <Description>Functionality to bind an object to data in configuration providers for Ms.Extensions.Configuration.</Description>
     <Title>Ms.Extensions.Configuration.Binder-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>

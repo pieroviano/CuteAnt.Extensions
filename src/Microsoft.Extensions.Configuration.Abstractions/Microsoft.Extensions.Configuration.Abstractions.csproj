@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Configuration.Abstractions</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Configuration.Abstractions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Configuration.Abstractions</PackageId>
     <Description>Abstractions of key-value pair based configuration.</Description>
     <Title>Ms.Extensions.Configuration.Abstractions-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>

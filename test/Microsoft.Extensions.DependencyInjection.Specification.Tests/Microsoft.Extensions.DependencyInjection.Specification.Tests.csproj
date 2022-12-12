@@ -2,7 +2,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net471</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.DependencyInjection.Specification.Tests</AssemblyName>
+    <AssemblyName>Net4x.Extensions.DependencyInjection.Specification.Tests</AssemblyName>
     <RootNamespace>Microsoft.Extensions.DependencyInjection.Specification</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Reflection;
-#if NET40
+#if NET40 || NET35
 using System.Linq;
 #else
 using System.Runtime.CompilerServices;
@@ -10,36 +10,36 @@ namespace Microsoft.Extensions.Internal
 {
   internal static class ReflectionUtils
   {
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public static bool IsConstructedGenericType(this Type t)
     {
-#if NET40
+#if NET40 || NET35
       return t.IsGenericType && !t.IsGenericTypeDefinition;
 #else
       return t.IsConstructedGenericType;
 #endif
     }
 
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public static Type[] GetTypeGenericArguments(this Type type)
     {
-#if NET40
+#if NET40 || NET35
       return type.IsGenericType && !type.IsGenericTypeDefinition ? type.GetGenericArguments() : Type.EmptyTypes;
 #else
       return type.GenericTypeArguments;
 #endif
     }
 
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public static bool HasDefaultValue(this ParameterInfo pi)
     {
-#if NET40
+#if NET40 || NET35
       const string _DBNullType = "System.DBNull";
       var defaultValue = pi.DefaultValue;
       if (null == defaultValue && pi.ParameterType.IsValueType)
@@ -52,7 +52,7 @@ namespace Microsoft.Extensions.Internal
 #endif
     }
 
-#if NET40
+#if NET40 || NET35
     /// <summary>返回指定对象的属性值</summary>
     /// <param name="property"></param>
     /// <param name="obj"></param>

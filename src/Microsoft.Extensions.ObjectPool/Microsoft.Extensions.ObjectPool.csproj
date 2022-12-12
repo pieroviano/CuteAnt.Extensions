@@ -3,17 +3,21 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.ObjectPool</AssemblyName>
+    <TargetFrameworks>net451;net40;net35</TargetFrameworks>
+    <AssemblyName>Net4x.Extensions.ObjectPool</AssemblyName>
     <RootNamespace>Microsoft.Extensions.ObjectPool</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.ObjectPool</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.ObjectPool</PackageId>
     <Title>Ms.Extensions.ObjectPool-net40-net451-fork</Title>
     <Description>A simple object pool implementation.</Description>
     <PackageTags>pooling</PackageTags>
   </PropertyGroup>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="AsyncBridge" Version="0.3.1" PrivateAssets="all" />
+  </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-﻿#if NET40
+﻿#if NET40 || NET35
 
 // ==++==
 // 
@@ -15,7 +15,9 @@
 ** 
 ===========================================================*/
 using System;
+#if !NET35
 using System.Diagnostics.Contracts;
+#endif
 
 namespace System.Collections.Generic
 {

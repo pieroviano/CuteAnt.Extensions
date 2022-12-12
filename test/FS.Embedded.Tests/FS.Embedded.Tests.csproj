@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <RootNamespace>Microsoft.Extensions.FileProviders.Embedded.Tests</RootNamespace>
-    <AssemblyName>Microsoft.Extensions.FileProviders.Embedded.Tests</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileProviders.Embedded.Tests</AssemblyName>
     <TargetFrameworks>net45</TargetFrameworks>
     <DefineConstants>$(DefineConstants);TEST40</DefineConstants>
   </PropertyGroup>

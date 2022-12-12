@@ -46,13 +46,13 @@ namespace Microsoft.Extensions.Internal
             ConstructorMatcher bestMatcher = null;
 
             if (!instanceType
-#if !NET40
+#if !NET40 && !NET35
                 .GetTypeInfo()
 #endif
                 .IsAbstract)
             {
                 foreach (var constructor in instanceType
-#if NET40
+#if NET40 || NET35
                     .GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
 #else
                     .GetTypeInfo()
@@ -242,7 +242,7 @@ namespace Microsoft.Extensions.Internal
             ref int?[] parameterMap)
         {
             foreach (var constructor in instanceType
-#if NET40
+#if NET40 || NET35
                 .GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly)
 #else
                 .GetTypeInfo().DeclaredConstructors
@@ -277,7 +277,7 @@ namespace Microsoft.Extensions.Internal
             ref int?[] parameterMap)
         {
             var seenPreferred = false;
-#if NET40
+#if NET40 || NET35
             foreach (var constructor in instanceType.GetConstructors(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Static | BindingFlags.DeclaredOnly))
 #else
             foreach (var constructor in instanceType.GetTypeInfo().DeclaredConstructors)
@@ -318,7 +318,7 @@ namespace Microsoft.Extensions.Internal
             for (var i = 0; i < argumentTypes.Length; i++)
             {
                 var foundMatch = false;
-#if NET40
+#if NET40 || NET35
                 var givenParameter = argumentTypes[i];
 #else
                 var givenParameter = argumentTypes[i].GetTypeInfo();
@@ -332,7 +332,7 @@ namespace Microsoft.Extensions.Internal
                         continue;
                     }
 
-#if NET40
+#if NET40 || NET35
                     if (constructorParameters[j].ParameterType.IsAssignableFrom(givenParameter))
 #else
                     if (constructorParameters[j].ParameterType.GetTypeInfo().IsAssignableFrom(givenParameter))
@@ -374,7 +374,7 @@ namespace Microsoft.Extensions.Internal
                 var applyExactLength = 0;
                 for (var givenIndex = 0; givenIndex != givenParameters.Length; givenIndex++)
                 {
-#if NET40
+#if NET40 || NET35
                     var givenType = givenParameters[givenIndex]?.GetType();
 #else
                     var givenType = givenParameters[givenIndex]?.GetType().GetTypeInfo();
@@ -384,7 +384,7 @@ namespace Microsoft.Extensions.Internal
                     for (var applyIndex = applyIndexStart; givenMatched == false && applyIndex != _parameters.Length; ++applyIndex)
                     {
                         if (_parameterValuesSet[applyIndex] == false &&
-#if NET40
+#if NET40 || NET35
                             _parameters[applyIndex].ParameterType.IsAssignableFrom(givenType))
 #else
                             _parameters[applyIndex].ParameterType.GetTypeInfo().IsAssignableFrom(givenType))
@@ -443,7 +443,7 @@ namespace Microsoft.Extensions.Internal
                 }
                 catch (TargetInvocationException ex)
                 {
-#if NET40
+#if NET40 || NET35
                     throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
 #else
                     ExceptionDispatchInfo.Capture(ex.InnerException).Throw();

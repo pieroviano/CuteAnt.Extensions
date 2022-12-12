@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Extensions.Configuration.Test.Common</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Test.Common</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.Test.Common</RootNamespace>
     <TargetFrameworks>net45</TargetFrameworks>
     <DefineConstants>$(DefineConstants);TEST40</DefineConstants>

@@ -6,7 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading;
-#if !NET40
+#if !NET40 && !NET35
 using System.Reflection;
 #endif
 
@@ -38,7 +38,7 @@ namespace System.Text.Unicode
     {
       // The stream should be exactly 8KB in size.
       var stream = typeof(UnicodeRange)
-#if !NET40
+#if !NET40 && !NET35
           .GetTypeInfo()
 #endif
           .Assembly.GetManifestResourceStream("System.Text.Encodings.Web.Resources.unicode8definedcharacters.bin");
@@ -85,7 +85,7 @@ namespace System.Text.Unicode
     /// Returns a bitmap of all characters which are defined per version 7.0.0
     /// of the Unicode specification.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static uint[] GetDefinedCharacterBitmap()
@@ -97,7 +97,7 @@ namespace System.Text.Unicode
     /// Given a UTF-16 character stream, reads the next scalar value from the stream.
     /// Set 'endOfString' to true if 'pChar' points to the last character in the stream.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static int GetScalarValueFromUtf16(char first, char? second, out bool wasSurrogatePair)
@@ -157,7 +157,7 @@ namespace System.Text.Unicode
     /// Given a UTF-16 character stream, reads the next scalar value from the stream.
     /// Set 'endOfString' to true if 'pChar' points to the last character in the stream.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static int GetScalarValueFromUtf16(char* pChar, bool endOfString)
@@ -283,7 +283,7 @@ namespace System.Text.Unicode
     /// private use, surrogates, some whitespace) are considered "undefined" for
     /// our purposes.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static bool IsCharacterDefined(char c)
@@ -298,7 +298,7 @@ namespace System.Text.Unicode
     /// Determines whether the given scalar value is in the supplementary plane and thus
     /// requires 2 characters to be represented in UTF-16 (as a surrogate pair).
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static bool IsSupplementaryCodePoint(int scalar)

@@ -226,7 +226,7 @@ namespace System.Reflection.Metadata
             switch (treatment & TypeDefTreatment.KindMask)
             {
                 case TypeDefTreatment.NormalNonAttribute:
-#if NET40
+#if NET40 || NET35
                     flags |= (TypeAttributes)0x00004000 | TypeAttributes.Import;
 #else
                     flags |= TypeAttributes.WindowsRuntime | TypeAttributes.Import;
@@ -234,7 +234,7 @@ namespace System.Reflection.Metadata
                     break;
 
                 case TypeDefTreatment.NormalAttribute:
-#if NET40
+#if NET40 || NET35
                     flags |= (TypeAttributes)0x00004000 | TypeAttributes.Sealed;
 #else
                     flags |= TypeAttributes.WindowsRuntime | TypeAttributes.Sealed;

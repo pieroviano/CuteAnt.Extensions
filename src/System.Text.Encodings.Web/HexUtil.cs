@@ -16,7 +16,7 @@ namespace System.Text.Encodings.Web
     /// <summary>
     /// Converts a number 0 - 15 to its associated hex character '0' - 'F'.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static char UInt32LsbToHexDigit(uint value)
@@ -28,7 +28,7 @@ namespace System.Text.Encodings.Web
     /// <summary>
     /// Converts a number 0 - 15 to its associated hex character '0' - 'F'.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static char Int32LsbToHexDigit(int value)
@@ -40,7 +40,7 @@ namespace System.Text.Encodings.Web
     /// <summary>
     /// Gets the uppercase hex-encoded form of a byte.
     /// </summary>
-#if !NET40
+#if !NET40 && !NET35
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     internal static void ByteToHexDigits(byte value, out char firstHexChar, out char secondHexChar)

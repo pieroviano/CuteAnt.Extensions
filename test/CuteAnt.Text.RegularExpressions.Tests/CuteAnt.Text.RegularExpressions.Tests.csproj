@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFrameworks>net471</TargetFrameworks>
     <RootNamespace>CuteAnt.Text.RegularExpressions.Tests</RootNamespace>
-    <AssemblyName>CuteAnt.Text.RegularExpressions.Tests</AssemblyName>
+    <AssemblyName>Net4x.Text.RegularExpressions.Tests</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 

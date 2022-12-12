@@ -4,13 +4,14 @@
   
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Options.ConfigurationExtensions</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Options.ConfigurationExtensions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Options.ConfigurationExtensions</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Options.ConfigurationExtensions</PackageId>
     <Title>Ms.Extensions.Options.ConfigurationExtensions-net40-net451-fork</Title>
     <Description>Provides additional configuration specific functionality related to Options.</Description>
     <PackageTags>aspnetcore;configuration;options</PackageTags>

@@ -5,13 +5,14 @@
   
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.AspNetCore.JsonPatch</AssemblyName>
+    <AssemblyName>Net4x.AspNetCore.JsonPatch</AssemblyName>
     <RootNamespace>Microsoft.AspNetCore.JsonPatch</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.AspNetCore.JsonPatch</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.AspNetCore.JsonPatch</PackageId>
     <Title>Ms.AspNetCore.JsonPatch-net40-net451-fork</Title>
     <Description>ASP.NET Core support for JSON PATCH.</Description>
     <PackageTags>json;jsonpatch</PackageTags>

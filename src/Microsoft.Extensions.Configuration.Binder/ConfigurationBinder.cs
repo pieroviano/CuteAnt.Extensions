@@ -179,7 +179,7 @@ namespace Microsoft.Extensions.Configuration
         {
             if (instance != null)
             {
-#if NET40
+#if NET40 || NET35
                 foreach (var property in GetAllProperties(instance.GetType()))
 #else
                 foreach (var property in GetAllProperties(instance.GetType().GetTypeInfo()))
@@ -193,7 +193,7 @@ namespace Microsoft.Extensions.Configuration
         private static void BindProperty(PropertyInfo property, object instance, IConfiguration config, BinderOptions options)
         {
             // We don't support set only, non public, or indexer properties
-#if NET40
+#if NET40 || NET35
             var getMethod = property.GetGetMethod(true);
 #else
             var getMethod = property.GetMethod;
@@ -206,7 +206,7 @@ namespace Microsoft.Extensions.Configuration
             }
 
             var propertyValue = property.GetValue(instance);
-#if NET40
+#if NET40 || NET35
             var setMethod = property.GetSetMethod(true);
 #else
             var setMethod = property.SetMethod;
@@ -567,7 +567,7 @@ namespace Microsoft.Extensions.Configuration
             return null;
         }
 
-#if NET40
+#if NET40 || NET35
         private static IEnumerable<PropertyInfo> GetAllProperties(Type type)
         {
             var allProperties = new List<PropertyInfo>();

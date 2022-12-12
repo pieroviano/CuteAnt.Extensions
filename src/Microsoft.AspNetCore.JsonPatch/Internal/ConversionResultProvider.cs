@@ -59,7 +59,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
 
         private static bool IsNullableType(Type type)
         {
-#if NET40
+#if NET40 || NET35
             var typeInfo = type;
 #else
             var typeInfo = type.GetTypeInfo();

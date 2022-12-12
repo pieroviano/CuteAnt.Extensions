@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.FileSystemGlobbing</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileSystemGlobbing</AssemblyName>
     <RootNamespace>Microsoft.Extensions.FileSystemGlobbing</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.FileSystemGlobbing</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.FileSystemGlobbing</PackageId>
     <Description>File system globbing to find files matching a specified pattern.</Description>
     <Title>Ms.Extensions.FileSystemGlobbing-net40-net451-fork</Title>
     <PackageTags>files;filesystem;glob;globbing</PackageTags>

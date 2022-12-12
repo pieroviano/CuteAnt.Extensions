@@ -23,7 +23,7 @@ namespace Microsoft.Extensions.Primitives
         /// Creates a new instance of <see cref="CompositeChangeToken"/>.
         /// </summary>
         /// <param name="changeTokens">The list of <see cref="IChangeToken"/> to compose.</param>
-#if NET40
+#if NET40 || NET35
         public CompositeChangeToken(IList<IChangeToken> changeTokens)
 #else
         public CompositeChangeToken(IReadOnlyList<IChangeToken> changeTokens)
@@ -43,7 +43,7 @@ namespace Microsoft.Extensions.Primitives
         /// <summary>
         /// Returns the list of <see cref="IChangeToken"/> which compose the current <see cref="CompositeChangeToken"/>.
         /// </summary>
-#if NET40
+#if NET40 || NET35
         public IList<IChangeToken> ChangeTokens { get; }
 #else
         public IReadOnlyList<IChangeToken> ChangeTokens { get; }

@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.FileProviders.Embedded</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileProviders.Embedded</AssemblyName>
     <RootNamespace>Microsoft.Extensions.FileProviders</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.FileProviders.Embedded</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.FileProviders.Embedded</PackageId>
     <Description>File provider for files in embedded resources for Ms.Extensions.FileProviders.</Description>
     <Title>Ms.Extensions.FileProviders.Embedded-net40-net451-fork</Title>
     <PackageTags>files;filesystem</PackageTags>

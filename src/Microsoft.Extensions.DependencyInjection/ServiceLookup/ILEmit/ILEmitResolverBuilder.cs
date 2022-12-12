@@ -14,7 +14,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
     {
         private static readonly MethodInfo ResolvedServicesGetter = typeof(ServiceProviderEngineScope).GetProperty(
             nameof(ServiceProviderEngineScope.ResolvedServices), BindingFlags.Instance | BindingFlags.NonPublic)
-#if NET40
+#if NET40 || NET35
             .GetGetMethod(true);
 #else
             .GetMethod;
@@ -399,7 +399,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         private static bool BeginCaptureDisposable(Type implType, ILEmitResolverBuilderContext argument)
         {
-#if NET40
+#if NET40 || NET35
             var shouldCapture = implType == null || typeof(IDisposable).IsAssignableFrom(implType);
 #else
             var shouldCapture = implType == null || typeof(IDisposable).GetTypeInfo().IsAssignableFrom(implType.GetTypeInfo());

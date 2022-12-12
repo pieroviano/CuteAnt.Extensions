@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Configuration.Ini</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Ini</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Configuration.Ini</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Configuration.Ini</PackageId>
     <Description>INI configuration provider implementation for Ms.Extensions.Configuration.</Description>
     <Title>Ms.Extensions.Configuration.Ini-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>

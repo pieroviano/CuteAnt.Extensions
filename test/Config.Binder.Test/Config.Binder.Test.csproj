@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <AssemblyName>Microsoft.Extensions.Configuration.Binder.Test</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.Binder.Test</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.Binder.Test</RootNamespace>
     <TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
     <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp2.2</TargetFrameworks>

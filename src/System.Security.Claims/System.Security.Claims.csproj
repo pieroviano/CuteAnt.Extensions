@@ -10,7 +10,8 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>Net40.Security.Claims</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Security.Claims</PackageId>
     <Title>Corefx.Security.Claims-net40-fork</Title>
     <Description>Provides classes that implement claims-based identity in the .NET Framework, including classes that represent claims, claims-based identities, and claims-based principals.</Description>
     <PackageTags>claims</PackageTags>

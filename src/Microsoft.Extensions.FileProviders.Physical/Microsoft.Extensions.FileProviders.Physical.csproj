@@ -5,13 +5,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.FileProviders.Physical</AssemblyName>
+    <AssemblyName>Net4x.Extensions.FileProviders.Physical</AssemblyName>
     <RootNamespace>Microsoft.Extensions.FileProviders</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.FileProviders.Physical</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.FileProviders.Physical</PackageId>
     <Description>File provider for physical files for Ms.Extensions.FileProviders.</Description>
     <Title>Ms.Extensions.FileProviders.Physical-net40-net451-fork</Title>
     <PackageTags>files;filesystem</PackageTags>

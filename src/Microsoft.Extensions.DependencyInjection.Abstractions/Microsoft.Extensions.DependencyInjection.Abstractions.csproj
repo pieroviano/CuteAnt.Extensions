@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.DependencyInjection.Abstractions</PackageId>
+    <PackageId>Net4x.Extensions.DependencyInjection.Abstractions</PackageId>
     <Title>Ms.Extensions.DependencyInjection.Abstractions-net40-net451-fork</Title>
     <Description>Abstractions for dependency injection.</Description>
     <PackageTags>dependencyinjection;di</PackageTags>

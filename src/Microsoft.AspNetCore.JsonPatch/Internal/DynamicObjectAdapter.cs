@@ -63,7 +63,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             // null in case of reference types
             object value = null;
             if (property.GetType()
-#if !NET40
+#if !NET40 && !NET35
                 .GetTypeInfo()
 #endif
                 .IsValueType

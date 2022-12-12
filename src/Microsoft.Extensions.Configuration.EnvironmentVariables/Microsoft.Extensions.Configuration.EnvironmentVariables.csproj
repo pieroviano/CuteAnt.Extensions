@@ -4,13 +4,14 @@
 
   <PropertyGroup>
     <TargetFrameworks>net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Configuration.EnvironmentVariables</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Configuration.EnvironmentVariables</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>NetFx.Extensions.Configuration.EnvironmentVariables</PackageId>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Configuration.EnvironmentVariables</PackageId>
     <Description>Environment variables configuration provider implementation for Ms.Extensions.Configuration.</Description>
     <Title>Ms.Extensions.Configuration.EnvironmentVariables-net40-net451-fork</Title>
     <PackageTags>configuration;envvar;environmentvariable</PackageTags>
