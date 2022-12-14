@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Options</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -16,6 +16,20 @@
     <Description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</Description>
     <PackageTags>aspnetcore;options</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />

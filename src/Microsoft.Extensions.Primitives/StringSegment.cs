@@ -138,7 +138,7 @@ namespace Microsoft.Extensions.Primitives
             }
         }
 
-#if !NET40 && !NET35
+#if !NET45 && !NET40 && !NET35
         /// <summary>
         /// Gets a <see cref="ReadOnlySpan{T}"/> from the current <see cref="StringSegment"/>.
         /// </summary>
@@ -313,7 +313,7 @@ namespace Microsoft.Extensions.Primitives
             return new StringSegment(value);
         }
 
-#if !NET40 && !NET35
+#if !NET45 && !NET40 && !NET35
         /// <summary>
         /// Creates a see <see cref="ReadOnlySpan{T}"/> from the given <see cref="StringSegment"/>.
         /// </summary>

@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
     <AssemblyName>Microsoft.Extensions.DependencyInjection.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -16,6 +16,20 @@
     <Description>Abstractions for dependency injection.</Description>
     <PackageTags>dependencyinjection;di</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <Import Project="..\..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" Label="Shared" />
 

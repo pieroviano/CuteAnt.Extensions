@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Configuration.FileExtensions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -16,6 +16,20 @@
     <Title>Ms.Extensions.Configuration.FileExtensions-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <IsPublishable>False</IsPublishable>
+  </PropertyGroup>
+
+  <Target Name="CopyPackage" AfterTargets="Pack">
+    <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.csproj" />
