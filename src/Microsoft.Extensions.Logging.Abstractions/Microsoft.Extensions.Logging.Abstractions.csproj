@@ -4,7 +4,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net451</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.Logging.Abstractions</AssemblyName>
+    <AssemblyName>Net4x.Extensions.Logging.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>

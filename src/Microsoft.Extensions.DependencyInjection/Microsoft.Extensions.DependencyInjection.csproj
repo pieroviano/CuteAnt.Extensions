@@ -4,7 +4,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net45;net451;net40</TargetFrameworks>
-    <AssemblyName>Microsoft.Extensions.DependencyInjection</AssemblyName>
+    <AssemblyName>Net4x.Extensions.DependencyInjection</AssemblyName>
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DefineConstants>$(DefineConstants);IL_EMIT</DefineConstants>
