@@ -8,6 +8,7 @@
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DefineConstants>$(DefineConstants);ActivatorUtilities_In_DependencyInjection</DefineConstants>
+    <version>1.0.3</version>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
