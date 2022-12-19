@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.DependencyInjection</AssemblyName>
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -30,6 +30,11 @@
   <Target Name="CopyPackage" AfterTargets="Pack">
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="AsyncBridge" Version="0.3.1" PrivateAssets="all" />
+    <PackageReference Include="Net4x.ValueTuple" Version="1.0.0" />
+  </ItemGroup>
 
   <Import Project="..\..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" Label="Shared" />
 

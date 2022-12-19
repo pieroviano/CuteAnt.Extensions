@@ -2,10 +2,14 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+#if !NET35
 using System.Runtime.ExceptionServices;
+#endif
 
 #if ActivatorUtilities_In_DependencyInjection
 using Microsoft.Extensions.Internal;
@@ -190,11 +194,13 @@ namespace Microsoft.Extensions.Internal
                 var parameterType = constructorParameter.ParameterType;
                 var hasDefaultValue = ParameterDefaultValue.TryGetDefaultValue(constructorParameter, out var defaultValue);
 
+#if !NET35
                 if (parameterMap[i] != null)
                 {
                     constructorArguments[i] = Expression.ArrayAccess(factoryArgumentArray, Expression.Constant(parameterMap[i]));
                 }
                 else
+#endif
                 {
                     var parameterTypeExpression = new Expression[] { serviceProvider,
                         Expression.Constant(parameterType, typeof(Type)),
@@ -443,8 +449,13 @@ namespace Microsoft.Extensions.Internal
                 }
                 catch (TargetInvocationException ex)
                 {
-#if NET40 || NET35
+#if NET40 
                     throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
+#elif NET35
+                    if (ex.InnerException != null)
+                    {
+                        throw ex.InnerException;
+                    }
 #else
                     ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
 #endif

@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if !NET35
+using System;
 using System.Collections.Generic;
 
 namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
@@ -19,3 +20,4 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
         }
     }
 }
+#endif

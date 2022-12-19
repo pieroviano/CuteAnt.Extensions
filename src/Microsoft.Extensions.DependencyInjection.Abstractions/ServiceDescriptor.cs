@@ -186,7 +186,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="implementationFactory">A factory to create new instances of the service implementation.</param>
         /// <returns>A new instance of <see cref="ServiceDescriptor"/>.</returns>
         public static ServiceDescriptor Transient<TService, TImplementation>(
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TImplementation> implementationFactory)
+#endif
             where TService : class
             where TImplementation : class, TService
         {
@@ -206,7 +210,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <typeparam name="TService">The type of the service.</typeparam>
         /// <param name="implementationFactory">A factory to create new instances of the service implementation.</param>
         /// <returns>A new instance of <see cref="ServiceDescriptor"/>.</returns>
+#if NET35
+        public static ServiceDescriptor Transient<TService>(Func<IServiceProvider, object> implementationFactory)
+#else
         public static ServiceDescriptor Transient<TService>(Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
             if (implementationFactory == null)
@@ -279,7 +287,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="implementationFactory">A factory to create new instances of the service implementation.</param>
         /// <returns>A new instance of <see cref="ServiceDescriptor"/>.</returns>
         public static ServiceDescriptor Scoped<TService, TImplementation>(
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TImplementation> implementationFactory)
+#endif
             where TService : class
             where TImplementation : class, TService
         {
@@ -299,7 +311,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <typeparam name="TService">The type of the service.</typeparam>
         /// <param name="implementationFactory">A factory to create new instances of the service implementation.</param>
         /// <returns>A new instance of <see cref="ServiceDescriptor"/>.</returns>
+#if NET35
+        public static ServiceDescriptor Scoped<TService>(Func<IServiceProvider, object> implementationFactory)
+#else
         public static ServiceDescriptor Scoped<TService>(Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
             if (implementationFactory == null)
@@ -382,7 +398,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="implementationFactory">A factory to create new instances of the service implementation.</param>
         /// <returns>A new instance of <see cref="ServiceDescriptor"/>.</returns>
         public static ServiceDescriptor Singleton<TService, TImplementation>(
+#if NET35
+            Func<IServiceProvider, object> implementationFactory)
+#else
             Func<IServiceProvider, TImplementation> implementationFactory)
+#endif
             where TService : class
             where TImplementation : class, TService
         {
@@ -402,7 +422,11 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <typeparam name="TService">The type of the service.</typeparam>
         /// <param name="implementationFactory">A factory to create new instances of the service implementation.</param>
         /// <returns>A new instance of <see cref="ServiceDescriptor"/>.</returns>
+#if NET35
+        public static ServiceDescriptor Singleton<TService>(Func<IServiceProvider, object> implementationFactory)
+#else
         public static ServiceDescriptor Singleton<TService>(Func<IServiceProvider, TService> implementationFactory)
+#endif
             where TService : class
         {
             if (implementationFactory == null)

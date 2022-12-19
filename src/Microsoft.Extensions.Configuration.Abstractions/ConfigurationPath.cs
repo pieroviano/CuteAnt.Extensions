@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -41,7 +42,11 @@ namespace Microsoft.Extensions.Configuration
             {
                 throw new ArgumentNullException(nameof(pathSegments));
             }
-            return string.Join(KeyDelimiter, pathSegments);
+            return string.Join(KeyDelimiter, pathSegments
+#if NET35
+                .ToArray()
+#endif
+            );
         }
 
         /// <summary>

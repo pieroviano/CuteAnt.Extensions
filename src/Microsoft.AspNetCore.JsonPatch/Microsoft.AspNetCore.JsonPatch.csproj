@@ -4,7 +4,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
     <AssemblyName>Net4x.AspNetCore.JsonPatch</AssemblyName>
     <RootNamespace>Microsoft.AspNetCore.JsonPatch</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -40,7 +40,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
 

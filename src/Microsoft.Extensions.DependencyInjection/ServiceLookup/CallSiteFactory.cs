@@ -12,6 +12,7 @@ using Microsoft.Extensions.Internal;
 
 namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 {
+
     internal class CallSiteFactory
     {
         private readonly List<ServiceDescriptor> _descriptors;
@@ -228,7 +229,12 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                 var closedType = descriptor.ImplementationType.MakeGenericType(serviceType.GetTypeGenericArguments());
                 var constructorCallSite = CreateConstructorCallSite(serviceType, closedType, callSiteChain);
 
-                return ApplyLifetime(constructorCallSite, Tuple.Create(descriptor, serviceType), descriptor.Lifetime);
+                return ApplyLifetime(constructorCallSite,
+#if NET35
+                    new System.Tuple<ServiceDescriptor, Type>(descriptor, serviceType), descriptor.Lifetime);
+#else
+                Tuple.Create(descriptor, serviceType), descriptor.Lifetime);
+#endif
             }
 
             return null;
@@ -331,9 +337,21 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
                             // Ambiguous match exception
                             var message = string.Join(
                                 Environment.NewLine,
+#if NET35
+                                new string[]{
+#endif
                                 Resources.FormatAmbiguousConstructorException(implementationType),
-                                bestConstructor,
-                                constructors[i]);
+                                bestConstructor
+#if NET35
+                                    .ToString()
+#endif
+                                ,
+                                constructors[i]
+#if NET35
+                                    .ToString()
+                                }
+#endif
+                                );
                             throw new InvalidOperationException(message);
                         }
                     }

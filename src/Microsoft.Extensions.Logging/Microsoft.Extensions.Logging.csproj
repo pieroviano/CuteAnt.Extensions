@@ -4,6 +4,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net451</TargetFrameworks>
+    <!--<TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>-->
     <AssemblyName>Net4x.Extensions.Logging</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>

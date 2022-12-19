@@ -918,7 +918,11 @@ namespace System.Text.Claims
                 numberOfPropertiesWritten++;
             }
 
+#if NET35
+            if (!StringNet35.IsNullOrWhiteSpace(_label))
+#else
             if (!string.IsNullOrWhiteSpace(_label))
+#endif
             {
                 mask |= SerializationMask.HasLabel;
                 numberOfPropertiesWritten++;

@@ -3,11 +3,15 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40;net45;net451</TargetFrameworks>
+    <TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Logging.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="Portable.ConcurrentDictionary" Version="1.0.4" />
+  </ItemGroup>
 
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Logging.Abstractions</PackageId>
@@ -29,6 +33,10 @@
   <Target Name="CopyPackage" AfterTargets="Pack">
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\System.Actions\System.Actions.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="LoggingSR.Designer.cs">

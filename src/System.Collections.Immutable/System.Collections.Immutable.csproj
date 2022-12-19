@@ -4,6 +4,7 @@
   
   <PropertyGroup>
     <TargetFrameworks>net40</TargetFrameworks>
+    <!--<TargetFrameworks>net40;net35</TargetFrameworks>-->
     <RootNamespace>System</RootNamespace>
     <AssemblyName>System.Collections.Immutable</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -34,6 +35,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="Kaos.Collections" Version="4.1.0" />
   </ItemGroup>
 
   <ItemGroup>

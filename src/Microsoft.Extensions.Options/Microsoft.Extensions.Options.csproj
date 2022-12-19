@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Options</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -31,7 +31,12 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="TaskParallelLibrary" Version="1.0.2856" />
+  </ItemGroup>
+
   <ItemGroup>
+    <ProjectReference Include="..\..\System.Actions\System.Actions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
   </ItemGroup>

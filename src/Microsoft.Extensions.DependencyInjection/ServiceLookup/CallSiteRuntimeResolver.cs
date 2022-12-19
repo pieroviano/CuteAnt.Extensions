@@ -1,5 +1,7 @@
 ﻿using System;
+#if !NET35
 using System.Runtime.ExceptionServices;
+#endif
 
 namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 {
@@ -30,8 +32,13 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             }
             catch (Exception ex) when (ex.InnerException != null)
             {
-#if NET40 || NET35
+#if NET40
                 throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
+#elif NET35
+                if (ex.InnerException != null)
+                {
+                    throw ex.InnerException;
+                }
 #else
                 ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
 #endif
@@ -72,8 +79,13 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             }
             catch (Exception ex) when (ex.InnerException != null)
             {
-#if NET40 || NET35
+#if NET40
                 throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
+#elif NET35
+                if (ex.InnerException != null)
+                {
+                    throw (ex.InnerException);
+                }
 #else
                 ExceptionDispatchInfo.Capture(ex.InnerException).Throw();
 #endif
