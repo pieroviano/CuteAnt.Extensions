@@ -3,8 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40;net45;net451</TargetFrameworks>
-    <!--<TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>-->
+    <TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Logging</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -31,13 +30,38 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <Compile Remove="DefaultLoggerLevelConfigureOptions.cs" />
+    <Compile Remove="FilterLoggingBuilderExtensions.cs" />
+    <Compile Remove="ILoggingBuilder.cs" />
+    <Compile Remove="Logger.cs" />
+    <Compile Remove="LoggerFactory.cs" />
+    <Compile Remove="LoggerFilterOptions.cs" />
+    <Compile Remove="LoggerFilterRule.cs" />
+    <Compile Remove="LoggerInformation.cs" />
+    <Compile Remove="LoggerRuleSelector.cs" />
+    <Compile Remove="LoggingBuilder.cs" />
+    <Compile Remove="LoggingBuilderExtensions.cs" />
+    <Compile Remove="LoggingServiceCollectionExtensions.cs" />
+    <Compile Remove="ProviderAliasAttribute.cs" />
+    <Compile Remove="ProviderAliasUtilities.cs" />
+    <Compile Remove="StaticFilterOptionsMonitor.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="ReflectionUtils.cs" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
   </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
+    <Compile Remove="LoggerLibrary\Interfaces\ILogger.cs" />
+    <Compile Remove="LoggerLibrary\Model\EventId.cs" />
+    <Compile Remove="LoggerLibrary\Model\LogLevel.cs" />
+  </ItemGroup>
+
 </Project>
