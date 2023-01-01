@@ -23,7 +23,7 @@
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
 
-  <Target Name="CopyPackage" AfterTargets="Pack">
+  <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
