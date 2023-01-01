@@ -3,7 +3,7 @@
   <PropertyGroup>
     <RootNamespace>Microsoft.Extensions.FileProviders.Composite</RootNamespace>
     <AssemblyName>Net4x.Extensions.FileProviders.Composite.Tests</AssemblyName>
-    <TargetFrameworks>net45;net35</TargetFrameworks>
+    <TargetFrameworks>net45</TargetFrameworks>
     <DefineConstants>$(DefineConstants);TEST40</DefineConstants>
   </PropertyGroup>
 
