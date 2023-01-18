@@ -4,6 +4,10 @@
   
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols Condition="'$(Configuration)'=='Debug'">true</IncludeSymbols>
+    <SymbolPackageFormat Condition="'$(Configuration)'=='Debug'">snupkg</SymbolPackageFormat>
+    <IncludeSymbols Condition="'$(Configuration)'!='Debug'">false</IncludeSymbols>
     <AssemblyName>Net4x.Extensions.Logging</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -22,7 +26,6 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
 
@@ -53,7 +56,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="TaskParallelLibrary" Version="1.0.2856" />
+    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
