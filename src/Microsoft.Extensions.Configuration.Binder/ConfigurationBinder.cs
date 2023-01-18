@@ -367,14 +367,14 @@ namespace Microsoft.Extensions.Configuration
 
             if (typeInfo.IsInterface || typeInfo.IsAbstract)
             {
-                throw new InvalidOperationException(Resources.FormatError_CannotActivateAbstractOrInterface(type));
+                throw new InvalidOperationException(Microsoft.Extensions.Configuration.Binder.Resources.FormatError_CannotActivateAbstractOrInterface(type));
             }
 
             if (type.IsArray)
             {
                 if (typeInfo.GetArrayRank() > 1)
                 {
-                    throw new InvalidOperationException(Resources.FormatError_UnsupportedMultidimensionalArray(type));
+                    throw new InvalidOperationException(Microsoft.Extensions.Configuration.Binder.Resources.FormatError_UnsupportedMultidimensionalArray(type));
                 }
 
                 return Array.CreateInstance(typeInfo.GetElementType(), 0);
@@ -383,7 +383,7 @@ namespace Microsoft.Extensions.Configuration
             var hasDefaultConstructor = typeInfo.DeclaredConstructors.Any(ctor => ctor.IsPublic && ctor.GetParameters().Length == 0);
             if (!hasDefaultConstructor)
             {
-                throw new InvalidOperationException(Resources.FormatError_MissingParameterlessConstructor(type));
+                throw new InvalidOperationException(Microsoft.Extensions.Configuration.Binder.Resources.FormatError_MissingParameterlessConstructor(type));
             }
 
             try
@@ -392,7 +392,7 @@ namespace Microsoft.Extensions.Configuration
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException(Resources.FormatError_FailedToActivate(type), ex);
+                throw new InvalidOperationException(Microsoft.Extensions.Configuration.Binder.Resources.FormatError_FailedToActivate(type), ex);
             }
         }
 
@@ -526,7 +526,7 @@ namespace Microsoft.Extensions.Configuration
                 }
                 catch (Exception ex)
                 {
-                    error = new InvalidOperationException(Resources.FormatError_FailedBinding(value, type), ex);
+                    error = new InvalidOperationException(Microsoft.Extensions.Configuration.Binder.Resources.FormatError_FailedBinding(value, type), ex);
                 }
                 return true;
             }

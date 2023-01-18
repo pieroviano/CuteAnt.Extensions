@@ -26,7 +26,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
     {
         private static readonly Action<object> _cancelTokenSource = state => ((CancellationTokenSource)state).Cancel();
 
-        internal static TimeSpan DefaultPollingInterval = TimeSpan.FromSeconds(4);
+        public static TimeSpan DefaultPollingInterval = TimeSpan.FromSeconds(4);
 
         private readonly ConcurrentDictionary<string, ChangeTokenInfo> _filePathTokenLookup =
             new ConcurrentDictionary<string, ChangeTokenInfo>(StringComparer.OrdinalIgnoreCase);
@@ -94,11 +94,11 @@ namespace Microsoft.Extensions.FileProviders.Physical
             _timerFactory = () => NonCapturingTimer.Create(RaiseChangeEvents, state: PollingChangeTokens, dueTime: TimeSpan.Zero, period: DefaultPollingInterval);
         }
 
-        internal bool PollForChanges { get; }
+        public bool PollForChanges { get; }
 
-        internal bool UseActivePolling { get; set; }
+        public bool UseActivePolling { get; set; }
 
-        internal ConcurrentDictionary<IPollingChangeToken, IPollingChangeToken> PollingChangeTokens { get; }
+        public ConcurrentDictionary<IPollingChangeToken, IPollingChangeToken> PollingChangeTokens { get; }
 
         /// <summary>
         ///     <para>
@@ -156,7 +156,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
             return changeToken;
         }
 
-        internal IChangeToken GetOrAddFilePathChangeToken(string filePath)
+        public IChangeToken GetOrAddFilePathChangeToken(string filePath)
         {
             if (!_filePathTokenLookup.TryGetValue(filePath, out var tokenInfo))
             {
@@ -191,7 +191,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
             return changeToken;
         }
 
-        internal IChangeToken GetOrAddWildcardChangeToken(string pattern)
+        public IChangeToken GetOrAddWildcardChangeToken(string pattern)
         {
             if (!_wildcardTokenLookup.TryGetValue(pattern, out var tokenInfo))
             {
@@ -403,7 +403,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
                 TaskScheduler.Default);
         }
 
-        internal static void RaiseChangeEvents(object state)
+        public static void RaiseChangeEvents(object state)
         {
             // Iterating over a concurrent bag gives us a point in time snapshot making it safe
             // to remove items from it.

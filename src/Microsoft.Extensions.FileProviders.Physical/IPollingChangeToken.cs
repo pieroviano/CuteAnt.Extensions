@@ -6,7 +6,7 @@ using Microsoft.Extensions.Primitives;
 
 namespace Microsoft.Extensions.FileProviders
 {
-    internal interface IPollingChangeToken : IChangeToken
+    public interface IPollingChangeToken : IChangeToken
     {
         CancellationTokenSource CancellationTokenSource { get; }
     }

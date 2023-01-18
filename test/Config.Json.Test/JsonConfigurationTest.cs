@@ -133,7 +133,7 @@ namespace Microsoft.Extensions.Configuration
         [Fact]
         public void ThrowExceptionWhenPassingNullAsFilePath()
         {
-            var expectedMsg = new ArgumentException(Resources.Error_InvalidFilePath, "path").Message;
+            var expectedMsg = new ArgumentException(ConfigJsonSR.Error_InvalidFilePath, "path").Message;
 
             var exception = Assert.Throws<ArgumentException>(() => new ConfigurationBuilder().AddJsonFile(path: null));
 
@@ -143,7 +143,7 @@ namespace Microsoft.Extensions.Configuration
         [Fact]
         public void ThrowExceptionWhenPassingEmptyStringAsFilePath()
         {
-            var expectedMsg = new ArgumentException(Resources.Error_InvalidFilePath, "path").Message;
+            var expectedMsg = new ArgumentException(ConfigJsonSR.Error_InvalidFilePath, "path").Message;
 
             var exception = Assert.Throws<ArgumentException>(() => new ConfigurationBuilder().AddJsonFile(string.Empty));
 

@@ -46,7 +46,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
         }
 
         // Internal for unit testing.
-        internal PollingWildCardChangeToken(
+        public PollingWildCardChangeToken(
             DirectoryInfoBase directoryInfo,
             string pattern,
             IClock clock)
@@ -60,12 +60,12 @@ namespace Microsoft.Extensions.FileProviders.Physical
         }
 
         /// <inheritdoc />
-        public bool ActiveChangeCallbacks { get; internal set; }
+        public bool ActiveChangeCallbacks { get; set; }
 
         // Internal for unit testing.
-        internal TimeSpan PollingInterval { get; set; } = PhysicalFilesWatcher.DefaultPollingInterval;
+        public TimeSpan PollingInterval { get; set; } = PhysicalFilesWatcher.DefaultPollingInterval;
 
-        internal CancellationTokenSource CancellationTokenSource
+        public CancellationTokenSource CancellationTokenSource
         {
             get => _tokenSource;
             set

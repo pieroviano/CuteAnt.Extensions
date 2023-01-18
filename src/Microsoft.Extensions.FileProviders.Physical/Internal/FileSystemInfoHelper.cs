@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Microsoft.Extensions.FileProviders.Physical
 {
-    internal static class FileSystemInfoHelper
+    public static class FileSystemInfoHelper
     {
         public static bool IsExcluded(FileSystemInfo fileSystemInfo, ExclusionFilters filters)
         {
