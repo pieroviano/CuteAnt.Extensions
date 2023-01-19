@@ -169,8 +169,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Extensions.Option
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestoreSystemBuffers", "RestoreSystemBuffers\RestoreSystemBuffers.csproj", "{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Actions", "System.Actions\System.Actions.csproj", "{517D445E-14D5-42D5-ABA6-86D555B7F023}"
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{1ab36d9f-d262-411e-8766-dcd127409290}*SharedItemsImports = 5
@@ -413,10 +411,6 @@ Global
 		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{517D445E-14D5-42D5-ABA6-86D555B7F023}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{517D445E-14D5-42D5-ABA6-86D555B7F023}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{517D445E-14D5-42D5-ABA6-86D555B7F023}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{517D445E-14D5-42D5-ABA6-86D555B7F023}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -495,7 +489,6 @@ Global
 		{7D02563F-82AA-4322-ACFD-04E3C7319E30} = {2F85D2CE-A8C6-46B5-8E57-FF6911C0C8FA}
 		{57F1B280-AC31-49EC-8DC7-9B1B7839F328} = {B3A252F2-B55B-42AC-8DE4-AFA4C983028F}
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0} = {B56A0D5D-FDC8-4C80-9A38-814FA0FEDF83}
-		{517D445E-14D5-42D5-ABA6-86D555B7F023} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EE6CFC8-DD4D-4293-8418-14C4AD850DD3}

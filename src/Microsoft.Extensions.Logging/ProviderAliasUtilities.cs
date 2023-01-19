@@ -30,7 +30,7 @@ namespace Microsoft.Extensions.Logging
 
                     if (valueProperty != null)
                     {
-                        return valueProperty.GetValue(attribute) as string;
+                        return valueProperty.GetValue(attribute, new object[0]) as string;
                     }
                 }
             }

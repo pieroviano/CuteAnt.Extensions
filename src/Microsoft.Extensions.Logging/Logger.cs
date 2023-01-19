@@ -1,4 +1,4 @@
-﻿// Copyright (c) .NET Foundation. All rights reserved.
+﻿// Copyright (c) .NET Foundation. ll rights reserved.
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
@@ -71,8 +71,13 @@ namespace Microsoft.Extensions.Logging
 
             if (exceptions != null && exceptions.Count > 0)
             {
+#if NET35
+                throw new AggregateExceptionEx(
+                    message: "An error occurred while writing to logger(s).", innerExceptions: exceptions.ToArray());
+#else
                 throw new AggregateException(
                     message: "An error occurred while writing to logger(s).", innerExceptions: exceptions);
+#endif
             }
         }
 
@@ -112,9 +117,15 @@ namespace Microsoft.Extensions.Logging
 
             if (exceptions != null && exceptions.Count > 0)
             {
+#if NET35
+                throw new AggregateExceptionEx(
+                    message: "An error occurred while writing to logger(s).",
+                    innerExceptions: exceptions.ToArray());
+#else
                 throw new AggregateException(
                     message: "An error occurred while writing to logger(s).",
                     innerExceptions: exceptions);
+#endif
             }
 
             return false;
@@ -191,8 +202,13 @@ namespace Microsoft.Extensions.Logging
 
             if (exceptions != null && exceptions.Count > 0)
             {
+#if NET35
+                throw new AggregateExceptionEx(
+                    message: "An error occurred while writing to logger(s).", innerExceptions: exceptions.ToArray());
+#else
                 throw new AggregateException(
                     message: "An error occurred while writing to logger(s).", innerExceptions: exceptions);
+#endif
             }
 
             return scope;

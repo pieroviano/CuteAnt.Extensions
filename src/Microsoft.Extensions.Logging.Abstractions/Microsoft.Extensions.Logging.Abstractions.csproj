@@ -13,6 +13,10 @@
     <PackageReference Include="Portable.ConcurrentDictionary" Version="1.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Net35.Actions" Version="1.0.0" Condition="'$(TargetFramework)' == 'net35'" />
+  </ItemGroup>
+
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Logging.Abstractions</PackageId>
     <Title>Ms.Extensions.Logging.Abstractions-net40-net451-fork</Title>
@@ -33,10 +37,6 @@
   <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\System.Actions\System.Actions.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="LoggingSR.Designer.cs">

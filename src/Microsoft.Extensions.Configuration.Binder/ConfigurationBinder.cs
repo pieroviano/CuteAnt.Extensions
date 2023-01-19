@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration.Binder;
 
 namespace Microsoft.Extensions.Configuration
 {
+
+
     /// <summary>
     /// Static helper class that allows binding strongly typed objects to configuration values.
     /// </summary>
@@ -179,7 +181,7 @@ namespace Microsoft.Extensions.Configuration
         {
             if (instance != null)
             {
-#if NET40 || NET35
+#if NET40
                 foreach (var property in GetAllProperties(instance.GetType()))
 #else
                 foreach (var property in GetAllProperties(instance.GetType().GetTypeInfo()))
@@ -205,7 +207,7 @@ namespace Microsoft.Extensions.Configuration
                 return;
             }
 
-            var propertyValue = property.GetValue(instance);
+            var propertyValue = property.GetValue(instance, new object[0]);
 #if NET40 || NET35
             var setMethod = property.GetSetMethod(true);
 #else
@@ -224,7 +226,7 @@ namespace Microsoft.Extensions.Configuration
 
             if (propertyValue != null && hasSetter)
             {
-                property.SetValue(instance, propertyValue);
+                property.SetValue(instance, propertyValue, new object[0]);
             }
         }
 
@@ -567,7 +569,7 @@ namespace Microsoft.Extensions.Configuration
             return null;
         }
 
-#if NET40 || NET35
+#if NET40
         private static IEnumerable<PropertyInfo> GetAllProperties(Type type)
         {
             var allProperties = new List<PropertyInfo>();

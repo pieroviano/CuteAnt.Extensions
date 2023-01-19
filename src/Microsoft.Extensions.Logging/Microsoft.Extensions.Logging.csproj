@@ -30,38 +30,23 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <Compile Remove="DefaultLoggerLevelConfigureOptions.cs" />
-    <Compile Remove="FilterLoggingBuilderExtensions.cs" />
-    <Compile Remove="ILoggingBuilder.cs" />
-    <Compile Remove="Logger.cs" />
-    <Compile Remove="LoggerFactory.cs" />
-    <Compile Remove="LoggerFilterOptions.cs" />
-    <Compile Remove="LoggerFilterRule.cs" />
-    <Compile Remove="LoggerInformation.cs" />
-    <Compile Remove="LoggerRuleSelector.cs" />
-    <Compile Remove="LoggingBuilder.cs" />
-    <Compile Remove="LoggingBuilderExtensions.cs" />
-    <Compile Remove="LoggingServiceCollectionExtensions.cs" />
-    <Compile Remove="ProviderAliasAttribute.cs" />
-    <Compile Remove="ProviderAliasUtilities.cs" />
-    <Compile Remove="StaticFilterOptionsMonitor.cs" />
-  </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="ReflectionUtils.cs" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
-    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
-    <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
-    <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
+  <ItemGroup>
+    <PackageReference Include="Net35.Actions" Version="1.0.0" Condition="'$(TargetFramework)' == 'net35'" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
-    <Compile Remove="LoggerLibrary\Interfaces\ILogger.cs" />
-    <Compile Remove="LoggerLibrary\Model\EventId.cs" />
-    <Compile Remove="LoggerLibrary\Model\LogLevel.cs" />
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection\Microsoft.Extensions.DependencyInjection.csproj" Condition="'$(TargetFramework)' == 'net35'" />
+    <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
+    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
