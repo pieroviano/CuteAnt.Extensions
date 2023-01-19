@@ -134,7 +134,11 @@ namespace System.Security.Cryptography
 
             if (_hash != null)
             {
+#if NET35
+                _hash.Clear();
+#else
                 _hash.Dispose();
+#endif
                 _hash = null;
             }
         }
