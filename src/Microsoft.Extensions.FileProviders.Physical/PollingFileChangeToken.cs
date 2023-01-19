@@ -43,7 +43,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
         }
 
         // Internal for unit testing
-        internal static TimeSpan PollingInterval { get; set; } = PhysicalFilesWatcher.DefaultPollingInterval;
+        public static TimeSpan PollingInterval { get; set; } = PhysicalFilesWatcher.DefaultPollingInterval;
 
         private DateTime GetLastWriteTimeUtc()
         {
@@ -56,7 +56,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
         /// </summary>
         public bool ActiveChangeCallbacks { get; internal set; }
 
-        internal CancellationTokenSource CancellationTokenSource
+        public CancellationTokenSource CancellationTokenSource
         {
             get => _tokenSource;
             set

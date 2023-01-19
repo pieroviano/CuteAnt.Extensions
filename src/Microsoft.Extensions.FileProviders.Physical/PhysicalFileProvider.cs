@@ -131,7 +131,7 @@ namespace Microsoft.Extensions.FileProviders
             set => _useActivePolling = value;
         }
 
-        internal PhysicalFilesWatcher FileWatcher
+        public PhysicalFilesWatcher FileWatcher
         {
             get
             {
@@ -150,7 +150,7 @@ namespace Microsoft.Extensions.FileProviders
             }
         }
 
-        internal PhysicalFilesWatcher CreateFileWatcher()
+        public PhysicalFilesWatcher CreateFileWatcher()
         {
             var root = PathUtils.EnsureTrailingSlash(Path.GetFullPath(Root));
             return new PhysicalFilesWatcher(root, new FileSystemWatcher(root), UsePollingFileWatcher, _filters)

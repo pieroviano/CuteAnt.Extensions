@@ -49,7 +49,7 @@
 
   <ItemGroup>
     <EmbeddedResource Update="ConfigIniSR.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ConfigIniSR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

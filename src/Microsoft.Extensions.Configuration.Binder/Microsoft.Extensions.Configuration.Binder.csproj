@@ -34,6 +34,11 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
+  <ItemGroup>
+    <PackageReference Include="Net35.Actions" Version="1.0.0" Condition="'$(TargetFramework)' == 'net35'" />
+    <PackageReference Include="Net35.TypeInfo" Version="1.0.0" Condition="'$(TargetFramework)' == 'net35'" />
+  </ItemGroup>
+
   <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Import Project="..\..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems" Label="Shared" />
   </ImportGroup>
