@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Configuration.EnvironmentVariables</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>

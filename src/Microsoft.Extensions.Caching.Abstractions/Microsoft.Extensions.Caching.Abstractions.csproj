@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net451</TargetFrameworks>
+    <TargetFrameworks>net451;net45;net40;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Caching.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Caching</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -30,6 +30,10 @@
   <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net40'">
+    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" PrivateAssets="all" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />

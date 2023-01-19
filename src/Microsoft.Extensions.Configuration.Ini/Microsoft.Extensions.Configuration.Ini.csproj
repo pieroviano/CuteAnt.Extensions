@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Configuration.Ini</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -34,6 +34,10 @@
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.FileExtensions\Microsoft.Extensions.Configuration.FileExtensions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

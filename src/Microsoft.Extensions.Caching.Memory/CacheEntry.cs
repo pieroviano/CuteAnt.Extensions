@@ -266,12 +266,21 @@ namespace Microsoft.Extensions.Caching.Memory
         private static void ExpirationTokensExpired(object obj)
         {
             // start a new thread to avoid issues with callbacks called from RegisterChangeCallback
+#if NET40
+            Task.Factory.StartNew(state =>
+            {
+                var entry = (CacheEntry)state;
+                entry.SetExpired(EvictionReason.TokenExpired);
+                entry._notifyCacheOfExpiration(entry);
+            }, obj, CancellationToken.None, (TaskCreationOptions)8, TaskScheduler.Default);
+#else
             Task.Factory.StartNew(state =>
             {
                 var entry = (CacheEntry)state;
                 entry.SetExpired(EvictionReason.TokenExpired);
                 entry._notifyCacheOfExpiration(entry);
             }, obj, CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
+#endif
         }
 
         private void DetachTokens()
@@ -295,8 +304,13 @@ namespace Microsoft.Extensions.Caching.Memory
         {
             if (_postEvictionCallbacks != null)
             {
+#if NET40
+                Task.Factory.StartNew(state => InvokeCallbacks((CacheEntry)state), this,
+                    CancellationToken.None, (TaskCreationOptions)8, TaskScheduler.Default);
+#else
                 Task.Factory.StartNew(state => InvokeCallbacks((CacheEntry)state), this,
                     CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
+#endif
             }
         }
 

@@ -27,6 +27,18 @@ namespace Microsoft.Extensions.Configuration.Ini
         /// <param name="source">The source settings.</param>
         public IniConfigurationProvider(IniConfigurationSource source) : base(source) { }
 
+        public static bool IsNullOrWhiteSpace(string value)
+        {
+            if (value == null)
+                return true;
+            for (int index = 0; index < value.Length; ++index)
+            {
+                if (!char.IsWhiteSpace(value[index]))
+                    return false;
+            }
+            return true;
+        }
+
         /// <summary>
         /// Loads the INI data from a stream.
         /// </summary>
@@ -45,7 +57,7 @@ namespace Microsoft.Extensions.Configuration.Ini
                     var line = rawLine.Trim();
 
                     // Ignore blank lines
-                    if (string.IsNullOrWhiteSpace(line))
+                    if (IsNullOrWhiteSpace(line))
                     {
                         continue;
                     }

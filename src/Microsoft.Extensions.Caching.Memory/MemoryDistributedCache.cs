@@ -11,8 +11,11 @@ namespace Microsoft.Extensions.Caching.Distributed
 {
     public class MemoryDistributedCache : IDistributedCache
     {
+#if NET40
+        private static readonly Task CompletedTask = TaskEx.FromResult<object>(null);
+#else
         private static readonly Task CompletedTask = Task.FromResult<object>(null);
-
+#endif
         private readonly IMemoryCache _memCache;
 
         public MemoryDistributedCache(IOptions<MemoryDistributedCacheOptions> optionsAccessor)
@@ -42,7 +45,11 @@ namespace Microsoft.Extensions.Caching.Distributed
                 throw new ArgumentNullException(nameof(key));
             }
 
+#if NET40
+            return TaskEx.FromResult(Get(key));
+#else
             return Task.FromResult(Get(key));
+#endif
         }
 
         public void Set(string key, byte[] value, DistributedCacheEntryOptions options)

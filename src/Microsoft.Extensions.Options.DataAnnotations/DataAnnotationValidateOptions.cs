@@ -50,8 +50,8 @@ namespace Microsoft.Extensions.Options
 
                 return ValidateOptionsResult.Fail(String.Join(Environment.NewLine,
                     validationResults.Select(r => "DataAnnotation validation failed for members " +
-                        String.Join(", ", r.MemberNames) +
-                        " with the error '" + r.ErrorMessage + "'.")));
+                        String.Join(", ", r.MemberNames.ToArray()) +
+                        " with the error '" + r.ErrorMessage + "'.").ToArray()));
             }
 
             // Ignored if not validating this instance.
