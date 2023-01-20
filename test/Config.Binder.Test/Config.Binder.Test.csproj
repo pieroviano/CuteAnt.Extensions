@@ -4,10 +4,6 @@
     <AssemblyName>Net4x.Extensions.Configuration.Binder.Test</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.Binder.Test</RootNamespace>
     <TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IncludeSymbols Condition="'$(Configuration)'=='Debug'">true</IncludeSymbols>
-    <SymbolPackageFormat Condition="'$(Configuration)'=='Debug'">snupkg</SymbolPackageFormat>
-    <IncludeSymbols Condition="'$(Configuration)'!='Debug'">false</IncludeSymbols>
     <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp2.2</TargetFrameworks>
   </PropertyGroup>
 

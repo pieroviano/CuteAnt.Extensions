@@ -259,11 +259,13 @@ namespace Microsoft.Extensions.FileProviders.Physical
                 try
                 {
                     // If the renamed entity is a directory then notify tokens for every sub item.
+#if NET35
                     foreach (
                         var newLocation in
-#if NET35
-                        Directory.GetFiles(e.FullPath, "*", SearchOption.AllDirectories))
+                        Directory.GetFileSystemEntries(e.FullPath, "*"))
 #else
+                    foreach (
+                        var newLocation in
                         Directory.EnumerateFileSystemEntries(e.FullPath, "*", SearchOption.AllDirectories))
 #endif
                     {

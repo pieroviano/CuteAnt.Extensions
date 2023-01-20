@@ -3,9 +3,8 @@
 
 using System;
 using System.Threading;
-using Microsoft.Extensions.Primitives;
 
-namespace System.Threading
+namespace Microsoft.Extensions.Primitives
 {
     /// <summary>
     /// A <see cref="IChangeToken"/> implementation using <see cref="CancellationToken"/>.

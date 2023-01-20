@@ -1918,9 +1918,6 @@ namespace System.Collections.Immutable.Tests
 
         [Theory]
         [MemberData(nameof(IStructuralEquatableGetHashCodeData))]
-#if NET35
-        [Ignore]
-#endif
         public void IStructuralEquatableGetHashCode(IEnumerable<int> source, IEqualityComparer comparer)
         {
             var array = source.ToImmutableArray();

@@ -220,7 +220,6 @@ namespace Microsoft.Extensions.Options.Tests
 
         [Theory]
         [MemberData(nameof(Configure_GetsNullableOptionsFromConfiguration_Data))]
-        [Fact(Skip = "specific reason")]
         public void Configure_GetsNullableOptionsFromConfiguration(
             IDictionary<string, string> configValues,
             IDictionary<string, object> expectedValues)

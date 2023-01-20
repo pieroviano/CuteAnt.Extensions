@@ -4,10 +4,6 @@
     <AssemblyName>Net4x.Extensions.Configuration.EnvironmentVariables.Test</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration.EnvironmentVariables.Test</RootNamespace>
     <TargetFrameworks>$(StandardTestTfms)</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <IncludeSymbols Condition="'$(Configuration)'=='Debug'">true</IncludeSymbols>
-    <SymbolPackageFormat Condition="'$(Configuration)'=='Debug'">snupkg</SymbolPackageFormat>
-    <IncludeSymbols Condition="'$(Configuration)'!='Debug'">false</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>

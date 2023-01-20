@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.4.33110.190
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FD46156B-EDAA-4F1D-A9DE-4F023DA86EB8}"
 EndProject
@@ -167,7 +167,31 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.Extensions.NonCap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Extensions.Options.DataAnnotations", "src\Microsoft.Extensions.Options.DataAnnotations\Microsoft.Extensions.Options.DataAnnotations.csproj", "{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestoreSystemBuffers", "RestoreSystemBuffers\RestoreSystemBuffers.csproj", "{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{1ab36d9f-d262-411e-8766-dcd127409290}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems*{1c35f063-5522-4e51-8657-ab397cf6361a}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems*{1c35f063-5522-4e51-8657-ab397cf6361a}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{323a5b31-2ef0-45c9-bb2e-1dd7e44528e2}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.ClosedGenericMatcher.Sources\CuteAnt.Extensions.ClosedGenericMatcher.Sources.projitems*{3f0f0ded-3903-4de9-a8ca-a2eb97e78e7f}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{40a9875a-07d9-4fdb-af7f-6268694f91b3}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{4d92b029-ed5d-4ecb-8a74-5e8c1aaf74ef}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.NonCapturingTimer.Sources\Microsoft.Extensions.NonCapturingTimer.Sources.projitems*{57f1b280-ac31-49ec-8dc7-9b1b7839f328}*SharedItemsImports = 13
+		src\CuteAnt.Extensions.ActivatorUtilities.Sources\CuteAnt.Extensions.ActivatorUtilities.Sources.projitems*{7d02563f-82aa-4322-acfd-04e3c7319e30}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Logging.Sources\CuteAnt.Extensions.Logging.Sources.projitems*{8dbb7dc8-2b90-4a8c-a60d-d41466174bde}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems*{90cca884-f548-4e6a-ac45-b7e217e083ec}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{90cca884-f548-4e6a-ac45-b7e217e083ec}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems*{b8008769-2082-44fd-aefc-dd19bd973982}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems*{c7f8dbe6-77b7-494d-af00-018f7579548c}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{cb50d1c8-fb58-4cf9-8ed8-27a0cd53897d}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{cfdc1c45-eb22-4a35-a0ce-00dca1adf8f0}*SharedItemsImports = 5
+		src\CuteAnt.Extensions.ActivatorUtilities.Sources\CuteAnt.Extensions.ActivatorUtilities.Sources.projitems*{cfdc1c45-eb22-4a35-a0ce-00dca1adf8f0}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems*{d90e9b82-6317-4055-82e3-fe8625c143e9}*SharedItemsImports = 13
+		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.ClosedGenericMatcher.Sources\CuteAnt.Extensions.ClosedGenericMatcher.Sources.projitems*{e7f3c086-16a7-4aed-b336-1c61a7d9b145}*SharedItemsImports = 5
+		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.NonCapturingTimer.Sources\Microsoft.Extensions.NonCapturingTimer.Sources.projitems*{ede317dd-4294-4c8e-9990-179a2304a1dd}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -383,6 +407,10 @@ Global
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6545B7BE-82A2-4DAB-ABA0-95E8C15912ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -464,27 +492,5 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EE6CFC8-DD4D-4293-8418-14C4AD850DD3}
-	EndGlobalSection
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{1ab36d9f-d262-411e-8766-dcd127409290}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems*{1c35f063-5522-4e51-8657-ab397cf6361a}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems*{1c35f063-5522-4e51-8657-ab397cf6361a}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{323a5b31-2ef0-45c9-bb2e-1dd7e44528e2}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.ClosedGenericMatcher.Sources\CuteAnt.Extensions.ClosedGenericMatcher.Sources.projitems*{3f0f0ded-3903-4de9-a8ca-a2eb97e78e7f}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{40a9875a-07d9-4fdb-af7f-6268694f91b3}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{4d92b029-ed5d-4ecb-8a74-5e8c1aaf74ef}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.NonCapturingTimer.Sources\Microsoft.Extensions.NonCapturingTimer.Sources.projitems*{57f1b280-ac31-49ec-8dc7-9b1b7839f328}*SharedItemsImports = 13
-		src\CuteAnt.Extensions.ActivatorUtilities.Sources\CuteAnt.Extensions.ActivatorUtilities.Sources.projitems*{7d02563f-82aa-4322-acfd-04e3c7319e30}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Logging.Sources\CuteAnt.Extensions.Logging.Sources.projitems*{8dbb7dc8-2b90-4a8c-a60d-d41466174bde}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems*{90cca884-f548-4e6a-ac45-b7e217e083ec}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{90cca884-f548-4e6a-ac45-b7e217e083ec}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems*{b8008769-2082-44fd-aefc-dd19bd973982}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems*{c7f8dbe6-77b7-494d-af00-018f7579548c}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{cb50d1c8-fb58-4cf9-8ed8-27a0cd53897d}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{cfdc1c45-eb22-4a35-a0ce-00dca1adf8f0}*SharedItemsImports = 5
-		src\CuteAnt.Extensions.ActivatorUtilities.Sources\CuteAnt.Extensions.ActivatorUtilities.Sources.projitems*{cfdc1c45-eb22-4a35-a0ce-00dca1adf8f0}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems*{d90e9b82-6317-4055-82e3-fe8625c143e9}*SharedItemsImports = 13
-		..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.ClosedGenericMatcher.Sources\CuteAnt.Extensions.ClosedGenericMatcher.Sources.projitems*{e7f3c086-16a7-4aed-b336-1c61a7d9b145}*SharedItemsImports = 5
-		..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.NonCapturingTimer.Sources\Microsoft.Extensions.NonCapturingTimer.Sources.projitems*{ede317dd-4294-4c8e-9990-179a2304a1dd}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

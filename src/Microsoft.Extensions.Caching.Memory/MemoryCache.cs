@@ -294,8 +294,13 @@ namespace Microsoft.Extensions.Caching.Memory
             if (_options.ExpirationScanFrequency < now - _lastExpirationScan)
             {
                 _lastExpirationScan = now;
+#if NET40
+                Task.Factory.StartNew(state => ScanForExpiredItems((MemoryCache)state), this,
+                    CancellationToken.None, (TaskCreationOptions)8, TaskScheduler.Default);
+#else
                 Task.Factory.StartNew(state => ScanForExpiredItems((MemoryCache)state), this,
                     CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
+#endif
             }
         }
 
