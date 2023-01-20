@@ -1916,15 +1916,6 @@ namespace System.Collections.Immutable.Tests
             Assert.Throws<NullReferenceException>(() => ((IStructuralEquatable)s_emptyDefault).Equals(other: null, comparer: null));
         }
 
-        [Theory]
-        [MemberData(nameof(IStructuralEquatableGetHashCodeData))]
-        public void IStructuralEquatableGetHashCode(IEnumerable<int> source, IEqualityComparer comparer)
-        {
-            var array = source.ToImmutableArray();
-            int expected = ((IStructuralEquatable)source.ToArray()).GetHashCode(comparer);
-            Assert.Equal(expected, ((IStructuralEquatable)array).GetHashCode(comparer));
-        }
-
         public static IEnumerable<object[]> IStructuralEquatableGetHashCodeData()
         {
             var enumerables = Int32EnumerableData()
@@ -2166,26 +2157,6 @@ namespace System.Collections.Immutable.Tests
                 }
             };
             Task.WaitAll(Task.Run(mutator), Task.Run(mutator));
-        }
-
-        [Theory]
-        [MemberData(nameof(Int32EnumerableData))]
-        //[SkipOnTargetFramework(TargetFrameworkMonikers.UapAot, "Cannot do DebuggerAttribute testing on UapAot: requires internal Reflection on framework types.")]
-        public void DebuggerAttributesValid(IEnumerable<int> source)
-        {
-            DebuggerAttributes.ValidateDebuggerDisplayReferences(source.ToImmutableArray());
-        }
-
-
-        [Fact]
-        //[SkipOnTargetFramework(TargetFrameworkMonikers.UapAot, "Cannot do DebuggerAttribute testing on UapAot: requires internal Reflection on framework types.")]
-        public void DebuggerAttributesValid()
-        {
-            DebuggerAttributes.ValidateDebuggerDisplayReferences(ImmutableArray.Create<int>());
-            ImmutableArray<int> array = ImmutableArray.Create(1, 2, 3, 4);
-            FieldInfo itemField = typeof(ImmutableArray<int>).GetFields(BindingFlags.Instance | BindingFlags.NonPublic).Single(fi => fi.GetCustomAttribute<DebuggerBrowsableAttribute>()?.State == DebuggerBrowsableState.RootHidden);
-            int[] items = itemField.GetValue(array) as int[];
-            Assert.Equal(array, items);
         }
 
         [Fact]

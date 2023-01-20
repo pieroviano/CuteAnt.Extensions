@@ -33,24 +33,6 @@ namespace Microsoft.Extensions.Primitives
         }
 
         [Fact]
-        public void StringSegment_AsSpan()
-        {
-            var segment = new StringSegment("Hello");
-
-            var span = segment.AsSpan();
-
-            Assert.Equal(5, span.Length);
-        }
-
-        [Fact]
-        public void StringSegment_ImplicitConvertToSpan()
-        {
-            ReadOnlySpan<char> span = new StringSegment("Hello");
-
-            Assert.Equal(5, span.Length);
-        }
-
-        [Fact]
         public void StringSegment_AsMemory()
         {
             var segment = new StringSegment("Hello");

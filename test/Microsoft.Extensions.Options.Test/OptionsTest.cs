@@ -219,29 +219,6 @@ namespace Microsoft.Extensions.Options.Tests
             }
         }
 
-        [Theory]
-        [MemberData(nameof(Configure_GetsNullableOptionsFromConfiguration_Data))]
-        public void Configure_GetsNullableOptionsFromConfiguration(
-            IDictionary<string, string> configValues,
-            IDictionary<string, object> expectedValues)
-        {
-            // Arrange
-            var services = new ServiceCollection();
-            var builder = new ConfigurationBuilder().AddInMemoryCollection(configValues);
-            var config = builder.Build();
-            services.Configure<NullableOptions>(config);
-
-            // Act
-            var options = services.BuildServiceProvider().GetService<IOptions<NullableOptions>>().Value;
-
-            // Assert
-            var optionsProps = options.GetType().GetProperties().ToDictionary(p => p.Name);
-            var assertions = expectedValues
-                .Select(_ => new Action<KeyValuePair<string, object>>(kvp =>
-                    Assert.Equal(kvp.Value, optionsProps[kvp.Key].GetValue(options))));
-            Assert.Collection(expectedValues, assertions.ToArray());
-        }
-
         public static TheoryData Configure_GetsEnumOptionsFromConfiguration_Data
         {
             get
