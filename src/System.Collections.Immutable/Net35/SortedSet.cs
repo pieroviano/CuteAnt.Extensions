@@ -10,6 +10,10 @@ namespace System.Collections
     public class SortedSet<T> : RankedSet<T>
     {
 
+        public SortedSet()
+        {
+        }
+
         public SortedSet(IEnumerable<T> collection, IComparer<T> comparer)
             : base(collection, comparer)
         {

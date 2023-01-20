@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-//using Microsoft.AspNetCore.Testing;
+using Microsoft.Extensions.FileProviders;
 using Xunit;
+//using Microsoft.AspNetCore.Testing;
 
-namespace Microsoft.Extensions.FileProviders.Embedded.Tests
+namespace Net4x.Extensions.FileProviders.Embedded.Tests
 {
     public class EmbeddedFileProviderTests
     {

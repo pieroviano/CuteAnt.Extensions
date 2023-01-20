@@ -5,6 +5,11 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <DocumentationFile />
+    <ErrorReport>none</ErrorReport>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\System.Collections.Immutable.Tests.rd.xml" />
   </ItemGroup>

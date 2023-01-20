@@ -33,6 +33,10 @@
   </Target>
 
   <ItemGroup>
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj" Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net40'" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

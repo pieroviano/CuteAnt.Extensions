@@ -3,11 +3,10 @@
   <Import Project="..\nuget.dotnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40</TargetFrameworks>
-    <!--<TargetFrameworks>net40;net35</TargetFrameworks>-->
+    <TargetFrameworks>net40;net35</TargetFrameworks>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>System.Collections.Immutable</AssemblyName>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>$(DefineConstants);EqualsStructurally;FEATURE_ITEMREFAPI</DefineConstants>
   </PropertyGroup>
 
@@ -32,10 +31,6 @@
   <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
-  </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
     <PackageReference Include="Kaos.Collections" Version="4.1.0" />

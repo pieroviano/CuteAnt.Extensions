@@ -87,9 +87,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Memory" Version="$(SystemMemoryPackageVersion)" />
-    <Reference Include="Microsoft.Extensions.Primitives">
-      <HintPath>..\..\src\System.Reflection.Metadata\bin\Debug\net40\Microsoft.Extensions.Primitives.dll</HintPath>
-    </Reference>
     <Reference Include="System.Collections.Immutable">
       <HintPath>..\..\src\System.Reflection.Metadata\bin\Debug\net40\System.Collections.Immutable.dll</HintPath>
     </Reference>

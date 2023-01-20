@@ -125,7 +125,8 @@ namespace Microsoft.Extensions.DependencyInjection
 #if NET40 || NET35
                 var typeArguments = ImplementationFactory.GetType().GetTypeGenericArguments();
 #else
-                var typeArguments = ImplementationFactory.GetType().GenericTypeArguments;
+                var type = ImplementationFactory.GetType();
+                var typeArguments = type.GenericTypeArguments;
 #endif
 
                 Debug.Assert(typeArguments.Length == 2);

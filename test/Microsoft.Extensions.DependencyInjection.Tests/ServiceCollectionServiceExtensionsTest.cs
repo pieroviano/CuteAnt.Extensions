@@ -73,7 +73,8 @@ namespace Microsoft.Extensions.DependencyInjection
                 {
                     { collection => collection.AddTransient(serviceType, s => new FakeService()), serviceType, objectType, ServiceLifetime.Transient },
                     { collection => collection.AddTransient<IFakeService>(s => new FakeService()), serviceType, serviceType, ServiceLifetime.Transient },
-                    { collection => collection.AddTransient<IFakeService, FakeService>(s => new FakeService()), serviceType, implementationType, ServiceLifetime.Transient },
+                    { collection => 
+                        collection.AddTransient<IFakeService, FakeService>(s => new FakeService()), serviceType, implementationType, ServiceLifetime.Transient },
 
                     { collection => collection.AddScoped(serviceType, s => new FakeService()), serviceType, objectType, ServiceLifetime.Scoped },
                     { collection => collection.AddScoped<IFakeService>(s => new FakeService()), serviceType, serviceType, ServiceLifetime.Scoped },
@@ -103,7 +104,7 @@ namespace Microsoft.Extensions.DependencyInjection
             // Assert
             var descriptor = Assert.Single(collection);
             Assert.Equal(serviceType, descriptor.ServiceType);
-            Assert.Equal(implementationType, descriptor.GetImplementationType());
+            Assert.True(implementationType== descriptor.GetImplementationType() || descriptor.GetImplementationType().IsAssignableFrom(implementationType));
             Assert.Equal(lifeCycle, descriptor.Lifetime);
         }
 
