@@ -4,6 +4,9 @@
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+#if NET35
+using ExcludeFromCodeCoverageAttribute = System.ExcludeFromCodeCoverageExAttribute;
+#endif
 
 namespace System.Collections.Immutable
 {

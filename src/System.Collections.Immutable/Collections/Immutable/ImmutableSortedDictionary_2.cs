@@ -8,6 +8,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
+#if NET35
+using ExcludeFromCodeCoverageAttribute = System.ExcludeFromCodeCoverageExAttribute;
+#endif
 
 namespace System.Collections.Immutable
 {

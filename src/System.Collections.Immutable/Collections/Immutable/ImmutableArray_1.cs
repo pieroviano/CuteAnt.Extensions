@@ -11,6 +11,10 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.Versioning;
 
+#if NET35
+using ExcludeFromCodeCoverageAttribute=System.ExcludeFromCodeCoverageExAttribute;
+#endif
+
 namespace System.Collections.Immutable
 {
     public partial struct ImmutableArray<T> : IReadOnlyList<T>, IList<T>, IEquatable<ImmutableArray<T>>, IList, IImmutableArray, IStructuralComparable, IStructuralEquatable, IImmutableList<T>

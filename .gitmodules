@@ -1,0 +1,3 @@
+[submodule "CuteAnt.Extensions.Common"]
+	path = CuteAnt.Extensions.Common
+	url = https://gitee.com/pieroviano/CuteAnt.Extensions.Common.git

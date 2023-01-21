@@ -20,15 +20,7 @@ namespace System.Collections.Generic
 {
 
     // Provides a read-only, covariant view of a generic list.
-
-#if false
-    // Note that T[] : IReadOnlyList<T>, and we want to ensure that if you use
-    // IList<YourValueType>, we ensure a YourValueType[] can be used 
-    // without jitting.  Hence the TypeDependencyAttribute on SZArrayHelper.
-    // This is a special hack internally though - see VM\compile.cpp.
-    // The same attribute is on IList<T>, IEnumerable<T>, ICollection<T>, and IReadOnlyList<T>.
-    [TypeDependencyAttribute("System.SZArrayHelper")]
-#endif
+#if !NET35
 #if CONTRACTS_FULL
     [ContractClass(typeof(IReadOnlyCollectionContract<>))]
 #endif
@@ -37,6 +29,7 @@ namespace System.Collections.Generic
     {
         int Count { get; }
     }
+#endif
 
 #if CONTRACTS_FULL
     [ContractClassFor(typeof(IReadOnlyCollection<>))]

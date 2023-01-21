@@ -1,4 +1,5 @@
-﻿//// ==++==
+﻿#if !NET35
+//// ==++==
 //// 
 ////   Copyright (c) Microsoft Corporation.  All rights reserved.
 //// 
@@ -83,3 +84,4 @@ namespace System.Collections.Generic
 #endif
 }
 
+#endif

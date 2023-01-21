@@ -33,7 +33,7 @@
   </Target>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="Kaos.Collections" Version="4.1.0" />
+    <PackageReference Include="Net35.System.Threading.Tasks" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

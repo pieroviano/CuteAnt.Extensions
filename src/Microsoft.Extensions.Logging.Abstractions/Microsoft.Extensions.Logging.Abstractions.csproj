@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="Portable.ConcurrentDictionary" Version="1.0.4" />
+    <PackageReference Include="Net35.System.Threading.Tasks" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
