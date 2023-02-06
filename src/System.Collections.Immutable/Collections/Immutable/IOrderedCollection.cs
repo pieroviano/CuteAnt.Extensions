@@ -1,7 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
 using System.Collections.Generic;
 
 namespace System.Collections.Immutable
@@ -11,7 +11,7 @@ namespace System.Collections.Immutable
     /// </summary>
     /// <typeparam name="T">The type of element in the collection.</typeparam>
     internal interface IOrderedCollection<
-#if !NET35
+#if !NET35 && !NET30 && !NET20
         out
 #endif
         T> : IEnumerable<T>

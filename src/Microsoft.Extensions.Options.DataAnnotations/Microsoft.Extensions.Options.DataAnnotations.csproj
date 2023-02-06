@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Options.DataAnnotations</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -34,6 +34,11 @@
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" />
+    <PackageReference Include="Net4x.ValueTuple" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

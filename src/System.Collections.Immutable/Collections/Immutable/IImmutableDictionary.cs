@@ -1,9 +1,9 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 using System.Diagnostics.Contracts;
 #endif
 
@@ -91,7 +91,7 @@ namespace System.Collections.Immutable
         bool TryGetKey(TKey equalKey, out TKey actualKey);
     }
 
-#if NET35
+#if NET35 || NET30 || NET20
     public class PureAttribute : Attribute
     {
     }

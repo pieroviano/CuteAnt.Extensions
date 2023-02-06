@@ -49,7 +49,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="value">value</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Add<TProp>(Expression<Func<TModel, TProp>> path, TProp value)
+        public JsonPatchDocument<TModel> Add<TProp>(Expression<System.Func<TModel, TProp>> path, TProp value)
         {
             if (path == null)
             {
@@ -74,7 +74,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="position">position</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Add<TProp>(
-            Expression<Func<TModel, IList<TProp>>> path,
+            Expression<System.Func<TModel, IList<TProp>>> path,
             TProp value,
             int position)
         {
@@ -99,7 +99,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="value">value</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Add<TProp>(Expression<Func<TModel, IList<TProp>>> path, TProp value)
+        public JsonPatchDocument<TModel> Add<TProp>(Expression<System.Func<TModel, IList<TProp>>> path, TProp value)
         {
             if (path == null)
             {
@@ -121,7 +121,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// </summary>
         /// <param name="path">target location</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Remove<TProp>(Expression<Func<TModel, TProp>> path)
+        public JsonPatchDocument<TModel> Remove<TProp>(Expression<System.Func<TModel, TProp>> path)
         {
             if (path == null)
             {
@@ -140,7 +140,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="position">position</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Remove<TProp>(Expression<Func<TModel, IList<TProp>>> path, int position)
+        public JsonPatchDocument<TModel> Remove<TProp>(Expression<System.Func<TModel, IList<TProp>>> path, int position)
         {
             if (path == null)
             {
@@ -161,7 +161,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <typeparam name="TProp">value type</typeparam>
         /// <param name="path">target location</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Remove<TProp>(Expression<Func<TModel, IList<TProp>>> path)
+        public JsonPatchDocument<TModel> Remove<TProp>(Expression<System.Func<TModel, IList<TProp>>> path)
         {
             if (path == null)
             {
@@ -183,7 +183,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="value">value</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Replace<TProp>(Expression<Func<TModel, TProp>> path, TProp value)
+        public JsonPatchDocument<TModel> Replace<TProp>(Expression<System.Func<TModel, TProp>> path, TProp value)
         {
             if (path == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="value">value</param>
         /// <param name="position">position</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Replace<TProp>(Expression<Func<TModel, IList<TProp>>> path,
+        public JsonPatchDocument<TModel> Replace<TProp>(Expression<System.Func<TModel, IList<TProp>>> path,
             TProp value, int position)
         {
             if (path == null)
@@ -231,7 +231,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="value">value</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Replace<TProp>(Expression<Func<TModel, IList<TProp>>> path, TProp value)
+        public JsonPatchDocument<TModel> Replace<TProp>(Expression<System.Func<TModel, IList<TProp>>> path, TProp value)
         {
             if (path == null)
             {
@@ -254,7 +254,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="value">value</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Test<TProp>(Expression<Func<TModel, TProp>> path, TProp value)
+        public JsonPatchDocument<TModel> Test<TProp>(Expression<System.Func<TModel, TProp>> path, TProp value)
         {
             if (path == null)
             {
@@ -278,7 +278,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="value">value</param>
         /// <param name="position">position</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Test<TProp>(Expression<Func<TModel, IList<TProp>>> path,
+        public JsonPatchDocument<TModel> Test<TProp>(Expression<System.Func<TModel, IList<TProp>>> path,
             TProp value, int position)
         {
             if (path == null)
@@ -302,7 +302,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <param name="value">value</param>
         /// <returns></returns>
-        public JsonPatchDocument<TModel> Test<TProp>(Expression<Func<TModel, IList<TProp>>> path, TProp value)
+        public JsonPatchDocument<TModel> Test<TProp>(Expression<System.Func<TModel, IList<TProp>>> path, TProp value)
         {
             if (path == null)
             {
@@ -326,8 +326,8 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Move<TProp>(
-            Expression<Func<TModel, TProp>> from,
-            Expression<Func<TModel, TProp>> path)
+            Expression<System.Func<TModel, TProp>> from,
+            Expression<System.Func<TModel, TProp>> path)
         {
             if (from == null)
             {
@@ -356,9 +356,9 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Move<TProp>(
-            Expression<Func<TModel, IList<TProp>>> from,
+            Expression<System.Func<TModel, IList<TProp>>> from,
             int positionFrom,
-            Expression<Func<TModel, TProp>> path)
+            Expression<System.Func<TModel, TProp>> path)
         {
             if (from == null)
             {
@@ -387,8 +387,8 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="positionTo">position</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Move<TProp>(
-            Expression<Func<TModel, TProp>> from,
-            Expression<Func<TModel, IList<TProp>>> path,
+            Expression<System.Func<TModel, TProp>> from,
+            Expression<System.Func<TModel, IList<TProp>>> path,
             int positionTo)
         {
             if (from == null)
@@ -419,9 +419,9 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="positionTo">position (target)</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Move<TProp>(
-            Expression<Func<TModel, IList<TProp>>> from,
+            Expression<System.Func<TModel, IList<TProp>>> from,
             int positionFrom,
-            Expression<Func<TModel, IList<TProp>>> path,
+            Expression<System.Func<TModel, IList<TProp>>> path,
             int positionTo)
         {
             if (from == null)
@@ -451,9 +451,9 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Move<TProp>(
-            Expression<Func<TModel, IList<TProp>>> from,
+            Expression<System.Func<TModel, IList<TProp>>> from,
             int positionFrom,
-            Expression<Func<TModel, IList<TProp>>> path)
+            Expression<System.Func<TModel, IList<TProp>>> path)
         {
             if (from == null)
             {
@@ -481,8 +481,8 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Move<TProp>(
-           Expression<Func<TModel, TProp>> from,
-           Expression<Func<TModel, IList<TProp>>> path)
+           Expression<System.Func<TModel, TProp>> from,
+           Expression<System.Func<TModel, IList<TProp>>> path)
         {
             if (from == null)
             {
@@ -510,8 +510,8 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Copy<TProp>(
-           Expression<Func<TModel, TProp>> from,
-           Expression<Func<TModel, TProp>> path)
+           Expression<System.Func<TModel, TProp>> from,
+           Expression<System.Func<TModel, TProp>> path)
         {
             if (from == null)
             {
@@ -540,9 +540,9 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Copy<TProp>(
-           Expression<Func<TModel, IList<TProp>>> from,
+           Expression<System.Func<TModel, IList<TProp>>> from,
             int positionFrom,
-           Expression<Func<TModel, TProp>> path)
+           Expression<System.Func<TModel, TProp>> path)
         {
             if (from == null)
             {
@@ -571,8 +571,8 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="positionTo">position</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Copy<TProp>(
-            Expression<Func<TModel, TProp>> from,
-            Expression<Func<TModel, IList<TProp>>> path,
+            Expression<System.Func<TModel, TProp>> from,
+            Expression<System.Func<TModel, IList<TProp>>> path,
             int positionTo)
         {
             if (from == null)
@@ -603,9 +603,9 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="positionTo">position (target)</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Copy<TProp>(
-            Expression<Func<TModel, IList<TProp>>> from,
+            Expression<System.Func<TModel, IList<TProp>>> from,
             int positionFrom,
-            Expression<Func<TModel, IList<TProp>>> path,
+            Expression<System.Func<TModel, IList<TProp>>> path,
             int positionTo)
         {
             if (from == null)
@@ -635,9 +635,9 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Copy<TProp>(
-            Expression<Func<TModel, IList<TProp>>> from,
+            Expression<System.Func<TModel, IList<TProp>>> from,
             int positionFrom,
-            Expression<Func<TModel, IList<TProp>>> path)
+            Expression<System.Func<TModel, IList<TProp>>> path)
         {
             if (from == null)
             {
@@ -665,8 +665,8 @@ namespace Microsoft.AspNetCore.JsonPatch
         /// <param name="path">target location</param>
         /// <returns></returns>
         public JsonPatchDocument<TModel> Copy<TProp>(
-            Expression<Func<TModel, TProp>> from,
-            Expression<Func<TModel, IList<TProp>>> path)
+            Expression<System.Func<TModel, TProp>> from,
+            Expression<System.Func<TModel, IList<TProp>>> path)
         {
             if (from == null)
             {
@@ -793,10 +793,10 @@ namespace Microsoft.AspNetCore.JsonPatch
         }
 
         // Internal for testing
-        internal string GetPath<TProp>(Expression<Func<TModel, TProp>> expr, string position)
+        internal string GetPath<TProp>(Expression<System.Func<TModel, TProp>> expr, string position)
         {
             var segments = GetPathSegments(expr.Body);
-#if NET35
+#if NET35 || NET30 || NET20
             var path = String.Join("/", segments.ToArray());
 #else
             var path = String.Join("/", segments);
@@ -879,7 +879,7 @@ namespace Microsoft.AspNetCore.JsonPatch
         {
             var converted = Expression.Convert(expression, typeof(object));
             var fakeParameter = Expression.Parameter(typeof(object), null);
-            var lambda = Expression.Lambda<Func<object, object>>(converted, fakeParameter);
+            var lambda = Expression.Lambda<System.Func<object, object>>(converted, fakeParameter);
             var func = lambda.Compile();
 
             return Convert.ToString(func(null), CultureInfo.InvariantCulture);

@@ -20,7 +20,7 @@ namespace System.Collections.Generic
 {
 
     // Provides a read-only, covariant view of a generic list.
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 #if CONTRACTS_FULL
     [ContractClass(typeof(IReadOnlyCollectionContract<>))]
 #endif

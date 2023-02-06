@@ -3,7 +3,7 @@
   <Import Project="..\nuget.dotnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40;net35</TargetFrameworks>
+    <TargetFrameworks>net40;net35;net30;net20</TargetFrameworks>
     <RootNamespace>CuteAnt.Text.RegularExpressions</RootNamespace>
     <AssemblyName>Net4x.Text.RegularExpressions</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
@@ -37,6 +37,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Net30.LinqBridge" Version="1.3.0" Condition="'$(TargetFramework)'=='net30' or '$(TargetFramework)'=='net20'" />
   </ItemGroup>
 
   <ItemGroup>

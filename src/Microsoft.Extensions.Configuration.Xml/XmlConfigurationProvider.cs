@@ -35,7 +35,7 @@ namespace Microsoft.Extensions.Configuration.Xml
             var readerSettings = new XmlReaderSettings()
             {
                 CloseInput = false, // caller will close the stream
-#if NET35
+#if NET35 || NET30 || NET20
                 ProhibitDtd=true,
 #else
                 DtdProcessing = DtdProcessing.Prohibit,

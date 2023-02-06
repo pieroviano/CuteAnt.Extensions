@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Microsoft.Extensions.Internal;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 using Microsoft.CSharp.RuntimeBinder;
 #endif
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 using CSharpBinder = Microsoft.CSharp.RuntimeBinder;
 #endif
 
@@ -68,7 +68,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             // null in case of reference types
             object value = null;
             if (property.GetType()
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
                 .GetTypeInfo()
 #endif
                 .IsValueType
@@ -171,7 +171,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             out object value,
             out string errorMessage)
         {
-#if NET35
+#if NET35 || NET30 || NET20
             try
             {
                 var propertyInfo = target.GetType().GetProperty(segment);
@@ -225,7 +225,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             object value,
             out string errorMessage)
         {
-#if NET35
+#if NET35 || NET30 || NET20
             try
             {
                 var propertyInfo = target.GetType().GetProperty(segment);

@@ -236,7 +236,7 @@ namespace System.Reflection.Metadata
             TypeAttributes flags = TypeDefTable.GetFlags(handle);
             EntityHandle extends = TypeDefTable.GetExtends(handle);
 
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
             if ((flags & TypeAttributes.WindowsRuntime) != 0)
             {
 #endif
@@ -295,7 +295,7 @@ namespace System.Reflection.Metadata
                         treatment |= TypeDefTreatment.MarkAbstractFlag;
                     }
                 }
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
             }
             else if (_metadataKind == MetadataKind.ManagedWindowsMetadata && IsClrImplementationType(handle))
             {
@@ -408,7 +408,7 @@ namespace System.Reflection.Metadata
             TypeDefinitionHandle parentTypeDef = GetDeclaringType(methodDef);
             TypeAttributes parentFlags = TypeDefTable.GetFlags(parentTypeDef);
 
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
             if ((parentFlags & TypeAttributes.WindowsRuntime) != 0)
             {
 #endif
@@ -447,7 +447,7 @@ namespace System.Reflection.Metadata
                         }
                     }
                 }
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
             }
 #endif
 

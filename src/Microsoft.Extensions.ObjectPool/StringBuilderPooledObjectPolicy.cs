@@ -23,7 +23,7 @@ namespace Microsoft.Extensions.ObjectPool
                 // Too big. Discard this one.
                 return false;
             }
-#if NET35
+#if NET35 || NET30 || NET20
             obj.Remove(0, obj.Length);
 #else
             obj.Clear();

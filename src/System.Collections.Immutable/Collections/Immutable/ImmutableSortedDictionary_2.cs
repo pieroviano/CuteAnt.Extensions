@@ -8,7 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Globalization;
 using System.Linq;
-#if NET35
+#if NET35 || NET30 || NET20
 using ExcludeFromCodeCoverageAttribute = System.ExcludeFromCodeCoverageExAttribute;
 #endif
 

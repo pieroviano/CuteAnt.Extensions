@@ -3,18 +3,18 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40;net45;net451;net35</TargetFrameworks>
+    <TargetFrameworks>net40;net45;net451;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Logging.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="Net35.System.Threading.Tasks" Version="1.0.0" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+    <PackageReference Include="Net35.Threading.Tasks" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Net35.Actions" Version="1.0.0" Condition="'$(TargetFramework)' == 'net35'" />
+    <PackageReference Include="Net35.Actions" Version="1.0.0" Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'" />
   </ItemGroup>
 
   <PropertyGroup Label="NuGet">

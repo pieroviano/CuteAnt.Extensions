@@ -10,7 +10,7 @@ namespace Microsoft.Extensions.Options
     /// </summary>
     /// <typeparam name="TOptions">The options type.</typeparam>
     public interface IOptionsMonitor<
-#if !NET35
+#if !NET35 && !NET30 && !NET20
         out 
 #endif
         TOptions>

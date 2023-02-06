@@ -71,7 +71,7 @@ namespace Microsoft.Extensions.Logging
 
             if (exceptions != null && exceptions.Count > 0)
             {
-#if NET35
+#if NET35 || NET30 || NET20
                 throw new AggregateExceptionEx(
                     message: "An error occurred while writing to logger(s).", innerExceptions: exceptions.ToArray());
 #else
@@ -117,7 +117,7 @@ namespace Microsoft.Extensions.Logging
 
             if (exceptions != null && exceptions.Count > 0)
             {
-#if NET35
+#if NET35 || NET30 || NET20
                 throw new AggregateExceptionEx(
                     message: "An error occurred while writing to logger(s).",
                     innerExceptions: exceptions.ToArray());
@@ -202,7 +202,7 @@ namespace Microsoft.Extensions.Logging
 
             if (exceptions != null && exceptions.Count > 0)
             {
-#if NET35
+#if NET35 || NET30 || NET20
                 throw new AggregateExceptionEx(
                     message: "An error occurred while writing to logger(s).", innerExceptions: exceptions.ToArray());
 #else

@@ -3,7 +3,7 @@
   <Import Project="..\nuget.aspnet.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.FileProviders.Embedded</AssemblyName>
     <RootNamespace>Microsoft.Extensions.FileProviders</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>

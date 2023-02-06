@@ -195,7 +195,7 @@ namespace Microsoft.Extensions.Configuration
         private static void BindProperty(PropertyInfo property, object instance, IConfiguration config, BinderOptions options)
         {
             // We don't support set only, non public, or indexer properties
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             var getMethod = property.GetGetMethod(true);
 #else
             var getMethod = property.GetMethod;
@@ -208,7 +208,7 @@ namespace Microsoft.Extensions.Configuration
             }
 
             var propertyValue = property.GetValue(instance, new object[0]);
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             var setMethod = property.GetSetMethod(true);
 #else
             var setMethod = property.SetMethod;

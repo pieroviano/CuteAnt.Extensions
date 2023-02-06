@@ -34,7 +34,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Operations
             {
                 OperationType result=default;
                 bool tryParse=true;
-#if NET35
+#if NET35 || NET30 || NET20
                 try
                 {
                     result = (OperationType)Enum.Parse(typeof(OperationType),value,true);

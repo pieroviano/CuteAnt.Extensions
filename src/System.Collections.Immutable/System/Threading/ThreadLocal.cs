@@ -1,4 +1,4 @@
-﻿#if NET40 || NET35
+﻿#if NET40 || NET35 || NET30 || NET20
 #pragma warning disable 0420
 // ==++==
 //
@@ -22,7 +22,7 @@
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Security.Permissions;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 using System.Diagnostics.Contracts;
 #endif
 
@@ -187,7 +187,7 @@ namespace System.Threading
 
 				if (id < 0 || !m_initialized)
 				{
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 					Contract.Assert(id >= 0 || !m_initialized, "expected id >= 0 if initialized");
 #else
                     Trace.Assert(id >= 0 || !m_initialized, "expected id >= 0 if initialized");
@@ -326,7 +326,7 @@ namespace System.Threading
 				throw new ObjectDisposedException("ThreadLocal_Disposed");
 			}
 
-#if !NET35
+#if !NET35 && !NET30 && !NET20
             Debugger.NotifyOfCrossThreadDependency();
 #endif
 
@@ -548,7 +548,7 @@ namespace System.Threading
 		/// <summary>Resizes a table to a certain length (or larger).</summary>
 		private void GrowTable(ref LinkedSlotVolatile[] table, int minLength)
 		{
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 			Contract.Assert(table.Length < minLength);
 #else
 			Trace.Assert(table.Length < minLength);
@@ -590,7 +590,7 @@ namespace System.Threading
 				// Intentionally return a value that will result in an OutOfMemoryException
 				return int.MaxValue;
 			}
-#if !NET35
+#if !NET35 && !NET30 && !NET20
             Contract.Assert(minSize > 0);
 #else
 			Trace.Assert(minSize > 0);
@@ -741,7 +741,7 @@ namespace System.Threading
 			~FinalizationHelper()
 			{
 				LinkedSlotVolatile[] slotArray = SlotArray;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 				Contract.Assert(slotArray != null);
 #else
                 Trace.Assert(slotArray != null);
@@ -773,7 +773,7 @@ namespace System.Threading
 							}
 
 							// Since the list uses a dummy head node, the Previous reference should never be null.
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 							Contract.Assert(linkedSlot.Previous != null);
 #else
 							Trace.Assert(linkedSlot.Previous != null);

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
-#if NET35
+#if NET35 || NET30 || NET20
 using ExcludeFromCodeCoverageAttribute = System.ExcludeFromCodeCoverageExAttribute;
 #endif
 
@@ -1498,7 +1498,7 @@ namespace System.Collections.Immutable
             /// <param name="left">The left child.</param>
             /// <param name="right">The right child.</param>
             /// <returns>The height of the parent node.</returns>
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
             private static byte ParentHeight(Node left, Node right) => checked((byte)(1 + Math.Max(left._height, right._height)));

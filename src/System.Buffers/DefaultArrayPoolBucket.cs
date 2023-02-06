@@ -16,7 +16,7 @@ namespace System.Buffers
             private readonly T[][] _buffers;
             private readonly int _poolId;
 
-#if !NET35
+#if !NET35 && !NET30 && !NET20
             private SpinLock _lock; // do not make this readonly; it's a mutable struct
 #else
             private object _lock = new object(); // do not make this readonly; it's a mutable struct
@@ -28,7 +28,7 @@ namespace System.Buffers
             /// </summary>
             internal Bucket(int bufferLength, int numberOfBuffers, int poolId)
             {
-#if !NET35
+#if !NET35 && !NET30 && !NET20
         _lock = new SpinLock(Debugger.IsAttached); // only enable thread tracking if debugger is attached; it adds non-trivial overheads to Enter/Exit
 #endif
                 _buffers = new T[numberOfBuffers][];
@@ -52,7 +52,7 @@ namespace System.Buffers
                 bool lockTaken = false, allocateBuffer = false;
                 try
                 {
-#if NET35
+#if NET35 || NET30 || NET20
                     Monitor.Enter(_lock);
 #else
                     _lock.Enter(ref lockTaken);
@@ -67,7 +67,7 @@ namespace System.Buffers
                 }
                 finally
                 {
-#if NET35
+#if NET35 || NET30 || NET20
                     Monitor.Exit(_lock);
 #else
                     if (lockTaken) _lock.Exit(false);
@@ -112,7 +112,7 @@ namespace System.Buffers
                 bool lockTaken = false;
                 try
                 {
-#if NET35
+#if NET35 || NET30 || NET20
                     Monitor.Enter(_lock);
 #else
                     _lock.Enter(ref lockTaken);
@@ -125,7 +125,7 @@ namespace System.Buffers
                 }
                 finally
                 {
-#if NET35
+#if NET35 || NET30 || NET20
                     Monitor.Exit(_lock);
 #else
                     if (lockTaken) _lock.Exit(false);

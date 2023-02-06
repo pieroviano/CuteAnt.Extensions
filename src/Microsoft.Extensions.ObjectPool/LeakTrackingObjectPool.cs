@@ -10,7 +10,7 @@ namespace Microsoft.Extensions.ObjectPool
 {
     public class LeakTrackingObjectPool<T> : ObjectPool<T> where T : class
     {
-#if NET35
+#if NET35 || NET30 || NET20
         private readonly Dictionary<T, Tracker> _trackers = new Dictionary<T, Tracker>();
 #else
         private readonly ConditionalWeakTable<T, Tracker> _trackers = new ConditionalWeakTable<T, Tracker>();

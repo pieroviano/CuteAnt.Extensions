@@ -78,7 +78,7 @@ namespace Microsoft.Extensions.FileSystemGlobbing.Internal.PatternContexts
             public string Stem
             {
                 get { return _stemItems == null ? null : string.Join("/", _stemItems
-#if NET35
+#if NET35 || NET30 || NET20
                         .ToArray()
 #endif
                 ); }

@@ -26,7 +26,7 @@ namespace Microsoft.Extensions.DependencyInjection
             }
             switch (options.Mode)
             {
-#if !NET35
+#if !NET35 && !NET30 && !NET20
                 case ServiceProviderMode.Dynamic:
                     _engine = new DynamicServiceProviderEngine(serviceDescriptors, callback);
                     break;
@@ -34,7 +34,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 case ServiceProviderMode.Runtime:
                     _engine = new RuntimeServiceProviderEngine(serviceDescriptors, callback);
                     break;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 #if IL_EMIT
                 case ServiceProviderMode.ILEmit:
                     _engine = new ILEmitServiceProviderEngine(serviceDescriptors, callback);

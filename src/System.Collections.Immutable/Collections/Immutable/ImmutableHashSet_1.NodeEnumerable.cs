@@ -4,7 +4,7 @@
 
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-#if NET35
+#if NET35 || NET30 || NET20
 using ExcludeFromCodeCoverageAttribute = System.ExcludeFromCodeCoverageExAttribute;
 #endif
 

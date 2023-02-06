@@ -138,7 +138,7 @@ namespace Microsoft.Extensions.Logging.Internal
                     if (enumerable != null)
                     {
                         values[i] = string.Join(", ", enumerable.Cast<object>().Select(o => o ?? NullValue)
-#if NET35
+#if NET35 || NET30 || NET20
                                 .Select(i=>i?.ToString()).ToArray()
 #endif
                         );

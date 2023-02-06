@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.JsonPatch.Operations;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
 using Microsoft.Extensions.Internal;
 #endif
 
@@ -29,7 +29,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Converters
                     return null;
                 }
 
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
                 var genericType = objectType.GetTypeGenericArguments()[0];
 #else
                 var genericType = objectType.GetTypeInfo().GenericTypeArguments[0];

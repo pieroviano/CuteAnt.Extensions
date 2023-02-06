@@ -3,7 +3,7 @@
   <Import Project="..\nuget.dotnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net40;net35</TargetFrameworks>
+    <TargetFrameworks>net40;net35;net30;net20</TargetFrameworks>
     <RootNamespace>System</RootNamespace>
     <AssemblyName>System.Collections.Immutable</AssemblyName>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -32,8 +32,8 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="Net35.System.Threading.Tasks" Version="1.0.0" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+    <PackageReference Include="Net35.Threading.Tasks" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -412,7 +412,7 @@ namespace CuteAnt.Text.RegularExpressions
             new LowerCaseMapping('\uFF21', '\uFF3A', LowercaseAdd, 32),
         };
 
-#if DEBUG && !NET35
+#if DEBUG && !NET35 && !NET30 && !NET20
         static RegexCharClass()
         {
             // Make sure the initial capacity for s_definedCategories is correct

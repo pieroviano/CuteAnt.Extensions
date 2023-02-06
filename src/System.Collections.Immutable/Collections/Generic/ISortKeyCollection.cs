@@ -9,7 +9,7 @@ namespace System.Collections.Generic
     /// <typeparam name="TKey">The type of element sorted in the collection.</typeparam>
     [SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
     internal interface ISortKeyCollection<
-#if !NET35
+#if !NET35 && !NET30 && !NET20
         in
 #endif
         TKey>

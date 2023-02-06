@@ -397,7 +397,7 @@ namespace System.Text.Encodings.Web
             return true;
         }
 
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         internal static unsafe bool TryWriteScalarAsChar(int unicodeScalar, char* destination, int destinationLength, out int numberOfCharactersWritten)

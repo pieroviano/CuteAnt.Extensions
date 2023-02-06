@@ -1,4 +1,4 @@
-﻿#if NET40 || NET35
+﻿#if NET40 || NET35 || NET30 || NET20
 // Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 // See the LICENSE file in the project root for more information.
@@ -11,8 +11,14 @@ using System.Globalization;
 using System.Linq;
 using System.Runtime.Versioning;
 
-#if NET35
+#if NET35 || NET30 || NET20
 using ExcludeFromCodeCoverageAttribute=System.ExcludeFromCodeCoverageExAttribute;
+#endif
+
+#if NET30 || NET20
+namespace System
+{
+}
 #endif
 
 namespace System.Collections.Immutable
@@ -1209,7 +1215,7 @@ namespace System.Collections.Immutable
                     }
                 }
             }
-#if NET35
+#if NET35 || NET30 || NET20
             var ours = self.array;
             return Equals(ours, otherArray, comparer);
 #else
@@ -1218,7 +1224,7 @@ namespace System.Collections.Immutable
 #endif
         }
 
-#if NET35
+#if NET35 || NET30 || NET20
         static int CompareTo(Array thisArray, object other, IComparer comparer)
         {
             if (other == null)
@@ -1294,7 +1300,7 @@ namespace System.Collections.Immutable
         int IStructuralEquatable.GetHashCode(IEqualityComparer comparer)
         {
             var self = this;
-#if NET35
+#if NET35 || NET30 || NET20
             var ours = self.array;
             return ours != null ? GetHashCode(ours, comparer) : self.GetHashCode();
 #else
@@ -1340,7 +1346,7 @@ namespace System.Collections.Immutable
 
             if (otherArray != null)
             {
-#if NET35
+#if NET35 || NET30 || NET20
                 var ours = self.array;
                 return CompareTo(ours, otherArray, comparer);
 #else

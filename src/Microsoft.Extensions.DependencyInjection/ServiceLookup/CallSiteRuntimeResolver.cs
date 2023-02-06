@@ -1,5 +1,5 @@
 ﻿using System;
-#if !NET35
+#if !NET35 && !NET30 && !NET20
 using System.Runtime.ExceptionServices;
 #endif
 
@@ -34,7 +34,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             {
 #if NET40
                 throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
-#elif NET35
+#elif NET35 || NET30 || NET20
                 if (ex.InnerException != null)
                 {
                     throw ex.InnerException;
@@ -81,7 +81,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
             {
 #if NET40
                 throw ExceptionEnlightenment.PrepareForRethrow(ex.InnerException);
-#elif NET35
+#elif NET35 || NET30 || NET20
                 if (ex.InnerException != null)
                 {
                     throw (ex.InnerException);

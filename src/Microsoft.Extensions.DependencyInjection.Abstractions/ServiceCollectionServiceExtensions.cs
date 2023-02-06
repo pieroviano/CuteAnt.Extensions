@@ -154,7 +154,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Transient"/>
         public static IServiceCollection AddTransient<TService>(
             this IServiceCollection services,
-#if NET35
+#if NET35 || NET30 || NET20
             Func<IServiceProvider, object> implementationFactory)
 #else
             Func<IServiceProvider, TService> implementationFactory)
@@ -188,7 +188,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Transient"/>
         public static IServiceCollection AddTransient<TService, TImplementation>(
             this IServiceCollection services,
-#if NET35
+#if NET35 || NET30 || NET20
             Func<IServiceProvider, object> implementationFactory)
 #else
             Func<IServiceProvider, TService> implementationFactory)
@@ -355,7 +355,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Scoped"/>
         public static IServiceCollection AddScoped<TService>(
             this IServiceCollection services,
-#if NET35
+#if NET35 || NET30 || NET20
             Func<IServiceProvider, object> implementationFactory)
 #else
             Func<IServiceProvider, TService> implementationFactory)
@@ -389,7 +389,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <seealso cref="ServiceLifetime.Scoped"/>
         public static IServiceCollection AddScoped<TService, TImplementation>(
             this IServiceCollection services,
-#if NET35
+#if NET35 || NET30 || NET20
             Func<IServiceProvider, object> implementationFactory)
 #else
             Func<IServiceProvider, TService> implementationFactory)

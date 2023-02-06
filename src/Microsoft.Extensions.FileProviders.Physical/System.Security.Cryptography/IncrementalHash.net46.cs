@@ -134,7 +134,7 @@ namespace System.Security.Cryptography
 
             if (_hash != null)
             {
-#if NET35
+#if NET35 || NET30 || NET20
                 _hash.Clear();
 #else
                 _hash.Dispose();
@@ -205,11 +205,23 @@ namespace System.Security.Cryptography
             if (hashAlgorithm == HashAlgorithmName.SHA1)
                 return new SHA1CryptoServiceProvider();
             if (hashAlgorithm == HashAlgorithmName.SHA256)
-                return new SHA256CryptoServiceProvider();
+#if NET30 || NET20
+                throw new NotSupportedException();
+#else
+            return new SHA256CryptoServiceProvider();
+#endif
             if (hashAlgorithm == HashAlgorithmName.SHA384)
+#if NET30 || NET20
+                throw new NotSupportedException();
+#else
                 return new SHA384CryptoServiceProvider();
+#endif
             if (hashAlgorithm == HashAlgorithmName.SHA512)
+#if NET30 || NET20
+                throw new NotSupportedException();
+#else
                 return new SHA512CryptoServiceProvider();
+#endif
 
             throw new CryptographicException(NTE_BAD_ALGID);
         }

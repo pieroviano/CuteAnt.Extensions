@@ -4,7 +4,7 @@
   <Import Project="..\nuget.aspnet.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>net45;net451;net40;net35</TargetFrameworks>
+    <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Primitives</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Primitives</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -56,7 +56,11 @@
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35'">
-    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" PrivateAssets="all" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+    <PackageReference Include="Net4x.AsyncBridge" Version="1.0.0" />
+    <PackageReference Include="Net4x.ValueTuple" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+    <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj" />
   </ItemGroup>
 </Project>

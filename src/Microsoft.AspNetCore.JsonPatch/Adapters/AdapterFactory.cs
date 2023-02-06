@@ -36,7 +36,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Adapters
                 var type = typeof(DictionaryAdapter<,>).MakeGenericType(jsonDictionaryContract.DictionaryKeyType, jsonDictionaryContract.DictionaryValueType);
                 return (IAdapter)Activator.CreateInstance(type);
             }
-#if !NET35
+#if !NET35 && !NET30 && !NET20
             else if (jsonContract is JsonDynamicContract)
             {
                 return new DynamicObjectAdapter();

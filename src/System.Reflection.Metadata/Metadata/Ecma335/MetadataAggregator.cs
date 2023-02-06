@@ -33,7 +33,7 @@ namespace System.Reflection.Metadata.Ecma335
             }
         }
 
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
         public MetadataAggregator(MetadataReader baseReader, IList<MetadataReader> deltaReaders)
 #else
         public MetadataAggregator(MetadataReader baseReader, IReadOnlyList<MetadataReader> deltaReaders)
@@ -43,7 +43,7 @@ namespace System.Reflection.Metadata.Ecma335
         }
 
         public MetadataAggregator(
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             IList<int> baseTableRowCounts,
             IList<int> baseHeapSizes,
             IList<MetadataReader> deltaReaders)
@@ -58,7 +58,7 @@ namespace System.Reflection.Metadata.Ecma335
 
         private MetadataAggregator(
             MetadataReader baseReader,
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             IList<int> baseTableRowCounts,
             IList<int> baseHeapSizes,
             IList<MetadataReader> deltaReaders)
@@ -127,7 +127,7 @@ namespace System.Reflection.Metadata.Ecma335
 
         private static void CalculateBaseCounts(
             MetadataReader baseReader,
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             out IList<int> baseTableRowCounts,
             out IList<int> baseHeapSizes)
 #else
@@ -153,7 +153,7 @@ namespace System.Reflection.Metadata.Ecma335
         }
 
         private static ImmutableArray<ImmutableArray<int>> CalculateHeapSizes(
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             IList<int> baseSizes,
             IList<MetadataReader> deltaReaders)
 #else
@@ -191,7 +191,7 @@ namespace System.Reflection.Metadata.Ecma335
         }
 
         private static ImmutableArray<ImmutableArray<RowCounts>> CalculateRowCounts(
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
             IList<int> baseRowCounts,
             IList<MetadataReader> deltaReaders)
 #else
@@ -222,7 +222,7 @@ namespace System.Reflection.Metadata.Ecma335
         }
 
         // internal for testing
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
         internal static RowCounts[][] GetBaseRowCounts(IList<int> baseRowCounts, int generations)
 #else
         internal static RowCounts[][] GetBaseRowCounts(IReadOnlyList<int> baseRowCounts, int generations)

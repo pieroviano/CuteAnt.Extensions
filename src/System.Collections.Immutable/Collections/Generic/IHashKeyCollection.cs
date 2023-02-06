@@ -7,7 +7,7 @@ namespace System.Collections.Generic
     /// <typeparam name="TKey">The type of element hashed in the collection.</typeparam>
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1711:IdentifiersShouldNotHaveIncorrectSuffix")]
     internal interface IHashKeyCollection<
-#if !NET35
+#if !NET35 && !NET30 && !NET20
         in
 #endif
         TKey>

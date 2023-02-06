@@ -9,7 +9,7 @@ namespace Microsoft.Extensions.FileProviders.Physical
 {
     partial class PhysicalFilesWatcher
     {
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
         /// <summary>The <c>TaskCreationOptions.DenyChildAttach</c> value, if it exists; otherwise, <c>0</c>.</summary>
         private static readonly TaskCreationOptions _CreationDenyChildAttach;
 
@@ -19,12 +19,12 @@ namespace Microsoft.Extensions.FileProviders.Physical
         }
 #endif
 
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         private static TaskCreationOptions GetCreationOptions(TaskCreationOptions toInclude = TaskCreationOptions.None)
         {
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
             return toInclude | TaskCreationOptions.DenyChildAttach;
 #else
             return toInclude | _CreationDenyChildAttach;

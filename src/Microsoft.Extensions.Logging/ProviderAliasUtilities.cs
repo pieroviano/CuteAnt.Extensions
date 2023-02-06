@@ -3,7 +3,7 @@
 
 using System;
 using System.Reflection;
-#if NET40 || NET35
+#if NET40 || NET35 || NET30 || NET20
 using Microsoft.Extensions.Internal;
 #endif
 
@@ -17,7 +17,7 @@ namespace Microsoft.Extensions.Logging
         internal static string GetAlias(Type providerType)
         {
             foreach (var attribute in providerType
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
                 .GetTypeInfo()
 #endif
                 .GetCustomAttributes(inherit: false))

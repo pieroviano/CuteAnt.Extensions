@@ -59,7 +59,7 @@ namespace Microsoft.Extensions.FileProviders.Internal
             try
             {
                 _entries = new DirectoryInfo(_directory)
-#if NET35
+#if NET35 || NET30 || NET20
                     .GetFileSystemInfos()
 #else
                     .EnumerateFileSystemInfos()

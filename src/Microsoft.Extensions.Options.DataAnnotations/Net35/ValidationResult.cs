@@ -1,4 +1,4 @@
-﻿#if NET35
+﻿#if NET35 || NET30 || NET20
 using System.Collections.Generic;
 
 namespace System.ComponentModel.DataAnnotations

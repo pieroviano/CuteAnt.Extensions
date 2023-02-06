@@ -139,7 +139,7 @@ namespace System.Text.Encodings.Web
     public DefaultUrlEncoder(params UnicodeRange[] allowedRanges) : this(new TextEncoderSettings(allowedRanges))
     { }
 
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public override bool WillEncode(int unicodeScalar)
@@ -148,7 +148,7 @@ namespace System.Text.Encodings.Web
       return !_allowedCharacters.IsUnicodeScalarAllowed(unicodeScalar);
     }
 
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public unsafe override int FindFirstCharacterToEncode(char* text, int textLength)

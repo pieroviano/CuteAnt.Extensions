@@ -20,7 +20,7 @@ namespace CuteAnt.Text.RegularExpressions
     [DebuggerTypeProxy(typeof(RegexCollectionDebuggerProxy<Group>))]
     [Serializable]
     public class GroupCollection : IList<Group>,
-#if !NET40 && !NET35
+#if !NET40 && !NET35 && !NET30 && !NET20
         IReadOnlyList<Group>,
 #endif
         IList
