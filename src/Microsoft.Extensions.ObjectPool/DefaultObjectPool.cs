@@ -51,7 +51,7 @@ namespace Microsoft.Extensions.ObjectPool
             return item;
         }
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         private T GetViaScan()
@@ -84,7 +84,7 @@ namespace Microsoft.Extensions.ObjectPool
             }
         }
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         private void ReturnViaScan(T obj)

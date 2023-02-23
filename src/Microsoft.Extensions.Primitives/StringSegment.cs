@@ -35,7 +35,7 @@ namespace Microsoft.Extensions.Primitives
         /// <param name="buffer">The original <see cref="string"/> used as buffer.</param>
         /// <param name="offset">The offset of the segment within the <paramref name="buffer"/>.</param>
         /// <param name="length">The length of the segment.</param>
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         public StringSegment(string buffer, int offset, int length)

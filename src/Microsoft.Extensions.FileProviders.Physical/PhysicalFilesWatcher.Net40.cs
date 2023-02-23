@@ -19,12 +19,12 @@ namespace Microsoft.Extensions.FileProviders.Physical
         }
 #endif
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         private static TaskCreationOptions GetCreationOptions(TaskCreationOptions toInclude = TaskCreationOptions.None)
         {
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
             return toInclude | TaskCreationOptions.DenyChildAttach;
 #else
             return toInclude | _CreationDenyChildAttach;

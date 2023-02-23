@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.IO;
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
 using System.Threading;
 using System.Threading.Tasks;
 #endif
@@ -155,7 +155,7 @@ namespace System.Reflection.Internal
             m_innerStream.WriteByte(value);
         }
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         public override Task FlushAsync(CancellationToken cancellationToken)
         {
             return m_innerStream.FlushAsync(cancellationToken);

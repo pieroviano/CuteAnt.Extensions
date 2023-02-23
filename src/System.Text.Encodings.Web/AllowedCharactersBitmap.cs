@@ -80,7 +80,7 @@ namespace System.Text.Internal
         }
 
         // Determines whether the given character can be returned unencoded.
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         public bool IsUnicodeScalarAllowed(int unicodeScalar)
@@ -90,7 +90,7 @@ namespace System.Text.Internal
             return ((_allowedCharacters[index] >> offset) & 0x1U) != 0;
         }
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
         public unsafe int FindFirstCharacterToEncode(char* text, int textLength)

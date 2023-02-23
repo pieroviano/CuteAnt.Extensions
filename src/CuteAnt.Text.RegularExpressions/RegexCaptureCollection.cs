@@ -25,7 +25,7 @@ namespace CuteAnt.Text.RegularExpressions
     [DebuggerTypeProxy(typeof(RegexCollectionDebuggerProxy<Capture>))]
     [Serializable]
     public class CaptureCollection : IList<Capture>,
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
         IReadOnlyList<Capture>, 
 #endif
         IList

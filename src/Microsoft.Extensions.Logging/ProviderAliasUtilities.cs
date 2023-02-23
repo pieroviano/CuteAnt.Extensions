@@ -17,7 +17,7 @@ namespace Microsoft.Extensions.Logging
         internal static string GetAlias(Type providerType)
         {
             foreach (var attribute in providerType
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
                 .GetTypeInfo()
 #endif
                 .GetCustomAttributes(inherit: false))

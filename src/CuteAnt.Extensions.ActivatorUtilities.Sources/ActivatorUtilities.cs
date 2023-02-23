@@ -50,7 +50,7 @@ namespace Microsoft.Extensions.Internal
             ConstructorMatcher bestMatcher = null;
 
             if (!instanceType
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
                 .GetTypeInfo()
 #endif
                 .IsAbstract)

@@ -10,7 +10,7 @@ namespace Microsoft.Extensions.Internal
 {
   internal static class ReflectionUtils
   {
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public static bool IsConstructedGenericType(this Type t)
@@ -22,7 +22,7 @@ namespace Microsoft.Extensions.Internal
 #endif
     }
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public static Type[] GetTypeGenericArguments(this Type type)
@@ -34,7 +34,7 @@ namespace Microsoft.Extensions.Internal
 #endif
     }
 
-#if !NET40 && !NET35 && !NET30 && !NET20
+#if !NET40 && !NET35 && !NET30 && !NET20 && !NET30 && !NET20
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
     public static bool HasDefaultValue(this ParameterInfo pi)
