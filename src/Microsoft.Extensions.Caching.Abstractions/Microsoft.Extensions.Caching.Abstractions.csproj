@@ -32,7 +32,7 @@
   </Target>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net40'">
-    <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion)*-*" />
+    <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion)$(VersionBuildSuffix)" />
   </ItemGroup>
 
   <ItemGroup>
