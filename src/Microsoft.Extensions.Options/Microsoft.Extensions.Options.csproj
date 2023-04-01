@@ -32,7 +32,7 @@
   </Target>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
-    <PackageReference Include="Net35.Threading.Tasks" Version="$(Net35ThreadingTasksVersion)$(VersionBuildSuffix)" />
+    <PackageReference Include="Net35.Threading.Tasks" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 
   <ItemGroup>

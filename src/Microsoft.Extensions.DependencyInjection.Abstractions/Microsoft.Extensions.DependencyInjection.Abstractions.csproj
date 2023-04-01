@@ -29,7 +29,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion)$(VersionBuildSuffix)" Condition="'$(TargetFramework)'=='net30' or '$(TargetFramework)'=='net20'" />
+    <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" Condition="'$(TargetFramework)'=='net30' or '$(TargetFramework)'=='net20'" />
   </ItemGroup>
 
   <Target Name="DeleteOldPackage" AfterTargets="Pack" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))' == 'true'">
