@@ -7,11 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FD46156B-EDA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9ED131A5-070E-44FB-BC7B-67C8EC47CB39}"
 	ProjectSection(SolutionItems) = preProject
+		.gitmodules = .gitmodules
 		Common\AssemblyVersion.cs = Common\AssemblyVersion.cs
-		Build.Debug.bat = Build.Debug.bat
+		Build.bat = Build.bat
 		clean.cmd = clean.cmd
 		Common\CommonAssemblyInfo.cs = Common\CommonAssemblyInfo.cs
 		Common\CommonVersionInfo.cs = Common\CommonVersionInfo.cs
+		build\dependencies.props = build\dependencies.props
 		Directory.Build.props = Directory.Build.props
 		Directory.General.props = Directory.General.props
 		LICENSE = LICENSE
