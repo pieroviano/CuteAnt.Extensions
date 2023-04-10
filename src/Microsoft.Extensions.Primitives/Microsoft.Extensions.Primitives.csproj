@@ -56,7 +56,8 @@
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+  <ItemGroup>
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
   </ItemGroup>

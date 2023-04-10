@@ -35,17 +35,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'" />
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
+    <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection\Microsoft.Extensions.DependencyInjection.csproj" Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'" />
+    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection\Microsoft.Extensions.DependencyInjection.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+  <ItemGroup>
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 

@@ -35,8 +35,9 @@
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.Abstractions\Microsoft.Extensions.Configuration.Abstractions.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+  <ItemGroup>
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 
   <ItemGroup>

@@ -37,5 +37,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 </Project>

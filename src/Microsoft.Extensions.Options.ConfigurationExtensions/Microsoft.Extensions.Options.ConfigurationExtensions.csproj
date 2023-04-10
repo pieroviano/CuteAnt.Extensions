@@ -32,6 +32,10 @@
   </Target>
 
   <ItemGroup>
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.Binder\Microsoft.Extensions.Configuration.Binder.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.FileProviders.Abstractions\Microsoft.Extensions.FileProviders.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />

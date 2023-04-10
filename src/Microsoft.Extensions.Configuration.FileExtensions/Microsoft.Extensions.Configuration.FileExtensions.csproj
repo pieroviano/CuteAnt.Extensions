@@ -37,6 +37,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="ConfigFileSR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

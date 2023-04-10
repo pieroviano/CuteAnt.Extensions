@@ -31,6 +31,10 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
+  <ItemGroup>
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
+  </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net40'">
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
   </ItemGroup>

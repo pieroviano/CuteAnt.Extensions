@@ -34,6 +34,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.FileExtensions\Microsoft.Extensions.Configuration.FileExtensions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.csproj" />
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 
   <ItemGroup>

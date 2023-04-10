@@ -31,7 +31,8 @@
     <Exec Command="if exist %userprofile%\.nuget\Packages\$(MSBuildProjectName) rmdir /s /q %userprofile%\.nuget\Packages\$(MSBuildProjectName)" />
   </Target>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
+  <ItemGroup>
+    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThredingTasksVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net35.Threading.Tasks" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 

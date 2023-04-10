@@ -1,7 +1,10 @@
 <Project>
   <PropertyGroup Condition="'$(DontPutSuffix)'==''">
     <CurrentDate>$([System.DateTime]::Now.ToString("yyyyMMdd"))</CurrentDate>
-    <Suffix Condition="'$(Suffix)'==''">-at$(CurrentDate)</Suffix>
+    <CurrentTime>$([System.DateTime]::Now.ToString("hhmmss"))</CurrentTime>
+    <Suffix Condition="'$(Suffix)'==''">-at$(CurrentDate)$(CurrentTime)</Suffix>
+    <Net4xExtensionsVersion Condition="'$(Net4xExtensionsVersion)' == ''">2.2.1</Net4xExtensionsVersion>
+    <Version>$(Net4xExtensionsVersion)$(Suffix)</Version>
   </PropertyGroup>
   <PropertyGroup>
     <VersionBuildSuffix Condition="'$(Configuration)'!='Release'">*-*</VersionBuildSuffix>
@@ -9,7 +12,7 @@
 
     <Net4xAsyncBridgeVersion Condition="'$(Net4xAsyncBridgeVersion)' == ''">1.0.0</Net4xAsyncBridgeVersion>
     <Net4xSystemRuntimeCachingVersion Condition="'$(Net4xSystemRuntimeCachingVersion)' == ''">1.0.0</Net4xSystemRuntimeCachingVersion>
-    <Net4xBaseTypesVersion Condition="'$(Net4xBaseTypesVersion)' == ''">1.0.0</Net4xBaseTypesVersion>
+    <Net4xBaseTypesVersion Condition="'$(Net4xBaseTypesVersion)' == ''">1.0.1</Net4xBaseTypesVersion>
     <NuGetUtilityVersion Condition="'$(NuGetUtilityVersion)' == ''">2.0.1</NuGetUtilityVersion>
     <WhenTheVersionVersion Condition="'$(WhenTheVersionVersion)' == ''">1.0.0</WhenTheVersionVersion>
     <Net4xValueTupleVersion Condition="'$(Net4xValueTupleVersion)' == ''">1.0.0</Net4xValueTupleVersion>
