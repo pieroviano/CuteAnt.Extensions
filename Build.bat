@@ -1,4 +1,7 @@
 IF NOT DEFINED Configuration SET Configuration=Release
+md %USERPROFILE%\.nuget\packages\system.buffers\4.4.0\lib\netstandard1.1
+echo >%USERPROFILE%\.nuget\packages\system.buffers\4.4.0\lib\netstandard1.1\System.Buffers.dll
+MSBuild.exe Net4x.Extensions.sln -t:clean
 MSBuild.exe Net4x.Extensions.sln -t:restore -p:RestorePackagesConfig=true /property:Configuration=%Configuration%
 MSBuild.exe Net4x.Extensions.sln -m /property:Configuration=%Configuration%
 IF DEFINED Package (
