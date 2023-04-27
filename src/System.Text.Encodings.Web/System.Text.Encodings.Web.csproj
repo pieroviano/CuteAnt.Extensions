@@ -2,6 +2,13 @@
   <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems" Label="Shared" />
   <Import Project="..\version.donet.props" />
   <Import Project="..\nuget.dotnet.props" />
+  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
+  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+  <ItemGroup>
+    <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+    <Version>$(NuGetUtilityVersion)$(Suffix)</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </ItemGroup>
   
   <PropertyGroup>
     <TargetFramework>net40</TargetFramework>

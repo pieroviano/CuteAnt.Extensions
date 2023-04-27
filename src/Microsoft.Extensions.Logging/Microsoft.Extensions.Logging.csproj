@@ -1,7 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\version.aspnet.props" />
   <Import Project="..\nuget.aspnet.props" />
-  
+  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
+  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+  <ItemGroup>
+    <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+    <Version>$(NuGetUtilityVersion)$(Suffix)</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFrameworks>net40;net45;net451;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Logging</AssemblyName>
