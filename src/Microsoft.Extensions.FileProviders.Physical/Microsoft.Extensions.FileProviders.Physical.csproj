@@ -1,4 +1,7 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
+  </PropertyGroup>
   <Import Project="..\version.aspnet.props" />
   <Import Project="..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.NonCapturingTimer.Sources\Microsoft.Extensions.NonCapturingTimer.Sources.projitems" Label="Shared" />
   <Import Project="..\nuget.aspnet.props" />
@@ -6,9 +9,11 @@
   <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
-    <Version>$(NuGetUtilityVersion)$(Suffix)</Version>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </ItemGroup>
+  <PropertyGroup>
+    
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </PropertyGroup>
 
   <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
