@@ -17,8 +17,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 		Directory.General.props = Directory.General.props
 		LICENSE = LICENSE
+		src\nuget.aspnet.props = src\nuget.aspnet.props
 		NuGet.Config = NuGet.Config
+		src\nuget.dotnet.props = src\nuget.dotnet.props
 		readme.md = readme.md
+		src\version.aspnet.props = src\version.aspnet.props
+		src\version.donet.props = src\version.donet.props
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serialization", "Serialization", "{40CB25EA-DCAE-47E3-A360-694C12E12977}"

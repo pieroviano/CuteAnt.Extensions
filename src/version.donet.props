@@ -1,6 +1,7 @@
 <Project>
   <!-- Versioning properties -->
   <PropertyGroup>
+    <DontUnlock>true</DontUnlock>
     <AssemblyVersion>2.1.0.0</AssemblyVersion>
     <VersionPrefix Condition=" '$(VersionPrefix)'=='' ">2.1.0</VersionPrefix>
     <!--<VersionSuffix Condition=" '$(VersionSuffix)'=='' ">rc1</VersionSuffix>

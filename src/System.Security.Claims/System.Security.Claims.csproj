@@ -1,7 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk" InitialTargets="PreMSBuildVersionTarget">
   <PropertyGroup>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
   </PropertyGroup>
+  <Target Name="PreMSBuildVersionTarget">
+    <PropertyGroup>
+      <VersionFile Condition="'$(VersionFile)'==''">$(SolutionDir)Properties/Version.txt</VersionFile>
+      <FileContents Condition="Exists($(VersionFile))">$([System.IO.File]::ReadAllText($(VersionFile)))</FileContents>
+      <Version Condition="'$(FileContents)' != '' and '$(Version)' == ''">$(FileContents)</Version>
+    </PropertyGroup>
+    <Exec Command="&quot;$(NuGetPackageRoot)nugetutility\$(NuGetUtilityVersion)\native6-windows\NuGetUtility.exe&quot; -UnLock:&quot;$(SolutionDir)Properties/Lock.txt&quot; -ProjectPath:&quot;$(MSBuildProjectFullPath)&quot; -Version:&quot;$(Version)&quot; -VersionFile:&quot;$(VersionFile)&quot;" />
+  </Target>
   <Import Project="..\version.donet.props" />
   <Import Project="..\nuget.dotnet.props" />
   <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
