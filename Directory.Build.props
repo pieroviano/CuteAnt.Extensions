@@ -2,11 +2,10 @@
   <!-- Set the repository root into a variable -->
   <PropertyGroup>
     <SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
+    <Version>$(Net4xExtensionsVersion)$(Suffix)</Version>
   </PropertyGroup>
 
   <Import Project="build\dependencies.props" />
-
-  <Import Project="Directory.General.props" />
 
   <!-- Ensure changes to this file cause project rebuilds. -->
   <PropertyGroup>

@@ -6,7 +6,7 @@
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
   <PropertyGroup>
-    <Version>2.3.0$(Suffix)</Version>
+    <Version>$(Net4xExtensionsVersion)$(Suffix)</Version>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
   <PropertyGroup Label="Globals">
