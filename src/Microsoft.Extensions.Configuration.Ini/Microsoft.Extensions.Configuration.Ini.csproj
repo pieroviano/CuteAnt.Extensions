@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
   </PropertyGroup>
@@ -42,7 +42,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.FileExtensions\Microsoft.Extensions.Configuration.FileExtensions.csproj" />
-    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 

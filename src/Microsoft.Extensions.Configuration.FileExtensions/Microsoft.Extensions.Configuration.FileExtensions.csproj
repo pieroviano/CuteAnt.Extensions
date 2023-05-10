@@ -41,7 +41,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.FileProviders.Physical\Microsoft.Extensions.FileProviders.Physical.csproj" />
   </ItemGroup>
 

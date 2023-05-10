@@ -2,8 +2,10 @@
   <!-- Set the repository root into a variable -->
   <PropertyGroup>
     <SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
-    <Version>$(Net4xExtensionsVersion)$(Suffix)</Version>
+    <VersionPrefix>$(Net4xExtensionsVersion)</VersionPrefix>
+    <VersionSuffix>0-at20230501051647</VersionSuffix>
   </PropertyGroup>
+  <Import Project="Directory.NuGet.props" />
 
   <Import Project="build\dependencies.props" />
 

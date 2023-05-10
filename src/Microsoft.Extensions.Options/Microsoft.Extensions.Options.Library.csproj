@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
   </PropertyGroup>
@@ -17,17 +17,17 @@
 
   <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
-    <AssemblyName>Net4x.Extensions.DependencyInjection</AssemblyName>
-    <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
+    <AssemblyName>Net4x.Extensions.Options</AssemblyName>
+    <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-    <DefineConstants>$(DefineConstants);IL_EMIT</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>Net4x.Extensions.DependencyInjection</PackageId>
-    <Title>Ms.Extensions.DependencyInjection-net40-net451-fork</Title>
-    <Description>Default implementation of dependency injection for Ms.Extensions.DependencyInjection.</Description>
-    <PackageTags>dependencyinjection;di</PackageTags>
+    <IncludeSymbols>True</IncludeSymbols>
+    <PackageId>Net4x.Extensions.Options.Library</PackageId>
+    <Title>Ms.Extensions.Options-net40-net451-fork</Title>
+    <Description>Provides a strongly typed way of specifying and accessing settings using dependency injection.</Description>
+    <PackageTags>aspnetcore;options</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -41,31 +41,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
-    <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
+    <PackageReference Include="Net35.Threading.Tasks" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
 
-  <Import Project="..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" Label="Shared" />
-
-  <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems" Label="Shared" />
-  <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Import Project="..\..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems" Label="Shared" />
-  </ImportGroup>
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Update="DiSR.Designer.cs">
+    <Compile Update="OptionsSR.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DiSR.resx</DependentUpon>
+      <DependentUpon>OptionsSR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
-    <EmbeddedResource Update="DiSR.resx">
+    <EmbeddedResource Update="OptionsSR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>DiSR.Designer.cs</LastGenOutput>
+      <LastGenOutput>OptionsSR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 </Project>

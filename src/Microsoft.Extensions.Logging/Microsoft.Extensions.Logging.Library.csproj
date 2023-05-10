@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
   </PropertyGroup>
@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <PackageId>Net4x.Extensions.Logging</PackageId>
+    <PackageId>Net4x.Extensions.Logging.Library</PackageId>
     <Title>Ms.Extensions.Logging-net40-net451-fork</Title>
     <Description>Logging infrastructure default implementation for Ms.Extensions.Logging.</Description>
     <PackageTags>logging</PackageTags>
@@ -49,8 +49,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection\Microsoft.Extensions.DependencyInjection.csproj" />
-    <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection\Microsoft.Extensions.DependencyInjection.Library.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.Library.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
   </ItemGroup>

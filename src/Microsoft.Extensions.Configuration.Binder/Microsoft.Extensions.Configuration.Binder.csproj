@@ -49,7 +49,7 @@
     <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems" Label="Shared" />
   </ImportGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.csproj" />
+    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="ConfigBinderSR.Designer.cs">
