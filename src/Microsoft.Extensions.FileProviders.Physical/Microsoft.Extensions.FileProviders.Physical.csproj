@@ -24,7 +24,6 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <IncludeSymbols>True</IncludeSymbols>
     <PackageId>Net4x.Extensions.FileProviders.Physical</PackageId>
     <Description>File provider for physical files for Ms.Extensions.FileProviders.</Description>
     <Title>Ms.Extensions.FileProviders.Physical-net40-net451-fork</Title>
@@ -34,8 +33,6 @@
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>

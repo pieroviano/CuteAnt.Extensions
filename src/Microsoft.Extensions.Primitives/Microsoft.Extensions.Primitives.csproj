@@ -24,7 +24,6 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <IncludeSymbols>True</IncludeSymbols>
     <PackageId>Net4x.Extensions.Primitives</PackageId>
     <Title>Ms.Extensions.Primitives-net40-net451-fork</Title>
     <Description>Primitives shared by framework extensions.</Description>
@@ -34,8 +33,6 @@
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>

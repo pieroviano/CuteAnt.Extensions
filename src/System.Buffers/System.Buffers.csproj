@@ -23,7 +23,6 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <IncludeSymbols>True</IncludeSymbols>
     <PackageId>Net4x.Buffers</PackageId>
     <Title>Corefx.Buffers-net40-fork</Title>
     <Description>Provides resource pooling of any type for performance-critical applications that allocate and deallocate objects frequently.</Description>
@@ -33,8 +32,6 @@
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>

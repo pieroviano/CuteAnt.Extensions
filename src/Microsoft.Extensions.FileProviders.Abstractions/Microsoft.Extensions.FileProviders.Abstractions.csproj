@@ -23,7 +23,6 @@
   </PropertyGroup>
 
   <PropertyGroup Label="NuGet">
-    <IncludeSymbols>True</IncludeSymbols>
     <PackageId>Net4x.Extensions.FileProviders.Abstractions</PackageId>
     <Description>Abstractions of files and directories.</Description>
     <Title>Ms.Extensions.FileProviders.Abstractions-net40-net451-fork</Title>
@@ -33,8 +32,6 @@
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>

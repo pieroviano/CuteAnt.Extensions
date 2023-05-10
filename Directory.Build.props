@@ -1,11 +1,14 @@
 <Project>
   <!-- Set the repository root into a variable -->
+  <Import Project="Directory.NuGet.props" />
   <PropertyGroup>
     <SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
     <VersionPrefix>$(Net4xExtensionsVersion)</VersionPrefix>
     <VersionSuffix>0-at20230501051647</VersionSuffix>
+    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+    <IncludeSymbols Condition="'$(Configuration)' != 'Release'">True</IncludeSymbols>
+    <SymbolPackageFormat Condition="'$(Configuration)' != 'Release'">snupkg</SymbolPackageFormat>
   </PropertyGroup>
-  <Import Project="Directory.NuGet.props" />
 
   <Import Project="build\dependencies.props" />
 
