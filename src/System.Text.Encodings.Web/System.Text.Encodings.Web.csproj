@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
   </PropertyGroup>
   <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems" Label="Shared" />
@@ -15,7 +16,7 @@
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
-  
+
   <PropertyGroup>
     <TargetFramework>net40</TargetFramework>
     <AssemblyName>System.Text.Encodings.Web</AssemblyName>

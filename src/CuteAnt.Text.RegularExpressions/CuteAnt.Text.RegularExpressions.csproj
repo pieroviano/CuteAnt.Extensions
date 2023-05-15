@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
   </PropertyGroup>
   <Import Project="..\version.donet.props" />
@@ -11,7 +12,7 @@
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
   <PropertyGroup>
-    
+
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
 

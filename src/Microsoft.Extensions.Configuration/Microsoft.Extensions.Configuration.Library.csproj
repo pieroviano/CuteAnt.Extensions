@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
     <DontGeneratePackageOutput>True</DontGeneratePackageOutput>
   </PropertyGroup>
   <Import Project="..\version.aspnet.props" />
