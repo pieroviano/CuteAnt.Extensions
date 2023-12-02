@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,26 +12,20 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.DependencyInjection.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <DefineConstants>$(DefineConstants);ActivatorUtilities_In_DependencyInjection</DefineConstants>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.DependencyInjection.Abstractions</PackageId>
     <Title>Ms.Extensions.DependencyInjection.Abstractions-net40-net451-fork</Title>
     <Description>Abstractions for dependency injection.</Description>
     <PackageTags>dependencyinjection;di</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -38,14 +33,11 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <Import Project="..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" Label="Shared" />
   <Import Project="..\CuteAnt.Extensions.ActivatorUtilities.Sources\CuteAnt.Extensions.ActivatorUtilities.Sources.projitems" Label="Shared" />
-
   <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
     <Import Project="..\..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems" Label="Shared" />
   </ImportGroup>

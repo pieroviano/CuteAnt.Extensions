@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Configuration.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Configuration.Abstractions</PackageId>
     <Description>Abstractions of key-value pair based configuration.</Description>
     <Title>Ms.Extensions.Configuration.Abstractions-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,7 +32,6 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
   </ItemGroup>

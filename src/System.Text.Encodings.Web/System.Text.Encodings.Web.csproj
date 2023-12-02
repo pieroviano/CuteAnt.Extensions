@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -12,25 +13,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFramework>net40</TargetFramework>
     <AssemblyName>System.Text.Encodings.Web</AssemblyName>
     <RootNamespace>System.Text.Encodings.Web</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Text.Encodings.Web</PackageId>
     <Title>Corefx.Text.Encodings.Web-net40-fork</Title>
     <Description>Provides types for encoding and escaping strings for use in JavaScript, HyperText Markup Language (HTML), and uniform resource locators (URL).</Description>
     <PackageTags>primitives</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -38,19 +33,15 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Resources\unicode8definedcharacters.bin" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="Resources\unicode8definedcharacters.bin" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="SR.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -58,7 +49,6 @@
       <DependentUpon>SR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="SR.resx">
       <Generator>ResXFileCodeGenerator</Generator>

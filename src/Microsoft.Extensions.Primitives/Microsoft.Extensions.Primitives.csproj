@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -12,25 +13,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Primitives</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Primitives</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Primitives</PackageId>
     <Title>Ms.Extensions.Primitives-net40-net451-fork</Title>
     <Description>Primitives shared by framework extensions.</Description>
     <PackageTags>primitives</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -38,11 +33,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj" Condition="'$(TargetFramework)' == 'net35' or '$(TargetFramework)' == 'net40'" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -50,25 +43,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
     <PackageReference Include="System.Memory" Version="$(SystemMemoryPackageVersion)" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' == 'net30' or '$(TargetFramework)' == 'net20'">
     <ProjectReference Include="..\System.Collections.Immutable\System.Collections.Immutable.csproj" />
   </ItemGroup>

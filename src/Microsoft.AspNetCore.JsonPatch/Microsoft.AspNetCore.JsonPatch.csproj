@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
@@ -12,25 +13,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.AspNetCore.JsonPatch</AssemblyName>
     <RootNamespace>Microsoft.AspNetCore.JsonPatch</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.AspNetCore.JsonPatch</PackageId>
     <Title>Ms.AspNetCore.JsonPatch-net40-net451-fork</Title>
     <Description>ASP.NET Core support for JSON PATCH.</Description>
     <PackageTags>json;jsonpatch</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -38,22 +33,18 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="Internal\ReflectionUtils.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)">
       <Aliases></Aliases>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' != 'net35' and '$(TargetFramework)' != 'net30' and '$(TargetFramework)' != 'net20'">
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="JsonPatchSR.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -61,7 +52,6 @@
       <DependentUpon>JsonPatchSR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="JsonPatchSR.resx">
       <Generator>ResXFileCodeGenerator</Generator>

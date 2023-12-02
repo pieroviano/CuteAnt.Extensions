@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
     <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net35;net40</TargetFrameworks>
     <RootNamespace>System.Security.Claims</RootNamespace>
     <AssemblyName>System.Security.Claims</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Security.Claims</PackageId>
     <Title>Corefx.Security.Claims-net40-fork</Title>
     <Description>Provides classes that implement claims-based identity in the .NET Framework, including classes that represent claims, claims-based identities, and claims-based principals.</Description>
     <PackageTags>claims</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,5 +32,4 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
 </Project>

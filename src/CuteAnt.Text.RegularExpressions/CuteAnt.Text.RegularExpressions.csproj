@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,24 +12,18 @@
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
   <PropertyGroup>
-
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net40;net35;net30;net20</TargetFrameworks>
     <RootNamespace>CuteAnt.Text.RegularExpressions</RootNamespace>
     <AssemblyName>Net4x.Text.RegularExpressions</AssemblyName>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Text.RegularExpressions</PackageId>
     <Title>Corefx.Text.RegularExpressions-net40-fork</Title>
     <Description>Provides the System.Text.RegularExpressions.Regex class, an implementation of a regular expression engine.</Description>
     <PackageTags>Regular</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -36,7 +31,6 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Update="Strings.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -44,11 +38,9 @@
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Options.ConfigurationExtensions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Options.ConfigurationExtensions</PackageId>
     <Title>Ms.Extensions.Options.ConfigurationExtensions-net40-net451-fork</Title>
     <Description>Provides additional configuration specific functionality related to Options.</Description>
     <PackageTags>aspnetcore;configuration;options</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,11 +32,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.Binder\Microsoft.Extensions.Configuration.Binder.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.FileProviders.Abstractions\Microsoft.Extensions.FileProviders.Abstractions.csproj" />

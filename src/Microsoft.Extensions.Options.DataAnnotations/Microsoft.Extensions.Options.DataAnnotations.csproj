@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Options.DataAnnotations</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Options</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Options.DataAnnotations</PackageId>
     <Title>Ms.Extensions.Options.DataAnnotations-net40-net451-fork</Title>
     <Description>Provides additional DataAnnotations specific functionality related to Options.</Description>
     <PackageTags>aspnetcore;configuration;options</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,18 +32,15 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.Library.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>

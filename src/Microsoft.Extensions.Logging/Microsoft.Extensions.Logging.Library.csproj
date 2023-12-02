@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net40;net45;net451;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Logging</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Logging.Library</PackageId>
     <Title>Ms.Extensions.Logging-net40-net451-fork</Title>
     <Description>Logging infrastructure default implementation for Ms.Extensions.Logging.</Description>
     <PackageTags>logging</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,25 +32,20 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' != 'net35'">
     <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="ReflectionUtils.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection\Microsoft.Extensions.DependencyInjection.Library.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.Library.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Logging.Abstractions\Microsoft.Extensions.Logging.Abstractions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
 </Project>

@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Configuration.Xml</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Configuration.Xml</PackageId>
     <Description>XML configuration provider implementation for Ms.Extensions.Configuration.</Description>
     <Title>Ms.Extensions.Configuration.Xml-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,20 +32,16 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration.FileExtensions\Microsoft.Extensions.Configuration.FileExtensions.csproj" />
     <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Reference Include="System.Security" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="ConfigXmlSR.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -58,7 +49,6 @@
       <DependentUpon>ConfigXmlSR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="ConfigXmlSR.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

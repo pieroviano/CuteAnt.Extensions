@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,34 +12,26 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net40;net45;net451;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Logging.Abstractions</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
     <PackageReference Include="Net35.Threading.Tasks" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Logging.Abstractions</PackageId>
     <Title>Ms.Extensions.Logging.Abstractions-net40-net451-fork</Title>
     <Description>Logging abstractions for Ms.Extensions.Logging.</Description>
     <PackageTags>logging</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -46,11 +39,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="LoggingSR.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -58,12 +49,10 @@
       <DependentUpon>LoggingSR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="LoggingSR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LoggingSR.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-
 </Project>

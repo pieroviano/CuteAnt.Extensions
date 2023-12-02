@@ -4,8 +4,8 @@
   <PropertyGroup>
     <SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
     <VersionPrefix>$(Net4xExtensionsVersion)</VersionPrefix>
-    <VersionSuffix Condition="'$(Configuration)'!='Release'">0-at20230515021623</VersionSuffix>
-    <VersionSuffix Condition="'$(Configuration)'=='Release'">0</VersionSuffix>
+    <VersionSuffix Condition="'$(Configuration)'!='Release'">1-at20230515021623</VersionSuffix>
+    <VersionSuffix Condition="'$(Configuration)'=='Release'">1</VersionSuffix>
     <IncludeSymbols Condition="'$(Configuration)' != 'Release'">True</IncludeSymbols>
     <SymbolPackageFormat Condition="'$(Configuration)' != 'Release'">snupkg</SymbolPackageFormat>
   </PropertyGroup>

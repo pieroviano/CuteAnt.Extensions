@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -11,25 +12,19 @@
   <ItemGroup>
     <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
   </ItemGroup>
-
   <PropertyGroup>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
     <AssemblyName>Net4x.Extensions.Configuration.CommandLine</AssemblyName>
     <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
-
   <PropertyGroup Label="NuGet">
     <PackageId>Net4x.Extensions.Configuration.CommandLine</PackageId>
     <Description>Command line configuration provider implementation for Ms.Extensions.Configuration.</Description>
     <Title>Ms.Extensions.Configuration.CommandLine-net40-net451-fork</Title>
     <PackageTags>configuration</PackageTags>
   </PropertyGroup>
-
   <PropertyGroup>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -37,11 +32,9 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <IsPublishable>False</IsPublishable>
   </PropertyGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="ConfigCmdSR.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -49,7 +42,6 @@
       <DependentUpon>ConfigCmdSR.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="ConfigCmdSR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
