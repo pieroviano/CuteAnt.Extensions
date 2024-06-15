@@ -1,58 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-16"?>
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <Version>$(VersionPrefix).$(VersionSuffix)</Version>
-    <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
-  </PropertyGroup>
-  <Import Project="..\version.aspnet.props" />
-  <Import Project="..\nuget.aspnet.props" />
-  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
-  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" />
-  <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
-  <ItemGroup>
-    <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
-  </ItemGroup>
-  <PropertyGroup>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
-    <AssemblyName>Net4x.Extensions.Configuration.Binder</AssemblyName>
-    <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
-    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Label="NuGet">
-    <PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
-    <Description>Functionality to bind an object to data in configuration providers for Ms.Extensions.Configuration.</Description>
-    <Title>Ms.Extensions.Configuration.Binder-net40-net451-fork</Title>
-    <PackageTags>configuration</PackageTags>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <IsPublishable>False</IsPublishable>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
-    <PackageReference Include="Net35.TypeInfo" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
-  </ItemGroup>
-  <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
-    <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems" Label="Shared" />
-  </ImportGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="ConfigBinderSR.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ConfigBinderSR.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Update="ConfigBinderSR.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ConfigBinderSR.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+    <PropertyGroup>
+        <Version>$(VersionPrefix).$(VersionSuffix)</Version>
+        <PackageOutputPath>$(SolutionDir)Packages/</PackageOutputPath>
+    </PropertyGroup>
+    <Import Project="..\version.aspnet.props" />
+    <Import Project="..\nuget.aspnet.props" />
+    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
+    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" />
+    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+    <ItemGroup>
+        <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+    </ItemGroup>
+    <PropertyGroup>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
+        <AssemblyName>Net4x.Extensions.Configuration.Binder</AssemblyName>
+        <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <PropertyGroup Label="NuGet">
+        <PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
+        <Description>Functionality to bind an object to data in configuration providers for Ms.Extensions.Configuration.</Description>
+        <Title>Ms.Extensions.Configuration.Binder-net40-net451-fork</Title>
+        <PackageTags>configuration</PackageTags>
+    </PropertyGroup>
+    <PropertyGroup>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <IsPublishable>False</IsPublishable>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+    </ItemGroup>
+    <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
+        <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems" Label="Shared" />
+    </ImportGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Update="ConfigBinderSR.Designer.cs">
+            <DesignTime>True</DesignTime>
+            <AutoGen>True</AutoGen>
+            <DependentUpon>ConfigBinderSR.resx</DependentUpon>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <EmbeddedResource Update="ConfigBinderSR.resx">
+            <Generator>ResXFileCodeGenerator</Generator>
+            <LastGenOutput>ConfigBinderSR.Designer.cs</LastGenOutput>
+        </EmbeddedResource>
+    </ItemGroup>
 </Project>
