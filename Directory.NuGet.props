@@ -132,7 +132,7 @@
         <UpdateLibraryPocVersion>1.30.0</UpdateLibraryPocVersion>
         <Net4xMSHTMLVersion>1.1.0</Net4xMSHTMLVersion>
         <BrutalDevStrongNameSignerVersion>3.2.1</BrutalDevStrongNameSignerVersion>
-        <ValuesFromSelectVersion>1.2.0</ValuesFromSelectVersion>
+        <ValuesFromSelectVersion>2.2.0</ValuesFromSelectVersion>
         <HostProcessLibrary>1.0.0</HostProcessLibrary>
         <WpfAdornedControlVersion>1.1.0</WpfAdornedControlVersion>
         <CreateHiddenProcessVersion>1.1.0</CreateHiddenProcessVersion>
@@ -181,5 +181,6 @@
         <HardcodetNotifyIconWpfVersion>1.1.0</HardcodetNotifyIconWpfVersion>
         <DataHandlerLibraryVersion>1.0.0</DataHandlerLibraryVersion>
         <MdiInActiveXVersion>2.2.0</MdiInActiveXVersion>
+        <HostProcessLibraryVersion>1.0.0</HostProcessLibraryVersion>
     </PropertyGroup>
 </Project>

@@ -136,6 +136,11 @@
             "Version": "4.5.2"
           }
         ]
+      },
+      {
+        "Name": "Tests\\AsyncEnumerable.Tests.csproj",
+        "Project": "Tests",
+        "PackageReferences": null
       }
     ]
   },
@@ -11348,6 +11353,21 @@
         "Name": "FastbookDownloader",
         "Project": "FastbookDownloader\\FastbookDownloader.csproj",
         "PackageReferences": null
+      },
+      {
+        "Name": "HtmlPersist\\HtmlPersist.csproj",
+        "Project": "Net4x.HtmlPersist",
+        "PackageReferences": null
+      },
+      {
+        "Name": "HtmlPersist.Tests\\HtmlPersist.Tests.csproj",
+        "Project": "HtmlPersist.Tests",
+        "PackageReferences": null
+      },
+      {
+        "Name": "BrowserLibrary.Tests\\BrowserLibrary.Tests.csproj",
+        "Project": "BrowserLibrary.Tests",
+        "PackageReferences": null
       }
     ]
   },
@@ -12601,6 +12621,16 @@
       {
         "Name": "UpdateLibrary.Poc",
         "Project": "Tests\\UpdateLibrary.Poc\\UpdateLibrary.Net45.Poc.csproj",
+        "PackageReferences": null
+      },
+      {
+        "Name": "UpdateManager\\UpdateManagerLibrary.csproj",
+        "Project": "Net4x.UpdateManagerLibrary",
+        "PackageReferences": null
+      },
+      {
+        "Name": "UpdateManagerLibrary\\UpdateManagerLibrary.csproj",
+        "Project": "Net4x.UpdateManagerLibrary",
         "PackageReferences": null
       }
     ]
