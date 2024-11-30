@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -6,21 +6,21 @@
     </PropertyGroup>
     <Import Project="..\version.aspnet.props" />
     <Import Project="..\nuget.aspnet.props" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" />
     <ItemGroup>
-        <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+        <PackageReference Include="NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
     </ItemGroup>
     <PropertyGroup>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
         <AssemblyName>Net4x.Extensions.Configuration.Binder</AssemblyName>
+		<PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
         <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
-        <PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
         <Description>Functionality to bind an object to data in configuration providers for Ms.Extensions.Configuration.</Description>
         <Title>Ms.Extensions.Configuration.Binder-net40-net451-fork</Title>
         <PackageTags>configuration</PackageTags>
@@ -37,7 +37,7 @@
         <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
-        <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems" Label="Shared" />
+        <Import Label="Shared" Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems" />
     </ImportGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.Configuration\Microsoft.Extensions.Configuration.Library.csproj" />

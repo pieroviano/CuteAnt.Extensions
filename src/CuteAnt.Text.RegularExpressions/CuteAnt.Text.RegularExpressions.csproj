@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -6,20 +6,20 @@
     </PropertyGroup>
     <Import Project="..\version.donet.props" />
     <Import Project="..\nuget.dotnet.props" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" />
     <ItemGroup>
-        <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+        <PackageReference Include="NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
     </ItemGroup>
     <PropertyGroup>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <TargetFrameworks>net40;net35;net30;net20</TargetFrameworks>
         <RootNamespace>CuteAnt.Text.RegularExpressions</RootNamespace>
         <AssemblyName>Net4x.Text.RegularExpressions</AssemblyName>
+        <PackageId>Net4x.Text.RegularExpressions</PackageId>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
-        <PackageId>Net4x.Text.RegularExpressions</PackageId>
         <Title>Corefx.Text.RegularExpressions-net40-fork</Title>
         <Description>Provides the System.Text.RegularExpressions.Regex class, an implementation of a regular expression engine.</Description>
         <PackageTags>Regular</PackageTags>

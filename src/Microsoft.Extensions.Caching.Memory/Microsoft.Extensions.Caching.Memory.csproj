@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -9,20 +9,20 @@
     <PropertyGroup>
         <TargetFrameworks>net451;net45;net40;net35;net30;net20;</TargetFrameworks>
         <AssemblyName>Net4x.Extensions.Caching.Memory</AssemblyName>
+        <PackageId>Net4x.Extensions.Caching.Memory</PackageId>
         <RootNamespace>Microsoft.Extensions.Caching.Memory</RootNamespace>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     </PropertyGroup>
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" />
     <ItemGroup>
-        <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+        <PackageReference Include="NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
     </ItemGroup>
     <PropertyGroup>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
-        <PackageId>Net4x.Extensions.Caching.Memory</PackageId>
         <Description>In-memory cache implementation of Ms.Extensions.Caching.Memory.IMemoryCache.</Description>
         <Title>Ms.Extensions.Caching.Memory-net451-fork</Title>
         <PackageTags>cache;memorycache</PackageTags>
@@ -35,8 +35,8 @@
         <IsPublishable>False</IsPublishable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.Caching.Abstractions\Microsoft.Extensions.Caching.Abstractions.csproj" />

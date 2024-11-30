@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-16"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <Version>$(VersionPrefix).$(VersionSuffix)</Version>
@@ -6,22 +6,22 @@
     </PropertyGroup>
     <Import Project="..\version.aspnet.props" />
     <Import Project="..\nuget.aspnet.props" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" />
-    <Import Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\Directory.NuGet.props" />
+    <Import Condition="Exists('$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" Project="$(UserProfile)\.nuget\packages\nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" />
     <ItemGroup>
-        <PackageReference Include="NuGetUtility" Version="$(NuGetUtilityVersion)" PrivateAssets="All" />
+        <PackageReference Include="NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
     </ItemGroup>
     <PropertyGroup>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
-        <AssemblyName>Net4x.Extensions.DependencyInjection</AssemblyName>
+        <AssemblyName>Net4x.Extensions.DependencyInjection.Library</AssemblyName>
+        <PackageId>Net4x.Extensions.DependencyInjection.Library</PackageId>
         <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
         <DefineConstants>$(DefineConstants);IL_EMIT</DefineConstants>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
-        <PackageId>Net4x.Extensions.DependencyInjection.Library</PackageId>
         <Title>Ms.Extensions.DependencyInjection-net40-net451-fork</Title>
         <Description>Default implementation of dependency injection for Ms.Extensions.DependencyInjection.</Description>
         <PackageTags>dependencyinjection;di</PackageTags>
@@ -34,14 +34,14 @@
         <IsPublishable>False</IsPublishable>
     </PropertyGroup>
     <ItemGroup>
+        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
-    <Import Project="..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" Label="Shared" />
-    <Import Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems" Label="Shared" />
+    <Import Label="Shared" Project="..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" />
+    <Import Label="Shared" Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.TypeNameHelper.Sources\CuteAnt.Extensions.TypeNameHelper.Sources.projitems" />
     <ImportGroup Condition=" '$(TargetFramework)' == 'net40' ">
-        <Import Project="..\..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems" Label="Shared" />
+        <Import Label="Shared" Project="..\..\CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems" />
     </ImportGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />

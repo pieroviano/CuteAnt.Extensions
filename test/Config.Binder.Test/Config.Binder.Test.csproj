@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <AssemblyName>Net4x.Extensions.Configuration.Binder.Test</AssemblyName>
-    <RootNamespace>Microsoft.Extensions.Configuration.Binder.Test</RootNamespace>
-    <TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
-    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp2.2</TargetFrameworks>
-  </PropertyGroup>
+	<PropertyGroup>
+		<AssemblyName>Net4x.Extensions.Configuration.Binder.Test</AssemblyName>
+		<RootNamespace>Microsoft.Extensions.Configuration.Binder.Test</RootNamespace>
+		<TargetFrameworks>netcoreapp2.2;net471</TargetFrameworks>
+		<TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp2.2</TargetFrameworks>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Config.Binder\Config.Binder.csproj" />
-    <ProjectReference Include="..\Config.Test.Common\Config.Test.Common.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Config.Binder\Config.Binder.csproj" />
+		<ProjectReference Include="..\Config.Test.Common\Config.Test.Common.csproj" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualstudioPackageVersion)" />
-    <PackageReference Include="xunit" Version="$(XunitPackageVersion)" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualstudioPackageVersion)" />
+		<PackageReference Include="xunit" Version="$(XunitPackageVersion)" />
+	</ItemGroup>
 
 </Project>
