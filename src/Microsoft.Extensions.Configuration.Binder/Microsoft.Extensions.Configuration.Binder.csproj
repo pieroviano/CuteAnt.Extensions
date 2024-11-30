@@ -16,7 +16,7 @@
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <TargetFrameworks>net45;net451;net40;net35;net30;net20</TargetFrameworks>
         <AssemblyName>Net4x.Extensions.Configuration.Binder</AssemblyName>
-		<PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
+        <PackageId>Net4x.Extensions.Configuration.Binder</PackageId>
         <RootNamespace>Microsoft.Extensions.Configuration</RootNamespace>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     </PropertyGroup>

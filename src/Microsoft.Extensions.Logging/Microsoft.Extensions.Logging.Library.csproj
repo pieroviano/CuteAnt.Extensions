@@ -16,7 +16,7 @@
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <TargetFrameworks>net40;net45;net451;net35;net30;net20</TargetFrameworks>
         <AssemblyName>Net4x.Extensions.Logging.Library</AssemblyName>
-		<PackageId>Net4x.Extensions.Logging.Library</PackageId>
+        <PackageId>Net4x.Extensions.Logging.Library</PackageId>
         <RootNamespace>Microsoft.Extensions.Logging</RootNamespace>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     </PropertyGroup>

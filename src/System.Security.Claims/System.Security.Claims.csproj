@@ -17,7 +17,7 @@
         <TargetFrameworks>net35;net40</TargetFrameworks>
         <RootNamespace>System.Security.Claims</RootNamespace>
         <AssemblyName>Net4x.Security.Claims</AssemblyName>
-		<PackageId>Net4x.Security.Claims</PackageId>
+        <PackageId>Net4x.Security.Claims</PackageId>
         <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">

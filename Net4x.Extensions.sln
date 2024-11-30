@@ -44,8 +44,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Security.Claims", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Extensions.Primitives", "src\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj", "{40A9875A-07D9-4FDB-AF7F-6268694F91B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "System.Text.Encodings.Web", "src\System.Text.Encodings.Web\System.Text.Encodings.Web.csproj", "{1AB36D9F-D262-411E-8766-DCD127409290}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CuteAnt.Text.RegularExpressions", "src\CuteAnt.Text.RegularExpressions\CuteAnt.Text.RegularExpressions.csproj", "{0DCCCE64-F462-47BD-A603-8D1A34034678}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.AspNetCore.JsonPatch", "src\Microsoft.AspNetCore.JsonPatch\Microsoft.AspNetCore.JsonPatch.csproj", "{E7F3C086-16A7-4AED-B336-1C61A7D9B145}"
@@ -126,6 +124,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Microsoft.Extensions.NonCap
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Extensions.Options.DataAnnotations", "src\Microsoft.Extensions.Options.DataAnnotations\Microsoft.Extensions.Options.DataAnnotations.csproj", "{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net4x.Text.Encodings.Web", "src\System.Text.Encodings.Web\Net4x.Text.Encodings.Web.csproj", "{E2B7B3E1-B45D-4231-BD36-01F2488F2F44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,10 +140,6 @@ Global
 		{40A9875A-07D9-4FDB-AF7F-6268694F91B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40A9875A-07D9-4FDB-AF7F-6268694F91B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40A9875A-07D9-4FDB-AF7F-6268694F91B3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1AB36D9F-D262-411E-8766-DCD127409290}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1AB36D9F-D262-411E-8766-DCD127409290}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1AB36D9F-D262-411E-8766-DCD127409290}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1AB36D9F-D262-411E-8766-DCD127409290}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0DCCCE64-F462-47BD-A603-8D1A34034678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0DCCCE64-F462-47BD-A603-8D1A34034678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DCCCE64-F462-47BD-A603-8D1A34034678}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -260,6 +256,10 @@ Global
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2B7B3E1-B45D-4231-BD36-01F2488F2F44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2B7B3E1-B45D-4231-BD36-01F2488F2F44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2B7B3E1-B45D-4231-BD36-01F2488F2F44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2B7B3E1-B45D-4231-BD36-01F2488F2F44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -273,7 +273,6 @@ Global
 		{CB50D1C8-FB58-4CF9-8ED8-27A0CD53897D} = {B3A252F2-B55B-42AC-8DE4-AFA4C983028F}
 		{D2C2CFFD-CC79-4B88-B298-DDE3A1355C85} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
 		{40A9875A-07D9-4FDB-AF7F-6268694F91B3} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
-		{1AB36D9F-D262-411E-8766-DCD127409290} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
 		{0DCCCE64-F462-47BD-A603-8D1A34034678} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
 		{E7F3C086-16A7-4AED-B336-1C61A7D9B145} = {40CB25EA-DCAE-47E3-A360-694C12E12977}
 		{2C766AAD-CBDF-4344-A989-B9F8F8B0C008} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
@@ -314,12 +313,12 @@ Global
 		{7D02563F-82AA-4322-ACFD-04E3C7319E30} = {2F85D2CE-A8C6-46B5-8E57-FF6911C0C8FA}
 		{57F1B280-AC31-49EC-8DC7-9B1B7839F328} = {B3A252F2-B55B-42AC-8DE4-AFA4C983028F}
 		{EFF3CCF8-C531-433C-8015-1F8FA4D255F0} = {B56A0D5D-FDC8-4C80-9A38-814FA0FEDF83}
+		{E2B7B3E1-B45D-4231-BD36-01F2488F2F44} = {45A30107-E174-4EBF-BC57-D43BD3AB29ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6EE6CFC8-DD4D-4293-8418-14C4AD850DD3}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{1ab36d9f-d262-411e-8766-dcd127409290}*SharedItemsImports = 5
 		CuteAnt.Extensions.Common\src\CuteAnt.Extensions.Reflection.Sources\CuteAnt.Extensions.Reflection.Sources.projitems*{1c35f063-5522-4e51-8657-ab397cf6361a}*SharedItemsImports = 5
 		CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems*{1c35f063-5522-4e51-8657-ab397cf6361a}*SharedItemsImports = 5
 		CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{323a5b31-2ef0-45c9-bb2e-1dd7e44528e2}*SharedItemsImports = 5
@@ -337,6 +336,7 @@ Global
 		CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems*{cfdc1c45-eb22-4a35-a0ce-00dca1adf8f0}*SharedItemsImports = 5
 		src\CuteAnt.Extensions.ActivatorUtilities.Sources\CuteAnt.Extensions.ActivatorUtilities.Sources.projitems*{cfdc1c45-eb22-4a35-a0ce-00dca1adf8f0}*SharedItemsImports = 5
 		CuteAnt.Extensions.Common\src\Nito.AsyncEx.ExceptionEnlightenment.Sources\Nito.AsyncEx.ExceptionEnlightenment.Sources.projitems*{d90e9b82-6317-4055-82e3-fe8625c143e9}*SharedItemsImports = 13
+		CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems*{e2b7b3e1-b45d-4231-bd36-01f2488f2f44}*SharedItemsImports = 5
 		CuteAnt.Extensions.Common\src\CuteAnt.Extensions.ClosedGenericMatcher.Sources\CuteAnt.Extensions.ClosedGenericMatcher.Sources.projitems*{e7f3c086-16a7-4aed-b336-1c61a7d9b145}*SharedItemsImports = 5
 		CuteAnt.Extensions.Common\src\Microsoft.Extensions.NonCapturingTimer.Sources\Microsoft.Extensions.NonCapturingTimer.Sources.projitems*{ede317dd-4294-4c8e-9990-179a2304a1dd}*SharedItemsImports = 5
 	EndGlobalSection
