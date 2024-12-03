@@ -7,8 +7,8 @@
 		<SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
 		<VersionSuffix Condition="'$(Configuration)'!='Release'">0-at20230515021623</VersionSuffix>
 		<VersionSuffix Condition="'$(Configuration)'=='Release'">0</VersionSuffix>
-		<IncludeSymbols Condition="'$(Configuration)' != 'Release'">True</IncludeSymbols>
-		<SymbolPackageFormat Condition="'$(Configuration)' != 'Release'">snupkg</SymbolPackageFormat>
+		<IncludeSymbols Condition="'$(Configuration)' != 'Release'">0rue</IncludeSymbols>
+		<SymbolPackageFormat Condition="'$(Configuration)' != 'Release'">0nupkg</SymbolPackageFormat>
 	</PropertyGroup>
 
 	<Import Project="build\dependencies.props" />
