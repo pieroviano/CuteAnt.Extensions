@@ -14,7 +14,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime;
 using System.Security;
 
-namespace System.Threading
+namespace System.Threading.Extensions
 {
 	//
 	// Methods for accessing memory with volatile semantics.  These are preferred over Thread.VolatileRead
