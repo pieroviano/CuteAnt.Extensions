@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project>
 	<!-- Set the repository root into a variable -->
 	<Import Project="Directory.NuGet.props" />
@@ -5,24 +6,21 @@
 		<SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
 		<VersionPrefix>$(Net4xExtensionsVersion)</VersionPrefix>
 		<SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
-		<VersionSuffix Condition="'$(Configuration)'!='Release'">0-at20230515021623</VersionSuffix>
-		<VersionSuffix Condition="'$(Configuration)'=='Release'">0</VersionSuffix>
+		<VersionSuffix Condition="'$(Configuration)'!='Release'">1-at20250530080652</VersionSuffix>
+		<VersionSuffix Condition="'$(Configuration)'=='Release'">1</VersionSuffix>
 		<IncludeSymbols Condition="'$(Configuration)' != 'Release'">0rue</IncludeSymbols>
 		<SymbolPackageFormat Condition="'$(Configuration)' != 'Release'">0nupkg</SymbolPackageFormat>
+		<NoWarn>$(NoWarn);NU1504</NoWarn>
 	</PropertyGroup>
-
 	<Import Project="build\dependencies.props" />
-
 	<!-- Ensure changes to this file cause project rebuilds. -->
 	<PropertyGroup>
 		<MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
 	</PropertyGroup>
-
 	<PropertyGroup>
 		<SignAssembly>True</SignAssembly>
 		<AssemblyOriginatorKeyFile>$(SourceRoot)/build/StrongKey.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
-
 	<!-- Common compile parameters -->
 	<PropertyGroup>
 		<LangVersion>latest</LangVersion>
@@ -37,7 +35,6 @@
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<ImportLibs>netcore</ImportLibs>
 	</PropertyGroup>
-
 	<PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2' ">
 		<DefineConstants>$(DefineConstants);NETCOREAPP;NETCOREAPP_2_0_GREATER;NETCOREAPP_2_1_GREATER;NET_4_0_GREATER;NET_4_5_GREATER;NET_4_6_GREATER</DefineConstants>
 	</PropertyGroup>
@@ -69,8 +66,6 @@
 		<DefineConstants>$(DefineConstants);DESKTOPCLR;NET_4_0_GREATER;NET_4_5_GREATER;NET_4_6_GREATER</DefineConstants>
 		<ImportLibs>netfx</ImportLibs>
 	</PropertyGroup>
-
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net471|AnyCPU'">
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
@@ -97,7 +92,6 @@
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net46|AnyCPU'">
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
@@ -137,7 +131,6 @@
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net452|AnyCPU'">
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
@@ -177,7 +170,6 @@
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net40|AnyCPU'">
 		<DebugSymbols>true</DebugSymbols>
 		<DebugType>full</DebugType>
@@ -191,7 +183,6 @@
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.1|AnyCPU'">
 		<DebugSymbols>True</DebugSymbols>
 		<DebugType>portable</DebugType>
@@ -207,7 +198,6 @@
 		<WarningLevel>4</WarningLevel>
 		<NetStandardImplicitPackageVersion>1.6.1</NetStandardImplicitPackageVersion>
 	</PropertyGroup>
-
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
 		<DebugSymbols>True</DebugSymbols>
 		<DebugType>portable</DebugType>
@@ -260,12 +250,10 @@
 		<ErrorReport>prompt</ErrorReport>
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
-
 	<!-- Set output folder for created NuGet packages -->
 	<PropertyGroup>
 		<PackageOutputPath Condition=" '$(PackageOutputPath)'=='' ">$(SourceRoot)/Packages</PackageOutputPath>
 	</PropertyGroup>
-
 	<Choose>
 		<When Condition="'$(BUILD_SOURCEVERSION)' != ''">
 			<PropertyGroup>
