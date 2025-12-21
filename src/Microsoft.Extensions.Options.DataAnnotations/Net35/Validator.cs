@@ -1,6 +1,5 @@
 ﻿#if NET35 || NET30 || NET20
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Resources;
 using System.Globalization;
 using System.Linq;
 

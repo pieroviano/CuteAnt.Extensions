@@ -45,8 +45,8 @@
     <CoreLibraryVersion>2.5.0</CoreLibraryVersion>
     <CreateHiddenProcessVersion>1.2.0</CreateHiddenProcessVersion>
     <CSharpParserVersion>1.0.0</CSharpParserVersion>
-    <DapperLibrariesVersion>1.6.0</DapperLibrariesVersion>
-    <DapperLibraryVersion>1.6.0</DapperLibraryVersion>
+    <DapperLibrariesVersion>2.0.0</DapperLibrariesVersion>
+    <DapperLibraryVersion>2.0.0</DapperLibraryVersion>
     <DataAccessLibraryVersion>2.3.0</DataAccessLibraryVersion>
     <DatabaseEditorLibraryVersion>1.26.0</DatabaseEditorLibraryVersion>
     <DatabaseSchemaLibraryVersion>1.26.0</DatabaseSchemaLibraryVersion>
