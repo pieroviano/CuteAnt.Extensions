@@ -6,7 +6,7 @@
 		<SourceRoot>$(MSBuildThisFileDirectory)</SourceRoot>
 		<VersionPrefix>$(Net4xExtensionsVersion)</VersionPrefix>
 		<SolutionDir Condition="'$(SolutionDir)'==''">$(MSBuildThisFileDirectory)</SolutionDir>
-		<VersionSuffix>2</VersionSuffix>
+		<VersionSuffix>4</VersionSuffix>
 		<IncludeSymbols>true</IncludeSymbols>
 		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 		<NoWarn>$(NoWarn);NU1504</NoWarn>
