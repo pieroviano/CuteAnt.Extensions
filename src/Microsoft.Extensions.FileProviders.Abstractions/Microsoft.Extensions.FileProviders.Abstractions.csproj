@@ -45,6 +45,6 @@
         <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
 </Project>

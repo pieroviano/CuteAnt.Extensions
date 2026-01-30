@@ -1,4 +1,13 @@
-﻿#if NET35 || NET30 || NET20
+﻿
+#if NET35 || NET30 || NET20
+#if NET20 || NET30
+extern alias rt;
+using System.Linq;
+
+using ValidationAttribute = rt::System.ComponentModel.DataAnnotations.ValidationAttribute;
+using ValidationException = rt::System.ComponentModel.DataAnnotations.ValidationException;
+#endif
+using System.Runtime.InteropServices;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -351,15 +360,15 @@ namespace System.ComponentModel.DataAnnotations
                 return (IEnumerable<Validator.ValidationError>)validationErrors;
             }
             else
-            foreach (ValidationAttribute attribute2 in attributes)
-            {
-                if (attribute2 != ((RequiredAttribute)attr) && !Validator.TryValidate(value, validationContext, attribute2, out validationError))
+                foreach (ValidationAttribute attribute2 in attributes)
                 {
-                    validationErrors.Add(validationError);
-                    if (breakOnFirstError)
-                        break;
+                    if (attribute2 != ((RequiredAttribute)attr) && !Validator.TryValidate(value, validationContext, attribute2, out validationError))
+                    {
+                        validationErrors.Add(validationError);
+                        if (breakOnFirstError)
+                            break;
+                    }
                 }
-            }
             return (IEnumerable<Validator.ValidationError>)validationErrors;
         }
 

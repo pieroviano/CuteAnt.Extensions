@@ -38,6 +38,6 @@
     </ItemGroup>
     <Import Label="Shared" Project="..\..\CuteAnt.Extensions.Common\src\CuteAnt.Extensions.HashCodeCombiner.Sources\CuteAnt.Extensions.HashCodeCombiner.Sources.projitems" />
     <ItemGroup>
-        <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
 </Project>

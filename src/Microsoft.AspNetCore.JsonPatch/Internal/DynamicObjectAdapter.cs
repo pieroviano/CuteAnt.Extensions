@@ -175,7 +175,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             try
             {
                 var propertyInfo = target.GetType().GetProperty(segment);
-                value = propertyInfo.GetValue(target);
+                value = ReflectionUtils.GetValue(propertyInfo,target);
                 errorMessage = null;
                 return true;
             }
@@ -229,7 +229,7 @@ namespace Microsoft.AspNetCore.JsonPatch.Internal
             try
             {
                 var propertyInfo = target.GetType().GetProperty(segment);
-                propertyInfo.SetValue(target, value);
+                ReflectionUtils.SetValue(propertyInfo,target, value);
                 errorMessage = null;
                 return true;
             }

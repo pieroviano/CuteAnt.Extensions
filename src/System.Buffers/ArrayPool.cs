@@ -4,7 +4,6 @@
 
 using System.Runtime.CompilerServices;
 using System.Threading;
-using Volatile = System.Threading.Extensions.Volatile;
 
 namespace System.Buffers
 {

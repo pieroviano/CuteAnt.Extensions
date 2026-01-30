@@ -187,11 +187,7 @@ namespace System.Threading
 
 				if (id < 0 || !m_initialized)
 				{
-#if !NET35 && !NET30 && !NET20
-					Contract.Assert(id >= 0 || !m_initialized, "expected id >= 0 if initialized");
-#else
                     Trace.Assert(id >= 0 || !m_initialized, "expected id >= 0 if initialized");
-#endif
 
 					// Handle double Dispose calls or disposal of an instance whose constructor threw an exception.
 					return;
@@ -548,11 +544,7 @@ namespace System.Threading
 		/// <summary>Resizes a table to a certain length (or larger).</summary>
 		private void GrowTable(ref LinkedSlotVolatile[] table, int minLength)
 		{
-#if !NET35 && !NET30 && !NET20
-			Contract.Assert(table.Length < minLength);
-#else
 			Trace.Assert(table.Length < minLength);
-#endif
 
 			// Determine the size of the new table and allocate it.
 			int newLen = GetNewTableSize(minLength);
@@ -590,11 +582,7 @@ namespace System.Threading
 				// Intentionally return a value that will result in an OutOfMemoryException
 				return int.MaxValue;
 			}
-#if !NET35 && !NET30 && !NET20
-            Contract.Assert(minSize > 0);
-#else
 			Trace.Assert(minSize > 0);
-#endif
 
 			//
 			// Round up the size to the next power of 2
@@ -741,11 +729,7 @@ namespace System.Threading
 			~FinalizationHelper()
 			{
 				LinkedSlotVolatile[] slotArray = SlotArray;
-#if !NET35 && !NET30 && !NET20
-				Contract.Assert(slotArray != null);
-#else
                 Trace.Assert(slotArray != null);
-#endif
 
 				for (int i = 0; i < slotArray.Length; i++)
 				{
@@ -773,11 +757,7 @@ namespace System.Threading
 							}
 
 							// Since the list uses a dummy head node, the Previous reference should never be null.
-#if !NET35 && !NET30 && !NET20
-							Contract.Assert(linkedSlot.Previous != null);
-#else
 							Trace.Assert(linkedSlot.Previous != null);
-#endif
 							linkedSlot.Previous.Next = linkedSlot.Next;
 						}
 					}

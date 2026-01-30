@@ -24,7 +24,8 @@ namespace Microsoft.AspNetCore.JsonPatch.Operations
         public string path { get; set; }
 
         [JsonProperty("op")]
-        public string op
+        public string 
+            op
         {
             get
             {

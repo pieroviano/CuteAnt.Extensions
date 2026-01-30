@@ -46,7 +46,7 @@
         <Reference Include="System.Security" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <ItemGroup>
         <Compile Update="ConfigXmlSR.Designer.cs">

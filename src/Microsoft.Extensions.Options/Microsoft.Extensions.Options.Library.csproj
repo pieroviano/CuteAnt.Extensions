@@ -40,7 +40,8 @@
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Include="Net35.Threading.Tasks" Version="$(Net35ThreadingTasksVersion).$(VersionBuildSuffix)" />
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Condition=" '$(TargetFramework)' == 'net451' " Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />

@@ -34,7 +34,7 @@
         <IsPublishable>False</IsPublishable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <Import Label="Shared" Project="..\..\CuteAnt.Extensions.Common\src\Microsoft.Extensions.ParameterDefaultValue.Sources\Microsoft.Extensions.ParameterDefaultValue.Sources.projitems" />
     <PropertyGroup>

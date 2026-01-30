@@ -43,7 +43,7 @@
         <ProjectReference Include="..\Microsoft.Extensions.FileProviders.Physical\Microsoft.Extensions.FileProviders.Physical.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <ItemGroup>
         <Compile Update="ConfigFileSR.Designer.cs">

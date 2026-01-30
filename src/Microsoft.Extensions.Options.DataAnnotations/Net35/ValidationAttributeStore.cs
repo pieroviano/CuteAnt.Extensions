@@ -1,4 +1,9 @@
 ﻿#if NET35 || NET30 || NET20
+#if NET20 || NET30
+extern alias rt;
+
+using ValidationAttribute = rt::System.ComponentModel.DataAnnotations.ValidationAttribute;
+#endif
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;

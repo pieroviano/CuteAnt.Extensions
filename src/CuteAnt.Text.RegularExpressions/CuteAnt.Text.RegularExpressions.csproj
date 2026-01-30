@@ -45,7 +45,7 @@
         </Compile>
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <ItemGroup>
         <EmbeddedResource Update="Strings.resx">

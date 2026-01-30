@@ -43,7 +43,7 @@
         <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="Internal\ReflectionUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net30.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Newtonsoft.Json" Version="$(NewtonsoftJsonVersion)">
             <Aliases></Aliases>
         </PackageReference>

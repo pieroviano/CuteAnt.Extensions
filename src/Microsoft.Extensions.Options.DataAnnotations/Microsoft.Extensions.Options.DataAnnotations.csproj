@@ -16,6 +16,8 @@
     </ItemGroup>
     <Import Condition="Exists('$(UserProfile)\.nuget\packages\net4x.nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets')" Project="$(UserProfile)\.nuget\packages\net4x.nugetutility\$(NuGetUtilityVersion)\build\NuGet.Utility.targets" />
     <ItemGroup>
+        <PackageReference Include="Net20.LinqBridge" Version="$(Net30LinqBridgeVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.Runtime" Version="$(Net20TypeInfoVersion).$(VersionBuildSuffix)" Aliases="rt" />
         <PackageReference Include="Net4x.NuGetUtility" PrivateAssets="All" Version="$(NuGetUtilityVersion)" />
     </ItemGroup>
     <PropertyGroup>
@@ -43,7 +45,7 @@
         <ProjectReference Include="..\Microsoft.Extensions.Options\Microsoft.Extensions.Options.Library.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
     </ItemGroup>

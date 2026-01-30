@@ -41,4 +41,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.Primitives\Microsoft.Extensions.Primitives.csproj" />
     </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Condition=" '$(TargetFramework)' == 'net451' " Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
+    </ItemGroup>
 </Project>

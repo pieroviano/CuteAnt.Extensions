@@ -42,8 +42,8 @@
         <Compile Include="..\Microsoft.Extensions.DependencyInjection\Internal\ReflectionUtils.cs" Link="ReflectionUtils.cs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Net35.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
-        <PackageReference Include="Net35.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.Actions" Version="$(Net35ActionsVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.DependencyInjection.Abstractions\Microsoft.Extensions.DependencyInjection.Abstractions.csproj" />

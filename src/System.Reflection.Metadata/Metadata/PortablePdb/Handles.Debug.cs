@@ -4,6 +4,7 @@
 
 using System.Diagnostics;
 using System.Reflection.Metadata.Ecma335;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace System.Reflection.Metadata
 {

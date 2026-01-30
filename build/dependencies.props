@@ -5,7 +5,7 @@
     <SystemRuntimeVersion>4.3.0</SystemRuntimeVersion>
     <SystemMemoryPackageVersion>4.5.1</SystemMemoryPackageVersion>
     <SystemValueTupleVersion>4.5.0</SystemValueTupleVersion>
-    <SystemRuntimeCompilerServicesUnsafeVersion>4.5.2</SystemRuntimeCompilerServicesUnsafeVersion>
+    <SystemRuntimeCompilerServicesUnsafeVersion>4.5.3</SystemRuntimeCompilerServicesUnsafeVersion>
 
     <!-- Microsoft packages -->
     <MicrosoftBuildVersion>15.3.409</MicrosoftBuildVersion>

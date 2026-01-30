@@ -54,7 +54,7 @@ namespace Microsoft.Extensions.Configuration.Json
             string errorLine = null;
             if (e.LineNumber >= 2)
             {
-                var errorContext = fileContent.Skip(e.LineNumber - 2).Take(2).ToList();
+                var errorContext = System.Linq.Enumerable.Skip(fileContent, e.LineNumber - 2).Take(2).ToList();
                 // Handle situations when the line number reported is out of bounds
                 if (errorContext.Count() >= 2)
                 {
@@ -63,7 +63,7 @@ namespace Microsoft.Extensions.Configuration.Json
             }
             if (string.IsNullOrEmpty(errorLine))
             {
-                var possibleLineContent = fileContent.Skip(e.LineNumber - 1).FirstOrDefault();
+                var possibleLineContent = System.Linq.Enumerable.Skip(fileContent, e.LineNumber - 1).FirstOrDefault();
                 errorLine = possibleLineContent ?? string.Empty;
             }
             return errorLine;
