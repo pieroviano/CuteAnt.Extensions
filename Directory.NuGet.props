@@ -141,11 +141,12 @@
     <Net4xConfigurationVersion>1.1.0</Net4xConfigurationVersion>
     <Net4xDataDataSetExtensionsVersion>4.8.0</Net4xDataDataSetExtensionsVersion>
     <Net4xDrawingVersion>4.8.9037</Net4xDrawingVersion>
-    <Net4xDynamicBridgeVersion>1.0.0</Net4xDynamicBridgeVersion>
+    <Net4xDynamicBridgeVersion>1.6.0</Net4xDynamicBridgeVersion>
     <Net4xEntityFramework6Version>6.4.4</Net4xEntityFramework6Version>
     <Net4xEntityFrameworkLibVersion>1.2.0</Net4xEntityFrameworkLibVersion>
     <Net4xEntityFrameworkVersion>6.4.4</Net4xEntityFrameworkVersion>
     <Net4xExtensionsVersion>2.5.0</Net4xExtensionsVersion>
+    <Net4xGtkWindowsFormsVersion>1.3.24</Net4xGtkWindowsFormsVersion>
     <Net4xInternetExplorerVersion>1.5.0</Net4xInternetExplorerVersion>
     <Net4xIoCompressionVersion>1.0.0</Net4xIoCompressionVersion>
     <Net4xIOCompressionVersion>1.0.0</Net4xIOCompressionVersion>
