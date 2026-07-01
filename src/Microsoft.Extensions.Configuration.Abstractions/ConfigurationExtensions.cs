@@ -79,7 +79,15 @@ namespace Microsoft.Extensions.Configuration
             {
                 return false;
             }
-            return section.Value != null || section.GetChildren().Any();
+
+            bool any = false;
+            foreach (var child in section.GetChildren())
+            {
+                any = true;
+                break;
+            }
+
+            return section.Value != null || any;
         }
     }
 }

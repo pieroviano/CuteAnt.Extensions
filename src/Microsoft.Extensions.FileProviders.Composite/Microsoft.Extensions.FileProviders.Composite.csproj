@@ -43,6 +43,7 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Condition=" '$(TargetFramework)' == 'net451' " Version="$(SystemRuntimeCompilerServicesUnsafeVersion)" />
+        <PackageReference Include="Net4x.MinimalLinq" Version="$(Net4xBaseTypesVersion).$(VersionBuildSuffix)" Aliases="ml" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Microsoft.Extensions.FileProviders.Abstractions\Microsoft.Extensions.FileProviders.Abstractions.csproj" />

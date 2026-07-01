@@ -21,7 +21,9 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         public CallSiteFactory(IEnumerable<ServiceDescriptor> descriptors)
         {
-            _descriptors = descriptors.ToList();
+            List<ServiceDescriptor> list = new List<ServiceDescriptor>();
+            foreach (var descriptor in descriptors) list.Add(descriptor);
+            _descriptors = list;
             Populate(descriptors);
         }
 

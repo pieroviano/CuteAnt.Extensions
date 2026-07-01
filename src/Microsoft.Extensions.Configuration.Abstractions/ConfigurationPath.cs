@@ -42,7 +42,10 @@ namespace Microsoft.Extensions.Configuration
             {
                 throw new ArgumentNullException(nameof(pathSegments));
             }
-            return string.Join(KeyDelimiter, pathSegments
+
+            List<string> list = new List<string>();
+            foreach (var segment in pathSegments) list.Add(segment);
+            return string.Join(KeyDelimiter, list
 #if NET35 || NET30 || NET20
                 .ToArray()
 #endif

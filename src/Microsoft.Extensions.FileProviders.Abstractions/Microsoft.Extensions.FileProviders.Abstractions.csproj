@@ -46,5 +46,6 @@
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
+        <PackageReference Include="Net4x.MinimalLinq" Version="$(Net4xBaseTypesVersion).$(VersionBuildSuffix)" Aliases="ml" />
     </ItemGroup>
 </Project>

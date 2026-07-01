@@ -18,8 +18,7 @@ namespace Microsoft.Extensions.FileProviders
     /// </summary>
     public class EmbeddedFileProvider : IFileProvider
     {
-        private static readonly char[] _invalidFileNameChars = Path.GetInvalidFileNameChars()
-            .Where(c => c != '/' && c != '\\').ToArray();
+        private static readonly char[] _invalidFileNameChars = Enumerable.Where(Path.GetInvalidFileNameChars(), c => c != '/' && c != '\\').ToArray();
 
         private readonly Assembly _assembly;
         private readonly string _baseNamespace;

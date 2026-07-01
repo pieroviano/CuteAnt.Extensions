@@ -78,7 +78,7 @@ namespace Microsoft.Extensions.Configuration
             var section = parentPath == null ? _config : _config.GetSection(parentPath);
             var children = section.GetChildren();
             var keys = new List<string>();
-            keys.AddRange(children.Select(c => c.Key));
+            keys.AddRange(Enumerable.Select(children, c => c.Key));
             return keys.Concat(earlierKeys)
                 .OrderBy(k => k, ConfigurationKeyComparer.Instance);
         }

@@ -151,14 +151,13 @@ namespace Microsoft.Extensions.DependencyInjection
         private static IEnumerable<Type> FindIConfigureOptions(Type type)
         {
 #if NET40 || NET35 || NET30 || NET20
-            var serviceTypes = type.GetInterfaces()
-                .Where(t => t.IsGenericType && 
+            var serviceTypes = Enumerable.Where(type.GetInterfaces(), t => t.IsGenericType && 
 #else
             var serviceTypes = type.GetTypeInfo().ImplementedInterfaces
                 .Where(t => t.GetTypeInfo().IsGenericType &&
 #endif
-                (t.GetGenericTypeDefinition() == typeof(IConfigureOptions<>)
-                || t.GetGenericTypeDefinition() == typeof(IPostConfigureOptions<>)));
+                                                                           (t.GetGenericTypeDefinition() == typeof(IConfigureOptions<>)
+                                                                            || t.GetGenericTypeDefinition() == typeof(IPostConfigureOptions<>)));
             if (!serviceTypes.Any())
             {
                 throw new InvalidOperationException(

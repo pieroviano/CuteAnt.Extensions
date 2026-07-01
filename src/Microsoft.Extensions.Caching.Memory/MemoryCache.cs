@@ -439,7 +439,7 @@ namespace Microsoft.Extensions.Caching.Memory
             // TODO: Refine policy
 
             // LRU
-            foreach (var entry in priorityEntries.OrderBy(entry => entry.LastAccessed))
+            foreach (var entry in Enumerable.OrderBy(priorityEntries, entry => entry.LastAccessed))
             {
                 entry.SetExpired(EvictionReason.Capacity);
                 entriesToRemove.Add(entry);

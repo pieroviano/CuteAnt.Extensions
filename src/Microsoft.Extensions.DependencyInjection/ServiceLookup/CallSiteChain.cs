@@ -49,7 +49,7 @@ namespace Microsoft.Extensions.DependencyInjection.ServiceLookup
 
         private void AppendResolutionPath(StringBuilder builder, Type currentlyResolving = null)
         {
-            foreach (var pair in _callSiteChain.OrderBy(p => p.Value.Order))
+            foreach (var pair in Enumerable.OrderBy(_callSiteChain, p => p.Value.Order))
             {
                 var serviceType = pair.Key;
                 var implementationType = pair.Value.ImplementationType;

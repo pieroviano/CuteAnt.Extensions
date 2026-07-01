@@ -34,6 +34,7 @@
         <IsPublishable>False</IsPublishable>
     </PropertyGroup>
     <ItemGroup>
+        <PackageReference Include="Net4x.MinimalLinq" Version="$(Net4xBaseTypesVersion).$(VersionBuildSuffix)" Aliases="ml" />
         <PackageReference Include="Net20.TypeInfo" Version="$(Net35TypeInfoVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.AsyncBridge" Version="$(Net4xAsyncBridgeVersion).$(VersionBuildSuffix)" />
         <PackageReference Include="Net4x.ValueTuple" Version="$(Net4xValueTupleVersion).$(VersionBuildSuffix)" />
